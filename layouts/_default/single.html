@@ -53,18 +53,57 @@
     </div>
 </section>
 
+<!-- Main Content Context Setup -->
+{{ $current := . }}
+{{ $relPermalink := .RelPermalink }}
+{{ $siblingNodes := slice }}
+{{ $parentMenuTitle := "" }}
+
+{{ range .Site.Menus.main }}
+    {{ if .HasChildren }}
+        {{ $parentEntry := . }}
+        {{ if eq $relPermalink .URL }}
+            {{ $siblingNodes = $parentEntry.Children }}
+            {{ $parentMenuTitle = $parentEntry.Name }}
+        {{ end }}
+        {{ range .Children }}
+            {{ if eq $relPermalink .URL }}
+                {{ $siblingNodes = $parentEntry.Children }}
+                {{ $parentMenuTitle = $parentEntry.Name }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
 <!-- Main Content -->
 <main class="section bg-light text-page">
     <div class="container fade-up delay-2">
-        {{ if .Params.custom_layout }}
-            {{ .Content }}
-        {{ else }}
-            <div style="background: white; padding: 3rem; border-radius: 8px; box-shadow: var(--shadow-sm); min-height: 400px; line-height: 1.8;">
-                <h2 style="color: var(--clr-primary); margin-bottom: 1.5rem;">{{ .Title }} Overview</h2>
-                <div style="width: 60px; height: 4px; background-color: var(--clr-secondary); margin-bottom: 2rem; border-radius: 2px;"></div>
-                {{ .Content }}
+        <div class="page-layout {{ if eq (len $siblingNodes) 0 }}no-sidebar{{ end }}">
+            
+            {{ if gt (len $siblingNodes) 0 }}
+            <aside class="sidebar-nav">
+                <h3>{{ $parentMenuTitle }}</h3>
+                <ul>
+                {{ range $siblingNodes }}
+                    <li><a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a></li>
+                {{ end }}
+                </ul>
+            </aside>
+            {{ end }}
+
+            <div class="page-content">
+                {{ if .Params.custom_layout }}
+                    {{ .Content }}
+                {{ else }}
+                    <div class="content-card">
+                        <h2 class="content-title">{{ .Title }} Overview</h2>
+                        <div class="content-divider"></div>
+                        {{ .Content }}
+                    </div>
+                {{ end }}
             </div>
-        {{ end }}
+            
+        </div>
     </div>
 </main>
 {{ end }}

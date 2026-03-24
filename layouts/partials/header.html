@@ -14,8 +14,26 @@
         
         <nav class="nav-links" id="nav-links">
             {{ $current := . }}
+            {{ $relPermalink := .RelPermalink }}
             {{ range .Site.Menus.main }}
-                <a href="{{ .URL | relURL }}" {{ if or ($current.IsMenuCurrent "main" .) (and (eq .URL "/") ($current.IsHome)) }}class="active"{{ end }}>{{ .Name }}</a>
+                {{ $isParentActive := eq $relPermalink .URL }}
+                {{ if .HasChildren }}
+                    {{ range .Children }}
+                        {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
+                    {{ end }}
+                    <div class="nav-dropdown">
+                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="{{ if $isParentActive }}active{{ end }}">
+                            {{ .Name }} <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </a>
+                        <div class="nav-dropdown-content">
+                            {{ range .Children }}
+                                <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ else }}
+                    <a href="{{ .URL | relURL }}" class="{{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}active{{ end }}">{{ .Name }}</a>
+                {{ end }}
             {{ end }}
             <a href="{{ .Site.Params.registration_link | relURL }}" class="btn btn-primary nav-btn">Register</a>
         </nav>

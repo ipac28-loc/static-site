@@ -87,9 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 4. Countdown Timer logic ---
-    // Set for a date in the future (e.g., 6 months from now)
-    const futureDate = new Date();
-    futureDate.setMonth(futureDate.getMonth() + 6);
+    const countdownEl = document.getElementById('countdown');
+    let futureDate = new Date();
+    
+    if (countdownEl && countdownEl.dataset.date) {
+        futureDate = new Date(countdownEl.dataset.date);
+    } else {
+        // Fallback to 6 months from now
+        futureDate.setMonth(futureDate.getMonth() + 6);
+    }
     
     const countDays = document.getElementById('days');
     const countHours = document.getElementById('hours');

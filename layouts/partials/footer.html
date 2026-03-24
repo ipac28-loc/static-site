@@ -11,9 +11,10 @@
                 </a>
                 <p class="footer-desc">The {{ .Site.Params.conf_full_name }}. Bringing together the brightest minds in accelerator science and engineering.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    {{ with .Site.Params.social.twitter }}<a href="{{ . }}"><i class="fab fa-twitter"></i></a>{{ end }}
+                    {{ with .Site.Params.social.linkedin }}<a href="{{ . }}"><i class="fab fa-linkedin-in"></i></a>{{ end }}
+                    {{ with .Site.Params.social.facebook }}<a href="{{ . }}"><i class="fab fa-facebook-f"></i></a>{{ end }}
+                    {{ with .Site.Params.social.github }}<a href="{{ . }}"><i class="fab fa-github"></i></a>{{ end }}
                 </div>
             </div>
             

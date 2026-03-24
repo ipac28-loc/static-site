@@ -2,12 +2,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Accelerator Background">
+            <img src="{{ .Site.Params.hero_image | absURL }}" alt="Accelerator Background">
             <div class="hero-overlay"></div>
         </div>
         
         <div class="container hero-content">
-            <div class="badge fade-up">International Conference</div>
+            <div class="badge fade-up">{{ .Site.Params.hero_badge }}</div>
             <h1 class="fade-up delay-1">{{ .Site.Params.conf_full_name }}</h1>
             <p class="hero-details fade-up delay-2">
                 <i class="fas fa-calendar-alt"></i> {{ .Site.Params.conf_dates }} &nbsp;|&nbsp; 
@@ -20,12 +20,13 @@
         </div>
     </section>
 
+    {{ if .Site.Params.enable_countdown }}
     <!-- Countdown Section -->
     <section class="countdown-section">
         <div class="container">
             <div class="countdown-card fade-up">
                 <h3>Conference Begins In:</h3>
-                <div class="countdown" id="countdown">
+                <div class="countdown" id="countdown" data-date="{{ .Site.Params.conf_start_date }}">
                     <div class="time-block">
                         <span class="time-value" id="days">00</span>
                         <span class="time-label">Days</span>
@@ -49,6 +50,7 @@
             </div>
         </div>
     </section>
+    {{ end }}
 
     <!-- About Section -->
     <section id="about" class="section about-section">
@@ -61,22 +63,22 @@
                     
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <h4 class="stat-number">1200+</h4>
+                            <h4 class="stat-number">{{ .Site.Params.stats.attendees }}</h4>
                             <p class="stat-label">Attendees</p>
                         </div>
                         <div class="stat-item">
-                            <h4 class="stat-number">800+</h4>
+                            <h4 class="stat-number">{{ .Site.Params.stats.presentations }}</h4>
                             <p class="stat-label">Presentations</p>
                         </div>
                         <div class="stat-item">
-                            <h4 class="stat-number">80+</h4>
+                            <h4 class="stat-number">{{ .Site.Params.stats.exhibitors }}</h4>
                             <p class="stat-label">Exhibitors</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image fade-up delay-1">
                     <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Conference Audience">
+                        <img src="{{ .Site.Params.about_image | absURL }}" alt="Conference Audience">
                     </div>
                 </div>
             </div>
@@ -190,6 +192,7 @@
     </section>
 
     <!-- Sponsors Section -->
+    {{ if .Site.Params.enable_sponsors }}
     <section id="sponsors" class="section bg-light sponsors-section">
         <div class="container">
             <div class="section-header text-center fade-up">
@@ -220,4 +223,5 @@
             </div>
         </div>
     </section>
+    {{ end }}
 {{ end }}

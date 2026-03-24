@@ -11,41 +11,180 @@ unsafe = true
   logo_image = "/img/ipac28_1200x608.png"
   conf_short_name = "IPAC'28"
   conf_full_name = "16th International Particle Accelerator Conference"
-  conf_dates = "May 19-24, 2028"
-  conf_location = "Global Convention Center, City, Country"
+  conf_dates = "June 5-9, 2028"
+  conf_start_date = "2028-06-05T08:00:00+09:00"
+  conf_location = "Tokyo International Forum, Tokyo, Japan"
   email = "contact@ipac28.org"
   registration_link = "/register/"
   abstract_deadline = "December 5, 2027"
 
+  # Appearance & Toggles
+  hero_badge = "16th International Conference"
+  hero_image = "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  about_image = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  enable_countdown = true
+  enable_sponsors = true
+
+[params.social]
+  twitter = "https://twitter.com/IPAC28"
+  linkedin = "https://linkedin.com/company/ipac28"
+  facebook = "https://facebook.com/ipac28"
+  # github = "https://github.com/ipac..."
+
+[params.stats]
+  attendees = "1200+"
+  presentations = "800+"
+  exhibitors = "80+"
+
+# ----- 1. About -----
 [[menu.main]]
-  name = "Home"
-  url = "/"
+  name = "About"
+  identifier = "about"
   weight = 10
 
 [[menu.main]]
-  name = "About"
+  name = "About IPAC"
   url = "/about/"
+  parent = "about"
+  weight = 10
+
+[[menu.main]]
+  name = "Organizing Committees"
+  url = "/committees/"
+  parent = "about"
   weight = 20
+
+[[menu.main]]
+  name = "Policies & Conduct"
+  url = "/policies/"
+  parent = "about"
+  weight = 30
+
+[[menu.main]]
+  name = "FAQ"
+  url = "/faq/"
+  parent = "about"
+  weight = 40
+
+# ----- 2. Author -----
+[[menu.main]]
+  name = "Author"
+  identifier = "author"
+  weight = 20
+
+[[menu.main]]
+  name = "Submit Abstract"
+  url = "/abstract/"
+  parent = "author"
+  weight = 10
+
+[[menu.main]]
+  name = "Paper Preparation"
+  url = "/paper-prep/"
+  parent = "author"
+  weight = 20
+
+[[menu.main]]
+  name = "Presentation Guidelines"
+  url = "/presentation/"
+  parent = "author"
+  weight = 30
 
 [[menu.main]]
   name = "Important Dates"
   url = "/dates/"
+  parent = "author"
+  weight = 40
+
+# ----- 3. Programmes -----
+[[menu.main]]
+  name = "Programmes"
+  identifier = "programmes"
   weight = 30
 
 [[menu.main]]
-  name = "Program"
+  name = "Scientific Program"
   url = "/program/"
+  parent = "programmes"
+  weight = 10
+
+[[menu.main]]
+  name = "Plenary Speakers"
+  url = "/speakers/"
+  parent = "programmes"
+  weight = 20
+
+[[menu.main]]
+  name = "Social Events"
+  url = "/social/"
+  parent = "programmes"
+  weight = 30
+
+# ----- 4. Registration -----
+[[menu.main]]
+  name = "Registration"
+  identifier = "registration"
   weight = 40
 
 [[menu.main]]
-  name = "Sponsors"
-  url = "/sponsors/"
+  name = "Registration Fees"
+  url = "/register/"
+  parent = "registration"
+  weight = 10
+
+[[menu.main]]
+  name = "Student Grants"
+  url = "/grants/"
+  parent = "registration"
+  weight = 20
+
+# ----- 5. Travel -----
+[[menu.main]]
+  name = "Travel"
+  identifier = "travel"
   weight = 50
 
 [[menu.main]]
-  name = "Committees"
-  url = "/committees/"
+  name = "Venue & Accommodation"
+  url = "/accommodation/"
+  parent = "travel"
+  weight = 10
+
+[[menu.main]]
+  name = "Visa Information"
+  url = "/visa/"
+  parent = "travel"
+  weight = 20
+
+[[menu.main]]
+  name = "Discover the City"
+  url = "/city/"
+  parent = "travel"
+  weight = 30
+
+# ----- 6. Sponsors & Exhibitors -----
+[[menu.main]]
+  name = "Sponsors & Exhibitors"
+  identifier = "sponsors_menu"
   weight = 60
+
+[[menu.main]]
+  name = "Our Sponsors"
+  url = "/sponsors/"
+  parent = "sponsors_menu"
+  weight = 10
+
+[[menu.main]]
+  name = "Exhibitor Prospectus"
+  url = "/exhibitor-info/"
+  parent = "sponsors_menu"
+  weight = 20
+
+# ----- 7. Contact -----
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 70
 
 [[menu.footer_quick]]
   name = "About Conference"
