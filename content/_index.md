@@ -6,4 +6,3 @@ title = 'Hello ipac28!'
 
 # Hello IPAC28!
 
-This is my first Hugo page.
