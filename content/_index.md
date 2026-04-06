@@ -4,6 +4,6 @@ draft = false
 title = 'Hello ipac28!'
 +++
 
-# Hello IPAC28!
+# Welcome to IPAC'28!
 
-IPAC28 will held at Tokyo!
+![](images/IPAC28_poster.jpeg)
