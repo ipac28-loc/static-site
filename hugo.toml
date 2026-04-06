@@ -20,8 +20,8 @@ unsafe = true
 
   # Appearance & Toggles
   hero_badge = "16th International Conference"
-  hero_image = "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-  about_image = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  hero_image = "/img/ipac28_poster_a0.png"
+  about_image = "/img/kanko.png"
   enable_countdown = true
   enable_sponsors = true
 

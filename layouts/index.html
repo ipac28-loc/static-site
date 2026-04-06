@@ -1,21 +1,22 @@
 {{ define "main" }}
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg">
-            <img src="{{ .Site.Params.hero_image | absURL }}" alt="Accelerator Background">
-            <div class="hero-overlay"></div>
-        </div>
-        
-        <div class="container hero-content">
-            <div class="badge fade-up">{{ .Site.Params.hero_badge }}</div>
-            <h1 class="fade-up delay-1">{{ .Site.Params.conf_full_name }}</h1>
-            <p class="hero-details fade-up delay-2">
-                <i class="fas fa-calendar-alt"></i> {{ .Site.Params.conf_dates }} &nbsp;|&nbsp; 
-                <i class="fas fa-map-marker-alt"></i> {{ .Site.Params.conf_location }}
-            </p>
-            <div class="hero-actions fade-up delay-3">
-                <a href="{{ "program/" | relURL }}" class="btn btn-primary btn-lg">Submit Abstract</a>
-                <a href="{{ "about/" | relURL }}" class="btn btn-outline btn-lg">Learn More</a>
+        <div class="hero-bg-accent"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge fade-up">{{ .Site.Params.hero_badge }}</div>
+                <h1 class="fade-up delay-1">{{ .Site.Params.conf_full_name }}</h1>
+                <p class="hero-details fade-up delay-2">
+                    <i class="fas fa-calendar-alt"></i> {{ .Site.Params.conf_dates }} &nbsp;|&nbsp; 
+                    <i class="fas fa-map-marker-alt"></i> {{ .Site.Params.conf_location }}
+                </p>
+                <div class="hero-actions fade-up delay-3">
+                    <a href="{{ "program/" | relURL }}" class="btn btn-primary btn-lg">Submit Abstract</a>
+                    <a href="{{ "about/" | relURL }}" class="btn btn-outline btn-lg">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-poster fade-up delay-2">
+                <img src="{{ .Site.Params.hero_image | absURL }}" alt="Conference Poster">
             </div>
         </div>
     </section>
@@ -57,9 +58,9 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-text fade-up">
-                    <h2 class="section-title">Welcome to {{ .Site.Params.conf_short_name }}</h2>
+                    <h2 class="section-title">Join us in Tokyo for {{ .Site.Params.conf_short_name }}</h2>
                     <p>The International Particle Accelerator Conference (IPAC) is the main international event for the worldwide particle accelerator field and industry. The {{ .Site.Params.conf_short_name }} edition brings together accelerator scientists, engineers, students, and vendors from across the globe.</p>
-                    <p>Attendees will have the opportunity to learn about the most recent achievements in particle accelerators and their applications, discover the newest products and services, and establish valuable global connections.</p>
+                    <p>Hosted in the vibrant and bustling city of Tokyo, Japan, attendees will have the opportunity to experience a unique blend of rich cultural heritage and cutting-edge technology. Alongside an engaging scientific program, you can explore iconic sightseeing spots, enjoy exquisite cuisine, and establish valuable global connections.</p>
                     
                     <div class="stats-grid">
                         <div class="stat-item">
@@ -78,7 +79,7 @@
                 </div>
                 <div class="about-image fade-up delay-1">
                     <div class="image-wrapper">
-                        <img src="{{ .Site.Params.about_image | absURL }}" alt="Conference Audience">
+                        <img src="{{ .Site.Params.about_image | absURL }}" alt="Tokyo Host City">
                     </div>
                 </div>
             </div>

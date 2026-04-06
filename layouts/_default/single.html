@@ -6,14 +6,15 @@
         display: flex;
         align-items: center;
         position: relative;
-        background-color: var(--clr-primary);
+        background-color: var(--color-hero-bg-solid);
         color: white;
         padding-top: 80px;
     }
     .page-hero-overlay {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 44, 89, 0.8) 100%);
+        background: linear-gradient(135deg, var(--color-hero-grad-start) 0%, var(--color-hero-grad-end) 100%);
+        opacity: 0.95;
         z-index: 1;
     }
     .page-hero-content {

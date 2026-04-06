@@ -4,34 +4,169 @@
 
 /* --- Variables & Configuration --- */
 :root {
-    /* Color Palette */
-    --clr-primary: #0f2c59; /* Deep Navy Blue */
-    --clr-primary-light: #1e4a8b;
-    --clr-secondary: #00b4d8; /* Bright Accelerator Blue */
-    --clr-accent: #f59e0b; /* Golden Orange for highlights */
-    
-    /* Backgrounds */
-    --bg-main: #ffffff;
-    --bg-light: #f8fafc;
-    --bg-dark: #0f172a;
-    
-    /* Text Colors */
-    --text-main: #334155;
-    --text-muted: #64748b;
-    --text-light: #f8fafc;
-    
-    /* Typography */
+    /* =========================================
+       1. Base Typography & Body
+       ========================================= */
+    --color-bg-body: #ffffff;
+    /* Entire page default background */
+    --color-bg-section-alt: #f8fafc;
+    /* Alternating section background (e.g., Dates, Sponsors) */
+
+    --color-text-body: #334155;
+    /* Default body text */
+    --color-text-heading: #1d4485;
+    /* Main headings (h1-h6) */
+    --color-text-muted: #64748b;
+    /* Muted text (subtitles, secondary info) */
+
+    --color-link-default: #e52421;
+    /* Standard hyperlinks */
+    --color-link-hover: #1d4485;
+    /* Standard hyperlinks on hover */
+
+    /* =========================================
+       2. Buttons 
+       ========================================= */
+    --color-btn-primary-bg: #e52421;
+    /* Primary button background */
+    --color-btn-primary-bg-hover: #b91c1b;
+    /* Primary button background on hover */
+    --color-btn-primary-text: #ffffff;
+    /* Primary button text */
+    --shadow-btn-primary-glow: 0 0 20px rgba(229, 36, 33, 0.4);
+    /* Glow effect on hover */
+
+    --color-btn-outline-border: #e52421;
+    /* Outline button border and text */
+    --color-btn-outline-text: #e52421;
+    /* Outline button text */
+    --color-btn-outline-bg-hover: #e52421;
+    /* Outline button background on hover */
+    --color-btn-outline-text-hover: #ffffff;
+    /* Outline button text on hover */
+
+    /* =========================================
+       3. Top Navigation Bar
+       ========================================= */
+    --color-nav-bg-transparent: transparent;
+    /* Nav background at top of page */
+    --color-nav-bg-scrolled: #208cc6;
+    /* Nav background when scrolled (Dark/Solid) */
+    --color-nav-logo: #ffffff;
+    /* Logo text color */
+    --color-nav-logo-highlight: #e52421;
+    /* Logo highlighted part */
+    --color-nav-link-text: rgba(255, 255, 255, 0.9);
+    /* Normal nav link text */
+    --color-nav-link-text-hover: #ffffff;
+    /* Nav link text on hover */
+    --color-nav-link-border-hover: #e52421;
+    /* Nav underline effect on hover */
+
+    /* =========================================
+       4. Hero Section 
+       ========================================= */
+    --color-hero-bg-solid: #2973af;
+    /* Hero background solid fallback */
+    --color-hero-grad-start: #2973af;
+    /* Hero overlay gradient start */
+    --color-hero-grad-end: #0e6eab;
+    /* Hero overlay gradient end */
+    --color-hero-text-main: #ffffff;
+    /* Hero Title text */
+    --color-hero-text-details: rgba(255, 255, 255, 0.9);
+    /* Hero sub-details text */
+
+    --color-hero-badge-bg: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent badge background */
+    --color-hero-badge-border: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent badge border */
+
+    /* =========================================
+       5. Countdown Section
+       ========================================= */
+    --color-countdown-bg: #ffffff;
+    /* Countdown card background */
+    --color-countdown-border-top: #e52421;
+    /* Thick accent border on top */
+    --color-countdown-title: #1d4485;
+    /* "Conference Begins In:" text */
+    --color-countdown-number: #1d4485;
+    /* Countdown digits */
+    --color-countdown-label: #64748b;
+    /* "Days", "Hours" labels */
+    --color-countdown-divider: #e52421;
+    /* Colon ":" dividers between times */
+
+    /* =========================================
+       6. Content Blocks & Special Elements
+       ========================================= */
+    --color-title-underline: #e52421;
+    /* Red dash under section titles */
+    --color-stat-number: #e52421;
+    /* Large numbers in About section stats */
+    --color-image-overlay-grad: #e52421;
+    /* Tint gradient over the About image */
+
+    /* Important Dates Cards */
+    --color-date-card-bg: #ffffff;
+    --color-date-card-icon-bg: rgba(229, 36, 33, 0.1);
+    --color-date-card-icon-text: #e52421;
+    --color-date-card-border-hover: #e52421;
+    --color-date-card-text-highlight: #ebb934;
+    /* E.g., Deadline highlights */
+
+    /* News Cards */
+    --color-news-card-bg: #ffffff;
+    --color-news-date-text: #e52421;
+
+    /* Sponsors Marquee */
+    --color-sponsor-box-bg: #ffffff;
+    --color-sponsor-box-border: #e2e8f0;
+    --color-sponsor-placeholder-text: #cbd5e1;
+
+    /* =========================================
+       7. Layout: Subpage Sidebar & Content
+       ========================================= */
+    --color-sidebar-bg: #ffffff;
+    --color-sidebar-title-text: #1d4485;
+    --color-sidebar-link-text: #334155;
+    --color-sidebar-item-bg-active: rgba(229, 36, 33, 0.1);
+    --color-sidebar-item-text-active: #e52421;
+
+    --color-content-card-bg: #ffffff;
+
+    /* =========================================
+       8. Footer Section
+       ========================================= */
+    --color-footer-bg: #208cc6;
+    /* Footer solid background */
+    --color-footer-title: #ffffff;
+    /* Footer column titles */
+    --color-footer-text-muted: rgba(255, 255, 255, 0.85);
+    /* General footer text descriptions */
+    --color-footer-link-default: rgba(255, 255, 255, 0.85);
+    /* Footer hyperlinks */
+    --color-footer-link-hover: #e52421;
+    /* Footer hyperlinks on hover */
+    --color-footer-divider: rgba(255, 255, 255, 0.1);
+    /* Thin dividers in footer */
+
+    --color-footer-social-bg: rgba(255, 255, 255, 0.1);
+    --color-footer-social-icon: #ffffff;
+    --color-footer-social-bg-hover: #e52421;
+
+    /* =========================================
+       9. Layout & Shadows (Core Setup)
+       ========================================= */
     --font-sans: 'Inter', -apple-system, sans-serif;
     --font-heading: 'Montserrat', sans-serif;
-    
-    /* Layout & Shadows */
     --container-width: 1200px;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-glow: 0 0 20px rgba(0, 180, 216, 0.4);
-    
-    /* Transitions */
+
+    /* 10. Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -46,25 +181,26 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offset for sticky header */
+    scroll-padding-top: 80px;
+    /* Offset for sticky header */
 }
 
 body {
     font-family: var(--font-sans);
-    color: var(--text-main);
-    background-color: var(--bg-main);
+    color: var(--color-text-body);
+    background-color: var(--color-bg-body);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    color: var(--clr-secondary);
+    color: var(--color-link-default);
     transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--clr-primary);
+    color: var(--color-brand-primary);
 }
 
 ul {
@@ -78,11 +214,16 @@ img {
 }
 
 /* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--clr-primary);
+    color: var(--color-text-heading);
     margin-bottom: 1rem;
 }
 
@@ -99,15 +240,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-light {
-    background-color: var(--bg-light);
+    background-color: var(--color-bg-section-alt);
 }
 
 .text-center {
     text-align: center;
 }
 
-.mt-4 { margin-top: 2rem; }
-.mb-4 { margin-bottom: 2rem; }
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
 
 /* Section Headers */
 .section-header {
@@ -132,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background-color: var(--clr-secondary);
+    background-color: var(--color-title-underline);
     border-radius: 2px;
 }
 
@@ -144,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: var(--color-text-muted);
     margin-top: 1rem;
 }
 
@@ -162,12 +308,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--clr-secondary);
+    background-color: var(--color-btn-primary-bg);
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #0096b4; /* Darker secondary */
+    background-color: #b91c1b;
+    /* Darker secondary */
     color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
@@ -175,12 +322,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-outline {
     background-color: transparent;
-    border-color: var(--clr-secondary);
-    color: var(--clr-secondary);
+    border-color: var(--color-btn-outline-border);
+    color: var(--color-btn-outline-text);
 }
 
 .btn-outline:hover {
-    background-color: var(--clr-secondary);
+    background-color: var(--color-btn-outline-bg-hover);
+    color: var(--color-btn-outline-text-hover);
     color: white;
     transform: translateY(-2px);
 }
@@ -199,12 +347,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 0;
     z-index: 1000;
     transition: all var(--transition-normal);
-    background-color: transparent; /* Transparent at top */
+    background-color: transparent;
+    /* Transparent at top */
 }
 
 /* Scrolled state applied via JS */
 .navbar.scrolled {
-    background-color: var(--bg-dark);
+    background-color: var(--color-nav-bg-scrolled);
     padding: 15px 0;
     box-shadow: var(--shadow-md);
 }
@@ -229,7 +378,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight {
-    color: var(--clr-secondary);
+    color: var(--color-nav-logo-highlight);
 }
 
 .nav-links {
@@ -251,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: var(--clr-secondary);
+    background-color: var(--color-nav-link-border-hover);
     transition: width var(--transition-normal);
 }
 
@@ -260,7 +409,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: white;
 }
 
@@ -276,43 +426,49 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Hero Section --- */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
+    padding: 160px 0 120px;
+    background-color: var(--color-hero-bg-solid);
     color: white;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
     overflow: hidden;
 }
 
-.hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1.05); /* Prevent edges showing on load animation */
-}
-
-.hero-overlay {
+.hero-bg-accent {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 44, 89, 0.7) 100%);
+    background: linear-gradient(135deg, var(--color-hero-grad-start) 0%, var(--color-hero-grad-end) 100%);
+    opacity: 0.95;
+    z-index: 0;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
 }
 
 .hero-content {
-    max-width: 800px;
-    z-index: 1;
+    max-width: 600px;
+}
+
+.hero-poster {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-poster img {
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg), 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.1);
 }
 
 .badge {
@@ -360,7 +516,8 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Countdown Section --- */
 .countdown-section {
     position: relative;
-    margin-top: -60px; /* Overlap hero */
+    margin-top: -60px;
+    /* Overlap hero */
     z-index: 10;
 }
 
@@ -373,12 +530,12 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    border-top: 4px solid var(--clr-secondary);
+    border-top: 4px solid var(--color-countdown-border-top);
 }
 
 .countdown-card h3 {
     margin: 0;
-    color: var(--clr-primary);
+    color: var(--color-countdown-title);
     font-size: 1.5rem;
 }
 
@@ -399,13 +556,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--clr-primary);
+    color: var(--color-countdown-number);
     line-height: 1;
 }
 
 .time-label {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--color-text-muted);
     text-transform: uppercase;
     font-weight: 600;
     margin-top: 0.25rem;
@@ -414,7 +571,7 @@ h1, h2, h3, h4, h5, h6 {
 .time-divider {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--clr-secondary);
+    color: var(--color-countdown-divider);
     margin-top: -15px;
 }
 
@@ -423,7 +580,13 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
+}
+
+.about-text {
+    position: sticky;
+    top: 120px;
+    align-self: start;
 }
 
 .about-text p {
@@ -442,7 +605,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat-number {
     font-size: 2.5rem;
-    color: var(--clr-secondary);
+    color: var(--color-stat-number);
     margin-bottom: 0.25rem;
 }
 
@@ -460,9 +623,16 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--clr-secondary) 0%, transparent 100%);
+    background: linear-gradient(45deg, var(--color-image-overlay-grad) 0%, transparent 100%);
     opacity: 0.2;
     z-index: 1;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* --- Important Dates --- */
@@ -487,12 +657,12 @@ h1, h2, h3, h4, h5, h6 {
 .date-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-    border-left-color: var(--clr-secondary);
+    border-left-color: var(--color-date-card-border-hover);
 }
 
 .date-icon {
-    background-color: rgba(0, 180, 216, 0.1);
-    color: var(--clr-secondary);
+    background-color: var(--color-date-card-icon-bg);
+    color: var(--color-date-card-icon-text);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -509,12 +679,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .date-content .date {
-    color: var(--text-muted);
+    color: var(--color-text-muted);
     font-weight: 500;
 }
 
 .highlight-text {
-    color: var(--clr-accent) !important;
+    color: var(--color-date-card-text-highlight) !important;
     font-weight: 700 !important;
 }
 
@@ -559,7 +729,7 @@ h1, h2, h3, h4, h5, h6 {
 .news-date {
     display: inline-block;
     font-size: 0.85rem;
-    color: var(--clr-secondary);
+    color: var(--color-news-date-text);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -570,7 +740,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .news-excerpt {
-    color: var(--text-muted);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     flex-grow: 1;
@@ -634,14 +804,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 1.5rem)); } /* Half of width to seamlessly loop */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 1.5rem));
+    }
+
+    /* Half of width to seamlessly loop */
 }
 
 /* --- Footer --- */
 .footer {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text-muted);
     padding-top: 80px;
 }
 
@@ -653,7 +830,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-desc {
-    color: #94a3b8;
+    color: rgba(255, 255, 255, 0.85);
     margin: 1.5rem 0;
 }
 
@@ -674,7 +851,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-links a:hover {
-    background-color: var(--clr-secondary);
+    background-color: var(--color-footer-social-bg-hover);
     transform: translateY(-3px);
 }
 
@@ -689,11 +866,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-links a {
-    color: #94a3b8;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-links a:hover {
-    color: var(--clr-secondary);
+    color: var(--color-footer-link-hover);
     padding-left: 5px;
 }
 
@@ -722,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #94a3b8;
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.9rem;
 }
 
@@ -743,51 +920,96 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
-    .hero h1 { font-size: 3rem; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .section { padding: 60px 0; }
-    
-    .mobile-toggle { display: block; }
-    
+    .section {
+        padding: 60px 0;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         height: 100vh;
         width: 70%;
-        background-color: var(--bg-dark);
+        background-color: var(--color-bg-dark);
         flex-direction: column;
         justify-content: center;
         transition: right var(--transition-normal);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .countdown-card {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
     }
-    
-    .about-grid { grid-template-columns: 1fr; }
-    
-    .hero h1 { font-size: 2.25rem; }
-    .hero-actions { flex-direction: column; }
-    
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-poster {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
 /* =========================================================================
@@ -799,17 +1021,19 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: inline-block;
 }
-.nav-dropdown > a {
+
+.nav-dropdown>a {
     display: flex;
     align-items: center;
     gap: 0.25rem;
 }
+
 .nav-dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--bg-dark);
+    background-color: var(--color-bg-dark);
     min-width: 220px;
     box-shadow: var(--shadow-lg);
     border-radius: 8px;
@@ -819,22 +1043,26 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(10px);
     transition: all var(--transition-fast);
 }
+
 .nav-dropdown:hover .nav-dropdown-content {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
+
 .nav-dropdown-content a {
     display: block;
     color: rgba(255, 255, 255, 0.8) !important;
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
 }
+
 .nav-dropdown-content a:hover,
 .nav-dropdown-content a.active {
     background-color: rgba(255, 255, 255, 0.1);
     color: white !important;
 }
+
 .nav-dropdown-content a::after {
     display: none !important;
 }
@@ -845,9 +1073,11 @@ h1, h2, h3, h4, h5, h6 {
     gap: 3rem;
     align-items: flex-start;
 }
+
 .page-layout.no-sidebar {
     display: block;
 }
+
 .sidebar-nav {
     width: 280px;
     flex-shrink: 0;
@@ -858,55 +1088,71 @@ h1, h2, h3, h4, h5, h6 {
     position: sticky;
     top: 100px;
 }
+
 .sidebar-nav h3 {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--bg-light);
-    color: var(--clr-primary);
+    border-bottom: 2px solid var(--color-bg-light);
+    color: var(--color-brand-primary);
 }
+
 .sidebar-nav ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
+
 .sidebar-nav a {
     display: block;
     padding: 0.75rem 1rem;
     border-radius: 4px;
-    color: var(--text-main);
+    color: var(--color-text-body);
     font-weight: 500;
     transition: all var(--transition-fast);
 }
-.sidebar-nav a:hover, 
+
+.sidebar-nav a:hover,
 .sidebar-nav a.active {
-    background-color: rgba(0, 180, 216, 0.1);
-    color: var(--clr-secondary);
+    background-color: var(--color-sidebar-item-bg-active);
+    color: var(--color-sidebar-item-text-active);
 }
+
 .page-content {
     flex-grow: 1;
     min-width: 0;
 }
+
 .content-card {
-    background: white; 
-    padding: 3rem; 
-    border-radius: 8px; 
-    box-shadow: var(--shadow-sm); 
-    min-height: 400px; 
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    min-height: 400px;
     line-height: 1.8;
 }
+
 .content-title {
-    color: var(--clr-primary); 
+    color: var(--color-text-heading);
     margin-bottom: 1.5rem;
 }
+
 .content-divider {
-    width: 60px; 
-    height: 4px; 
-    background-color: var(--clr-secondary); 
-    margin-bottom: 2rem; 
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-brand-secondary);
+    margin-bottom: 2rem;
     border-radius: 2px;
 }
+
 @media (max-width: 900px) {
-    .page-layout { flex-direction: column; }
-    .sidebar-nav { width: 100%; position: static; margin-bottom: 2rem; }
+    .page-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-nav {
+        width: 100%;
+        position: static;
+        margin-bottom: 2rem;
+    }
 }
