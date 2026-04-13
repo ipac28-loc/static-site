@@ -7,5 +7,5 @@ title = 'Hello ipac28!'
 # Welcome to IPAC'28!
 
 ![](images/IPAC28_poster.jpeg)
-![](images/TokyoKanko.png)
+![](images/kanko.png)
 
