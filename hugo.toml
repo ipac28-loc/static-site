@@ -30,6 +30,77 @@ unsafe = true
   announcement_text = "Abstract submission is now open! Submission deadline: December 5, 2027."
   announcement_link = "/abstract/"
 
+  # Global date formatting style for all pages (standard Go layout)
+  date_fmt = "January 2, 2006"
+
+  # Centralized Important Dates & Milestones (Clean multi-line arrays for easy editing)
+  [[params.important_dates]]
+    date = "2026-04-23T00:00:00+09:00"
+    title = "IPAC'28 Website Opening"
+    type = "info"
+    description = "The IPAC'28 Website has been opened. We have prepared the contents of the homepage including program, registration, and venue information."
+
+  [[params.important_dates]]
+    date = "2027-04-01T00:00:00+09:00"
+    title = "Exhibitor Registration Opens"
+    type = "open"
+    description = "Exhibitor registration opens"
+
+  [[params.important_dates]]
+    date = "2027-10-01T00:00:00+09:00"
+    title = "Abstract Submission Opens"
+    type = "open"
+    description = "Abstract submission opens"
+
+  [[params.important_dates]]
+    date = "2027-10-01T00:00:00+09:00"
+    title = "Early Bird Registration Opens"
+    type = "open"
+    description = "Early bird registration opens"
+
+  [[params.important_dates]]
+    date = "2027-12-30T23:59:59+09:00"
+    title = "Abstract Submission Deadline"
+    type = "close"
+    description = "Abstract submission closes strictly at 23:59 JST. No late submissions or modifications will be processed."
+
+  [[params.important_dates]]
+    date = "2028-01-10T09:00:00+09:00"
+    title = "Regular Registration & Student Grant Opens"
+    type = "open"
+    description = "Early bird registration rate becomes active. Eligible students can apply for the IPAC'28 Travel Grant."
+
+  [[params.important_dates]]
+    date = "2028-03-10T09:00:00+09:00"
+    title = "Author Notification & Student Grant Deadline"
+    type = "info"
+    description = "Abstract decisions (Oral, Poster, or Rejection) are communicated to primary authors. Student grant applications close."
+
+  [[params.important_dates]]
+    date = "2028-04-01T23:59:59+09:00"
+    title = "Early Registration Rate Closes"
+    type = "close"
+    description = "Last day to register under the discounted early-bird rate. After this date, standard conference registration fees apply."
+
+  [[params.important_dates]]
+    date = "2028-05-20T23:59:59+09:00"
+    title = "Final Paper Submission Deadline"
+    type = "close"
+    description = "All contributions must upload their final, peer-review-ready PDF and source files (LaTeX/Word) to the JACoW Scientific Repository for editorial checks."
+
+  [[params.important_dates]]
+    date = "2028-06-04T12:00:00+09:00"
+    title = "Pre-Registration & Welcome Drink"
+    type = "info"
+    description = "Early badge pick-up and registration desk opens at the Tokyo International Forum, followed by the informal Welcome Drink in the evening."
+
+  [[params.important_dates]]
+    date = "2028-06-05T08:00:00+09:00"
+    title = "IPAC'28 Scientific Program"
+    type = "info"
+    description = "Timetable sessions, plenary keynotes, parallel talks, commercial exhibitions, and the official social banquet."
+
+
 [params.text_style]
   font_size = "1.05rem"
   line_height = "2.1"
@@ -49,9 +120,6 @@ unsafe = true
   presentations = "800+"
   exhibitors = "80+"
 
-# ==========================================
-# MULTI-LEVEL NAVIGATION MENU (IPAC'27 Style)
-# ==========================================
 
 # ----- 1. About -----
 [[menu.main]]
@@ -287,7 +355,7 @@ unsafe = true
 
 [[menu.footer_quick]]
   name = "Important Dates"
-  url = "/dates/"
+  url = "/dates"
   weight = 20
 
 [[menu.footer_quick]]

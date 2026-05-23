@@ -11,8 +11,8 @@
                 <i class="fas fa-map-marker-alt"></i> {{ .Site.Params.conf_location }}
             </p>
             <div class="hero-actions fade-up delay-3">
-                <a href="{{ " program/" | relURL }}" class="btn btn-primary btn-lg">Submit Abstract</a>
-                <a href="{{ " about/" | relURL }}" class="btn btn-outline btn-lg">Learn More</a>
+                <a href="{{ `program/` | relURL }}" class="btn btn-primary btn-lg">Submit Abstract</a>
+                <a href="{{ `about/` | relURL }}" class="btn btn-outline btn-lg">Learn More</a>
             </div>
         </div>
         <div class="hero-poster fade-up delay-2">
@@ -95,63 +95,80 @@
 <section id="dates" class="section bg-light">
     <div class="container">
         <div class="section-header text-center fade-up">
-            <h2 class="section-title">Important Dates</h2>
+            <h2 class="section-title">Upcoming Important Dates</h2>
             <p class="section-subtitle">Mark your calendars for these critical deadlines.</p>
         </div>
 
-        <div class="dates-grid">
-            <!-- Date Card 1 -->
-            <div class="date-card fade-up">
-                <div class="date-icon"><i class="fas fa-file-alt"></i></div>
-                <div class="date-content">
-                    <h4>Abstract Submission Opens</h4>
-                    <p class="date">October 1, 202X</p>
+        <div class="conference-timeline" style="max-width: 800px; margin: 3rem auto 4.5rem auto;">
+            {{ $now := now }}
+            {{ $future_dates := slice }}
+
+            {{ range .Site.Params.important_dates }}
+            {{ $item_time := time .date }}
+            {{ if ge $item_time $now }}
+            {{ $future_dates = $future_dates | append . }}
+            {{ end }}
+            {{ end }}
+
+            {{ $dates_to_show := slice }}
+            {{ if gt (len $future_dates) 0 }}
+            <!-- Take the 3 closest future dates -->
+            {{ $dates_to_show = first 3 $future_dates }}
+            {{ else }}
+            <!-- Fallback to showing the final 3 dates of the conference if all have passed -->
+            {{ $dates_to_show = last 3 .Site.Params.important_dates }}
+            {{ end }}
+
+            {{ range $dates_to_show }}
+            <!-- Check if the milestone is in the past relative to the current build time -->
+            {{ $is_expired := false }}
+            {{ if lt (time .date) $now }}
+            {{ $is_expired = true }}
+            {{ end }}
+
+            <!-- Determine Badge Text and Badge Class -->
+            {{ $badge_class := "badge-info" }}
+            {{ $badge_label := "Info" }}
+
+            {{ if $is_expired }}
+            {{ $badge_class = "badge-outdated" }}
+            {{ $badge_label = "Outdated" }}
+            {{ else }}
+            {{ if eq .type "open" }}
+            {{ $badge_class = "badge-open" }}
+            {{ $badge_label = "Open" }}
+            {{ else if eq .type "close" }}
+            {{ $badge_class = "badge-close" }}
+            {{ $badge_label = "Close" }}
+            {{ else if eq .type "info" }}
+            {{ $badge_class = "badge-info" }}
+            {{ $badge_label = "Info" }}
+            {{ end }}
+            {{ end }}
+
+            <!-- Date formatting based on user-defined date_fmt in hugo.toml -->
+            {{ $formatted_date := (time .date).Format (site.Params.date_fmt | default "January 2, 2006") }}
+
+            <div class="timeline-item fade-up timeline-type-{{ .type }}{{ if $is_expired }} timeline-expired{{ end }}">
+                <div class="timeline-meta">
+                    <div class="timeline-date-bubble">
+                        <span class="timeline-date">{{ $formatted_date }}</span>
+                    </div>
+                    <span class="timeline-badge-label {{ $badge_class }}">{{ $badge_label }}</span>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-content">
+                    <h4 class="timeline-item-title">{{ .title }}</h4>
+                    <div class="timeline-item-body">
+                        {{ .description | markdownify }}
+                    </div>
                 </div>
             </div>
-            <!-- Date Card 2 -->
-            <div class="date-card fade-up delay-1">
-                <div class="date-icon"><i class="fas fa-upload"></i></div>
-                <div class="date-content">
-                    <h4>Abstract Deadline</h4>
-                    <p class="date highlight-text">{{ .Site.Params.abstract_deadline }}</p>
-                </div>
-            </div>
-            <!-- Date Card 3 -->
-            <div class="date-card fade-up delay-2">
-                <div class="date-icon"><i class="fas fa-bullhorn"></i></div>
-                <div class="date-content">
-                    <h4>Author Notification</h4>
-                    <p class="date">February 15, 202X</p>
-                </div>
-            </div>
-            <!-- Date Card 4 -->
-            <div class="date-card fade-up">
-                <div class="date-icon"><i class="fas fa-user-check"></i></div>
-                <div class="date-content">
-                    <h4>Registration Opens</h4>
-                    <p class="date">January 10, 202X</p>
-                </div>
-            </div>
-            <!-- Date Card 5 -->
-            <div class="date-card fade-up delay-1">
-                <div class="date-icon"><i class="fas fa-tags"></i></div>
-                <div class="date-content">
-                    <h4>Early Registration Deadline</h4>
-                    <p class="date highlight-text">April 1, 202X</p>
-                </div>
-            </div>
-            <!-- Date Card 6 -->
-            <div class="date-card fade-up delay-2">
-                <div class="date-icon"><i class="fas fa-users"></i></div>
-                <div class="date-content">
-                    <h4>Conference Begins</h4>
-                    <p class="date">May 19, 202X</p>
-                </div>
-            </div>
+            {{ end }}
         </div>
 
         <div class="text-center mt-4 fade-up">
-            <a href="{{ " dates/" | relURL }}" class="btn btn-outline">View Full Schedule</a>
+            <a href="{{ `dates/` | relURL }}" class="btn btn-outline">View All Important Dates</a>
         </div>
     </div>
 </section>
@@ -160,7 +177,7 @@
 <section class="section">
     <div class="container">
         <div class="section-header text-center fade-up">
-            <h2 class="section-title">Latest Updates</h2>
+            <h2 class="section-title">Latest Updates and Announcements</h2>
         </div>
 
         <div class="news-grid">
@@ -173,7 +190,7 @@
                     <p class="news-excerpt">The exhibitor prospectus for {{ .Site.Params.conf_short_name }} is now
                         available. Secure your booth space early as prime locations are assigned on a first-come,
                         first-served basis.</p>
-                    <a href="{{ " sponsors/" | relURL }}" class="read-more">Read More <i
+                    <a href="{{ `exhibitor-info/` | relURL }}" class="read-more">Read More <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -186,7 +203,7 @@
                     <h3 class="news-title">Student Grant Applications Open</h3>
                     <p class="news-excerpt">Applications for the student grant program are now being accepted. Eligible
                         students can receive support for travel and accommodation during the conference.</p>
-                    <a href="{{ " about/" | relURL }}" class="read-more">Read More <i
+                    <a href="{{ `grants/` | relURL }}" class="read-more">Read More <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -199,7 +216,7 @@
                     <h3 class="news-title">Venue Information Updated</h3>
                     <p class="news-excerpt">Detailing accommodations, transportation, and visa information for
                         international attendees is now available on our travel portal.</p>
-                    <a href="{{ " accommodation/" | relURL }}" class="read-more">Read More <i
+                    <a href="{{ `accommodation/` | relURL }}" class="read-more">Read More <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -235,7 +252,7 @@
             </div>
         </div>
         <div class="text-center mt-4 fade-up">
-            <a href="{{ " sponsors/" | relURL }}" class="btn btn-outline">Become a Sponsor</a>
+            <a href="{{ `sponsors/` | relURL }}" class="btn btn-outline">Become a Sponsor</a>
         </div>
     </div>
 </section>

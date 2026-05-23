@@ -1,0 +1,48 @@
+<div class="conference-timeline">
+    {{ range .Site.Params.important_dates }}
+    <!-- Check if the milestone is in the past relative to the current build time -->
+    {{ $is_expired := false }}
+    {{ if lt (time .date) now }}
+        {{ $is_expired = true }}
+    {{ end }}
+
+    <!-- Determine Badge Text and Badge Class -->
+    {{ $badge_class := "badge-info" }}
+    {{ $badge_label := "Info" }}
+
+    {{ if $is_expired }}
+        {{ $badge_class = "badge-outdated" }}
+        {{ $badge_label = "Outdated" }}
+    {{ else }}
+        {{ if eq .type "open" }}
+            {{ $badge_class = "badge-open" }}
+            {{ $badge_label = "Open" }}
+        {{ else if eq .type "close" }}
+            {{ $badge_class = "badge-close" }}
+            {{ $badge_label = "Close" }}
+        {{ else if eq .type "info" }}
+            {{ $badge_class = "badge-info" }}
+            {{ $badge_label = "Info" }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Date formatting based on user-defined date_fmt in hugo.toml -->
+    {{ $formatted_date := (time .date).Format (site.Params.date_fmt | default "January 2, 2006") }}
+
+    <div class="timeline-item timeline-type-{{ .type }}{{ if $is_expired }} timeline-expired{{ end }}">
+        <div class="timeline-meta">
+            <div class="timeline-date-bubble">
+                <span class="timeline-date">{{ $formatted_date }}</span>
+            </div>
+            <span class="timeline-badge-label {{ $badge_class }}">{{ $badge_label }}</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-item-content">
+            <h4 class="timeline-item-title">{{ .title }}</h4>
+            <div class="timeline-item-body">
+                {{ .description | markdownify }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
