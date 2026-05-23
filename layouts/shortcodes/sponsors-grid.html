@@ -1,0 +1,225 @@
+<style>
+/* ── Sponsors Grid Page — Apple-inspired ────────────────────────────── */
+.sg-intro {
+    max-width: 640px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    color: var(--color-text-body);
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+.sg-tier-section {
+    margin-bottom: 4.5rem;
+}
+
+.sg-tier-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sg-tier-pip {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.sg-tier-pip.platinum { background: linear-gradient(135deg, #94a3b8, #e2e8f0); }
+.sg-tier-pip.gold     { background: linear-gradient(135deg, #b45309, #fbbf24); }
+.sg-tier-pip.silver   { background: linear-gradient(135deg, #64748b, #cbd5e1); }
+.sg-tier-pip.bronze   { background: linear-gradient(135deg, #92400e, #d97706); }
+.sg-tier-pip.supporter{ background: linear-gradient(135deg, #1d4485, #3b6cc9); }
+
+.sg-tier-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.sg-tier-rule {
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+/* Card grid */
+.sg-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+.sg-grid.platinum { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.sg-grid.gold     { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.sg-grid.silver   { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.sg-grid.bronze,
+.sg-grid.supporter{ grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+/* Individual sponsor card */
+.sg-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 2.25rem 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.22s cubic-bezier(.25,.8,.25,1),
+                box-shadow 0.22s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+}
+.sg-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Logo area */
+.sg-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.sg-grid.platinum .sg-logo-wrap { height: 80px; }
+.sg-grid.gold     .sg-logo-wrap { height: 68px; }
+.sg-grid.silver   .sg-logo-wrap { height: 56px; }
+.sg-grid.bronze   .sg-logo-wrap,
+.sg-grid.supporter .sg-logo-wrap { height: 48px; }
+
+.sg-logo-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Text */
+.sg-card-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: 0.4rem;
+    line-height: 1.25;
+}
+.sg-grid.platinum .sg-card-name { font-size: 1.05rem; }
+.sg-grid.gold     .sg-card-name { font-size: 0.98rem; }
+.sg-grid.silver   .sg-card-name,
+.sg-grid.bronze   .sg-card-name,
+.sg-grid.supporter .sg-card-name { font-size: 0.9rem; }
+
+.sg-card-tagline {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.sg-card-link {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-link);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    opacity: 0.75;
+    transition: opacity 0.15s;
+}
+.sg-card:hover .sg-card-link { opacity: 1; }
+
+/* CTA banner */
+.sg-cta {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, var(--color-hero-grad-start, #1a3a73) 0%, var(--color-hero-grad-end, #2d59b5) 100%);
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    color: white;
+}
+.sg-cta h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+.sg-cta p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+}
+
+@media (max-width: 600px) {
+    .sg-grid.platinum,
+    .sg-grid.gold,
+    .sg-grid.silver { grid-template-columns: 1fr 1fr; }
+    .sg-card { padding: 1.5rem 1.25rem 1.25rem; }
+    .sg-cta { padding: 2.5rem 1.5rem; }
+}
+</style>
+
+{{ $allSponsors := .Site.Params.sponsors }}
+{{ $tiers := slice "platinum" "gold" "silver" "bronze" "supporter" }}
+
+{{ $tierLabels := dict
+    "platinum" "Platinum Sponsors"
+    "gold"     "Gold Sponsors"
+    "silver"   "Silver Sponsors"
+    "bronze"   "Bronze Sponsors"
+    "supporter" "Supporting Partners"
+}}
+
+{{ range $tiers }}
+    {{ $tier := . }}
+    {{ $group := slice }}
+    {{ range $allSponsors }}
+        {{ if eq (.tier | lower) $tier }}
+            {{ $group = $group | append . }}
+        {{ end }}
+    {{ end }}
+
+    {{ if gt (len $group) 0 }}
+    <div class="sg-tier-section">
+        <div class="sg-tier-header">
+            <span class="sg-tier-pip {{ $tier }}"></span>
+            <span class="sg-tier-label">{{ index $tierLabels $tier }}</span>
+            <span class="sg-tier-rule"></span>
+        </div>
+
+        <div class="sg-grid {{ $tier }}">
+            {{ range $group }}
+            <a href="{{ .url }}" class="sg-card" target="_blank" rel="noopener noreferrer">
+                <div class="sg-logo-wrap">
+                    <img src="{{ .logo | absURL }}" alt="{{ .name }} logo" loading="lazy">
+                </div>
+                <p class="sg-card-name">{{ .name }}</p>
+                {{ if .tagline }}
+                <p class="sg-card-tagline">{{ .tagline }}</p>
+                {{ end }}
+                <span class="sg-card-link">
+                    Visit website <i class="fas fa-arrow-up-right-from-square" style="font-size:0.7em;"></i>
+                </span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+
+<div class="sg-cta">
+    <h3>Become a Sponsor</h3>
+    <p>Join our growing family of industry partners and connect with over 1,200 accelerator scientists and engineers at IPAC'28.</p>
+    <a href="{{ `exhibitor-info/` | relURL }}" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">
+        Download Prospectus
+    </a>
+</div>

@@ -706,7 +706,24 @@ h6 {
 }
 
 .news-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Accent bar replaces hero images in data-driven news cards */
+.news-card-accent {
+    height: 6px;
+    width: 100%;
+    flex-shrink: 0;
+}
+.news-accent-0 {
+    background: linear-gradient(90deg, #1d4485 0%, #3b6cc9 100%);
+}
+.news-accent-1 {
+    background: linear-gradient(90deg, #065f46 0%, #10b981 100%);
+}
+.news-accent-2 {
+    background: linear-gradient(90deg, #7c1d1d 0%, #e52421 100%);
 }
 
 .news-img {
@@ -795,12 +812,35 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    color: #cbd5e1;
-    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
     box-shadow: var(--shadow-sm);
     box-sizing: border-box;
     border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    text-decoration: none;
+}
+
+.sponsor-logo:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(29, 68, 133, 0.25);
+}
+
+.sponsor-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    /* desaturate slightly so logos harmonise on the white card */
+    filter: grayscale(20%);
+    transition: filter var(--transition-fast);
+}
+
+.sponsor-logo:hover img {
+    filter: grayscale(0%);
 }
 
 @keyframes scroll {

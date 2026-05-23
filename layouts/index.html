@@ -174,58 +174,42 @@
 </section>
 
 <!-- News & Announcements -->
+{{ if .Site.Params.news }}
 <section class="section">
     <div class="container">
         <div class="section-header text-center fade-up">
             <h2 class="section-title">Latest Updates and Announcements</h2>
         </div>
 
+        {{ $sorted_news := sort .Site.Params.news "date" "desc" }}
+        {{ $news_to_show := first 3 $sorted_news }}
+
         <div class="news-grid">
-            <article class="news-card fade-up">
-                <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Exhibition Space" class="news-img">
+            {{ range $i, $item := $news_to_show }}
+            {{ $formatted_news_date := (time $item.date).Format (site.Params.date_fmt | default "January 2, 2006") }}
+            {{ $delay_class := "" }}
+            {{ if eq $i 1 }}{{ $delay_class = " delay-1" }}{{ end }}
+            {{ if eq $i 2 }}{{ $delay_class = " delay-2" }}{{ end }}
+            <article class="news-card fade-up{{ $delay_class }}">
+                <div class="news-card-accent news-accent-{{ $i }}"></div>
                 <div class="news-content">
-                    <span class="news-date">August 15, 202X</span>
-                    <h3 class="news-title">Exhibitor Prospectus Available</h3>
-                    <p class="news-excerpt">The exhibitor prospectus for {{ .Site.Params.conf_short_name }} is now
-                        available. Secure your booth space early as prime locations are assigned on a first-come,
-                        first-served basis.</p>
-                    <a href="{{ `exhibitor-info/` | relURL }}" class="read-more">Read More <i
+                    <span class="news-date">{{ $formatted_news_date }}</span>
+                    <h3 class="news-title">{{ $item.title }}</h3>
+                    <p class="news-excerpt">{{ $item.summary }}</p>
+                    {{ if $item.link }}
+                    <a href="{{ $item.link | relURL }}" class="read-more">Read More <i
                             class="fas fa-arrow-right"></i></a>
+                    {{ end }}
                 </div>
             </article>
-
-            <article class="news-card fade-up delay-1">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Student Grant" class="news-img">
-                <div class="news-content">
-                    <span class="news-date">July 20, 202X</span>
-                    <h3 class="news-title">Student Grant Applications Open</h3>
-                    <p class="news-excerpt">Applications for the student grant program are now being accepted. Eligible
-                        students can receive support for travel and accommodation during the conference.</p>
-                    <a href="{{ `grants/` | relURL }}" class="read-more">Read More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="news-card fade-up delay-2">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Venue" class="news-img">
-                <div class="news-content">
-                    <span class="news-date">June 05, 202X</span>
-                    <h3 class="news-title">Venue Information Updated</h3>
-                    <p class="news-excerpt">Detailing accommodations, transportation, and visa information for
-                        international attendees is now available on our travel portal.</p>
-                    <a href="{{ `accommodation/` | relURL }}" class="read-more">Read More <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+            {{ end }}
         </div>
     </div>
 </section>
+{{ end }}
 
 <!-- Sponsors Section -->
-{{ if .Site.Params.enable_sponsors }}
+{{ if and .Site.Params.enable_sponsors .Site.Params.sponsors }}
 <section id="sponsors" class="section bg-light sponsors-section">
     <div class="container">
         <div class="section-header text-center fade-up">
@@ -235,24 +219,23 @@
 
         <div class="sponsor-marquee fade-up">
             <div class="marquee-content">
-                <!-- Repeated logos for infinite scroll effect -->
-                <div class="sponsor-logo">Logo 1</div>
-                <div class="sponsor-logo">Logo 2</div>
-                <div class="sponsor-logo">Logo 3</div>
-                <div class="sponsor-logo">Logo 4</div>
-                <div class="sponsor-logo">Logo 5</div>
-                <div class="sponsor-logo">Logo 6</div>
-                <!-- Duplicate for seamless scroll -->
-                <div class="sponsor-logo">Logo 1</div>
-                <div class="sponsor-logo">Logo 2</div>
-                <div class="sponsor-logo">Logo 3</div>
-                <div class="sponsor-logo">Logo 4</div>
-                <div class="sponsor-logo">Logo 5</div>
-                <div class="sponsor-logo">Logo 6</div>
+                {{/* Render sponsors twice for seamless infinite scroll */}}
+                {{ range .Site.Params.sponsors }}
+                <a href="{{ .url }}" class="sponsor-logo" target="_blank" rel="noopener noreferrer"
+                    title="{{ .name }}{{ if .tier }} — {{ .tier | title }} Sponsor{{ end }}">
+                    <img src="{{ .logo | absURL }}" alt="{{ .name }} logo">
+                </a>
+                {{ end }}
+                {{ range .Site.Params.sponsors }}
+                <a href="{{ .url }}" class="sponsor-logo" target="_blank" rel="noopener noreferrer" title="{{ .name }}"
+                    aria-hidden="true">
+                    <img src="{{ .logo | absURL }}" alt="">
+                </a>
+                {{ end }}
             </div>
         </div>
         <div class="text-center mt-4 fade-up">
-            <a href="{{ `sponsors/` | relURL }}" class="btn btn-outline">Become a Sponsor</a>
+            <a href="{{ `exhibitor-register/` | relURL }}" class="btn btn-outline">Become a Sponsor</a>
         </div>
     </div>
 </section>

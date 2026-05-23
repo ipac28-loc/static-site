@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col brand-col">
-                <a href="{{ "/" | relURL }}" class="logo">
+                <a href="{{ `/` | relURL }}" class="logo">
                     {{ if .Site.Params.logo_image }}
                     <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo"
                         style="height: 48px; width: auto; object-fit: contain;">
@@ -42,24 +42,21 @@
             </div>
 
             <div class="footer-col">
-                <h4>Newsletter</h4>
-                <p>Subscribe to our newsletter for the latest updates.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Email Address" required>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
-                </form>
+                <h4>Contact</h4>
+                <p>Contact us at:</p>
+                <p>{{ .Site.Params.email }}</p>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2028 {{ .Site.Params.conf_short_name }} Conference. All rights reserved.</p>
             <div class="legal-links">
-                <a href="{{ "privacy/" | relURL }}">Privacy Policy</a>
-                <a href="{{ "terms/" | relURL }}">Terms of Use</a>
+                <a href="{{ `privacy/` | relURL }}">Privacy Policy</a>
+                <a href="{{ `terms/` | relURL }}">Terms of Use</a>
             </div>
         </div>
     </div>
 </footer>
 
 <!-- Custom Logic -->
-<script src="{{ "js/main.js" | relURL }}"></script>
+<script src="{{ `js/main.js` | relURL }}"></script>

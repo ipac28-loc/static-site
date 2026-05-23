@@ -100,6 +100,73 @@ unsafe = true
     type = "info"
     description = "Timetable sessions, plenary keynotes, parallel talks, commercial exhibitions, and the official social banquet."
 
+  # Latest Updates & Announcements (shown on homepage, newest 3 displayed)
+  [[params.news]]
+    date = "2026-04-23T00:00:00+09:00"
+    title = "IPAC'28 Website Is Now Open"
+    summary = "The official IPAC'28 conference website has launched. Find information on the scientific program, registration, venue, and more."
+    link = "/about/welcome/"
+
+  [[params.news]]
+    date = "2026-05-01T00:00:00+09:00"
+    title = "Call for Abstracts: Coming Soon"
+    summary = "Abstract submission will open in October 2027 via the JACoW Indico portal. Authors are encouraged to prepare their contributions in advance."
+    link = "/abstract/"
+
+  [[params.news]]
+    date = "2026-05-15T00:00:00+09:00"
+    title = "Exhibitor Prospectus Now Available"
+    summary = "The exhibitor and sponsorship prospectus for IPAC'28 is now available for download. Secure prime booth space early — allocation is first-come, first-served."
+    link = "/exhibitor-info/"
+
+  # Sponsors & Industry Partners
+  # Fields:
+  #   name     (required) Display name of the sponsor
+  #   logo     (required) Path to logo image under /static (e.g. /img/logo.png)
+  #   url      (required) Official website URL (opens in new tab)
+  #   tier     (optional) Sponsorship tier: "platinum" | "gold" | "silver" | "bronze" | "supporter"
+  #   tagline  (optional) Short one-line description shown on the sponsors sub-page
+  [[params.sponsors]]
+    name    = "Quantum Dynamics Corp."
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/quantum-dynamics"
+    tier    = "platinum"
+    tagline = "Pioneering the next generation of particle accelerator power systems."
+
+  [[params.sponsors]]
+    name    = "NanoBeam Technologies"
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/nanobeam"
+    tier    = "platinum"
+    tagline = "Precision beam diagnostics and control systems for modern accelerators."
+
+  [[params.sponsors]]
+    name    = "FusionEdge Solutions"
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/fusionedge"
+    tier    = "gold"
+    tagline = "Advanced RF and microwave components for high-energy physics research."
+
+  [[params.sponsors]]
+    name    = "Acceleron Instruments"
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/acceleron"
+    tier    = "gold"
+    tagline = "Vacuum technology and ultra-high vacuum solutions for research facilities."
+
+  [[params.sponsors]]
+    name    = "Helios Superconductors"
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/helios-sc"
+    tier    = "silver"
+    tagline = "Superconducting magnet systems and cryogenic infrastructure."
+
+  [[params.sponsors]]
+    name    = "Synchrotron Systems Ltd."
+    logo    = "/img/ipac28_600x304.png"
+    url     = "https://example.com/synchrotron-sys"
+    tier    = "silver"
+    tagline = "Turn-key synchrotron light source solutions worldwide."
 
 [params.text_style]
   font_size = "1.05rem"
@@ -301,7 +368,7 @@ unsafe = true
 
 [[menu.main]]
   name = "Exhibitor Registration"
-  url = "/exhibitor-info/register/"
+  url = "/exhibitor-register/"
   parent = "exhibitors"
   weight = 20
 
