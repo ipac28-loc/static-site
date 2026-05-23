@@ -1,6 +1,6 @@
 ---
 title: "Ongoing Accelerator Projects"
-url: "/exhibitor-info/projects/"
+url: "/exhibitor/exhibitor-project/"
 ---
 
 The industrial exhibition at IPAC'28 provides a unique portal connecting global vendors with major upcoming national and international particle accelerator projects.
@@ -14,10 +14,6 @@ The industrial exhibition at IPAC'28 provides a unique portal connecting global 
 - **Electron-Ion Collider (EIC)**  
   *Entity*: Brookhaven National Laboratory / Jefferson Lab  
   *Focus*: Next-generation nuclear physics research collider. Superconducting magnets, high-speed beam instrumentation, and high-frequency RF systems.
-
-- **High-Intensity Proton Accelerator Facility (J-PARC II)**  
-  *Entity*: KEK / JAEA  
-  *Focus*: Upgrades to the MR beam power to 1.3 MW, requiring advanced rapid-cycling high-voltage power supplies and highly complex beam diagnostic feedback modules.
 
 ---
 

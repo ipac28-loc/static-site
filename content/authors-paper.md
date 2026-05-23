@@ -1,6 +1,6 @@
 ---
 title: "Paper Preparation Guidelines"
-url: "/paper-prep/"
+url: "/authors/authors-paper/"
 ---
 
 All authors presenting at IPAC'28 must submit a contribution paper (maximum 3 pages for posters/contributed orals, 5 pages for plenary/invited talks). Papers must adhere strictly to the **JACoW (Joint Accelerator Conferences Website)** style templates.
@@ -18,7 +18,7 @@ JACoW provides a highly optimized LaTeX template environment which is the prefer
    - *Columns*: Strict two-column format (column width: 82mm, spacing: 5.3mm).
 4. **Warning**: Do not modify class settings or page margins. Over-length papers will not be processed by the editorial team.
     {{< /tab >}}
-    
+
     {{< tab title="MS Word Author Templates" >}}
 ### MS Word Preparation Instructions
 If you prepare your paper using Microsoft Word, please follow these guidelines to ensure proper formatting:
@@ -30,7 +30,7 @@ If you prepare your paper using Microsoft Word, please follow these guidelines t
    - *Hyphenation*: Enable automatic hyphenation to avoid excessive space in columns.
    - *Equations*: Use the native Math Equation editor rather than placing them as floating graphic boxes.
     {{< /tab >}}
-    
+
     {{< tab title="Upload & PDF Verification" >}}
 ### Upload Procedures
 All files must be uploaded before the paper deadline: **May 20, 2028**.

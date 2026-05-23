@@ -1,6 +1,6 @@
 ---
 title: "Venue & Accommodation"
-url: "/accommodation/"
+url: "/travel/travel-accommodation/"
 ---
 
  securing accommodation early is highly recommended as Tokyo is a very popular destination during June. Below is a curated list of recommended accommodations, categorized by proximity and budget.

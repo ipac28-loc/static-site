@@ -1,6 +1,6 @@
 ---
 title: "Conference Poster"
-url: "/about/poster/"
+url: "/about/about-poster/"
 ---
 
 The official poster for **IPAC'28** has been published. It highlights Tokyo's historic Yurakucho architecture intersecting with advanced synchrotron light simulations.

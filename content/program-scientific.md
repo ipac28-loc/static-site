@@ -1,13 +1,17 @@
 ---
 title: "Scientific Program"
-url: "/program/"
+url: "/program/program-scientific"
 ---
 
-The scientific program of IPAC'28 will run over five full days, covering a broad spectrum of accelerator science, particle beam physics, and cutting-edge engineering technologies. 
+> The scientific program for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
+
+
+
+<!-- The scientific program of IPAC'28 will run over five full days, covering a broad spectrum of accelerator science, particle beam physics, and cutting-edge engineering technologies. 
 
 Below is the **Interactive Synoptic Program Timetable**. For detailed sessions, oral contributions, and poster lists, please reference the official JACoW Indico program repository.
 
-{{< synoptic-table >}}
+{{< synoptic-table >}} -->
 
 ### Program Classifications & Tracks
 Contributions and presentations are structured into several primary classifications:
@@ -21,7 +25,6 @@ Contributions and presentations are structured into several primary classificati
 - **MC7: Accelerator Technology and Partnerships**
 - **MC8: Applications of Accelerators**
 
----
 
 ### JACoW Indico Integration
 The complete database of abstracts, speaker bios, parallel session structures, and final contribution downloads is hosted on the **[JACoW Indico Portal](https://jacow.org)**. Please create an account on Indico to manage your abstract submission and review status.

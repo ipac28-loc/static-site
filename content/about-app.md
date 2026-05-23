@@ -1,6 +1,6 @@
 ---
 title: "Mobile App"
-url: "/about/app/"
+url: "/about/about-app/"
 ---
 
 To maximize your conference experience, the official **IPAC'28 Mobile App** will be available for download on iOS and Android starting **May 2028**.

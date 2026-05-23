@@ -1,6 +1,6 @@
 ---
 title: "Exhibitor & Sponsor Prospectus"
-url: "/exhibitor-info/"
+url: "/exhibitor/exhibitor-info/"
 ---
 
 Welcome Industry Partners! We invite you to showcase your latest innovations, network with leading scientists, and establish technical partnerships at the **IPAC'28 Industrial Exhibition**. 

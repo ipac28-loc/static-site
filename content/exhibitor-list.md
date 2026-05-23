@@ -1,6 +1,6 @@
 ---
 title: "Exhibitors & Sponsors"
-url: "/sponsors/"
+url: "/exhibitor/exhibitor-list/"
 custom_layout: true
 ---
 

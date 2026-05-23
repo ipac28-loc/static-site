@@ -1,6 +1,6 @@
 ---
 title: "Visa Information"
-url: "/visa/"
+url: "/travel/travel-visa/"
 ---
 
 Most international visitors traveling to Japan for academic conferences require a short-term temporary visitor visa unless they hold passport nationalities with visa-exemption agreements. Please consult the guidelines below.

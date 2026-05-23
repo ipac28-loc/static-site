@@ -1,6 +1,6 @@
 ---
 title: "Exhibitor Registration"
-url: "/exhibitor-register/"
+url: "/exhibitor/exhibitor-register/"
 ---
 
 Industrial exhibition booths booking for **IPAC'28** will launch on **October 1, 2027**. Booking is processed strictly on a first-come, first-served basis via our exhibitor reservation system.

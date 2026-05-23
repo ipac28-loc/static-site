@@ -1,6 +1,6 @@
 ---
 title: "Conference Logo"
-url: "/about/logo/"
+url: "/about/about-logo/"
 ---
 
 The official logo of the **19th International Particle Accelerator Conference (IPAC'28)** is designed to symbolize acceleration, circular collisions, and the national flag of Japan.

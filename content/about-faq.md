@@ -1,6 +1,6 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
-url: "/faq/"
+url: "/about/about-faq/"
 ---
 
 Find quick answers to common questions about abstract submission, registration, travel, and accommodation for IPAC'28.

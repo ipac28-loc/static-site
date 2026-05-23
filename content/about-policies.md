@@ -1,6 +1,6 @@
 ---
 title: "Policies & Code of Conduct"
-url: "/about/policies/"
+url: "/about/about-policies/"
 ---
 
 `To be added`
