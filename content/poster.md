@@ -8,11 +8,16 @@ The official poster for **IPAC'28** has been published. It highlights Tokyo's hi
 ### Download & Share
 We kindly request members of the accelerator community to print and display the official poster on bulletin boards at their respective research institutes and laboratories.
 
-- **A0 High-Resolution PDF (Print Format - 300 DPI)**:  
-  `To be added (A0 Print PDF Link)`
-  
-- **A4 Low-Resolution JPEG (Digital Share Format - 72 DPI)**:  
-  `To be added (A4 Digital JPEG Link)`
-
-- **Social Media Banner Formats**:  
-  `To be added (Twitter/X & LinkedIn banner links)`
+{{< poster-download 
+    src="/img/ipac28_poster_a0.png"
+    dimensions="A0 Size (841 x 1189 mm / 33.1 x 46.8 in)"
+    format="High-Resolution PNG (300 DPI, Print Ready)"
+    size="1.1 MB"
+    description="Designed to reflect the fusion of Tokyo's rich cultural heritage with leading-edge accelerator sciences. The graphic motifs represent synchrotron light trajectories overlaid with elements from traditional Japanese design."
+    download1_url="/img/ipac28_poster_a0.png"
+    download1_label="Download A0 High-Res PNG (300 DPI)"
+    download1_filename="ipac28_poster_a0.png"
+    download2_url="/img/ipac28_poster_a0.png"
+    download2_label="Download A4 High-Res Digital PNG"
+    download2_filename="ipac28_poster_a4.png"
+>}}

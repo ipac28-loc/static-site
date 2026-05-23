@@ -11,25 +11,32 @@
         color: white;
         padding-top: 80px;
     }
+
     .page-hero-overlay {
         position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background: linear-gradient(135deg, var(--color-hero-grad-start) 0%, var(--color-hero-grad-end) 100%);
         opacity: 0.95;
         z-index: 1;
     }
+
     .page-hero-content {
         position: relative;
         z-index: 2;
         width: 100%;
     }
+
     .page-hero h1 {
         color: white;
         font-size: 3rem;
         margin-bottom: 0.5rem;
         font-family: var(--font-heading);
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
+
     .breadcrumb {
         display: flex;
         gap: 0.5rem;
@@ -37,9 +44,11 @@
         color: rgba(255, 255, 255, 0.7);
         margin-bottom: 0.5rem;
     }
+
     .breadcrumb a {
         color: rgba(255, 255, 255, 0.7);
     }
+
     .breadcrumb a:hover {
         color: white;
     }
@@ -65,108 +74,116 @@
 {{ $parentMenuTitle := "" }}
 
 {{ range .Site.Menus.main }}
-    {{ if .HasChildren }}
-        {{ $parentEntry := . }}
-        {{ if eq $relPermalink .URL }}
-            {{ $siblingNodes = $parentEntry.Children }}
-            {{ $parentMenuTitle = $parentEntry.Name }}
-        {{ end }}
-        {{ range .Children }}
-            {{ if eq $relPermalink .URL }}
-                {{ $siblingNodes = $parentEntry.Children }}
-                {{ $parentMenuTitle = $parentEntry.Name }}
-            {{ end }}
-            {{ range .Children }}
-                {{ if eq $relPermalink .URL }}
-                    {{ $siblingNodes = $parentEntry.Children }}
-                    {{ $parentMenuTitle = $parentEntry.Name }}
-                {{ end }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+{{ if .HasChildren }}
+{{ $parentEntry := . }}
+{{ if eq $relPermalink .URL }}
+{{ $siblingNodes = $parentEntry.Children }}
+{{ $parentMenuTitle = $parentEntry.Name }}
+{{ end }}
+{{ range .Children }}
+{{ if eq $relPermalink .URL }}
+{{ $siblingNodes = $parentEntry.Children }}
+{{ $parentMenuTitle = $parentEntry.Name }}
+{{ end }}
+{{ range .Children }}
+{{ if eq $relPermalink .URL }}
+{{ $siblingNodes = $parentEntry.Children }}
+{{ $parentMenuTitle = $parentEntry.Name }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
 {{ end }}
 
 <!-- Main Content -->
 <main class="section bg-light text-page">
     <div class="container fade-up delay-2">
         <div class="page-layout {{ if eq (len $siblingNodes) 0 }}no-sidebar{{ end }}">
-            
+
             {{ if gt (len $siblingNodes) 0 }}
             <aside class="sidebar-nav">
                 <h3>{{ $parentMenuTitle }}</h3>
                 <ul>
-                {{ range $siblingNodes }}
+                    {{ range $siblingNodes }}
                     {{ $isChildActive := eq $relPermalink .URL }}
                     {{ $hasActiveGrandchild := false }}
                     {{ if .HasChildren }}
-                        {{ range .Children }}
-                            {{ if eq $relPermalink .URL }}{{ $hasActiveGrandchild = true }}{{ end }}
-                        {{ end }}
+                    {{ range .Children }}
+                    {{ if eq $relPermalink .URL }}{{ $hasActiveGrandchild = true }}{{ end }}
+                    {{ end }}
                     {{ end }}
                     <li>
-                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="{{ if or $isChildActive $hasActiveGrandchild }}active{{ end }}">
+                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}"
+                            class="{{ if or $isChildActive $hasActiveGrandchild }}active{{ end }}">
                             {{ .Name }}
                         </a>
                         {{ if .HasChildren }}
-                            <ul class="sub-sidebar-nav" style="display: {{ if or $isChildActive $hasActiveGrandchild }}block{{ else }}none{{ end }};">
+                        <ul class="sub-sidebar-nav"
+                            style="display: {{ if or $isChildActive $hasActiveGrandchild }}block{{ else }}none{{ end }};">
                             {{ range .Children }}
-                                <li>
-                                    <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">
-                                        <i class="fas fa-chevron-right" style="font-size: 0.7em; margin-right: 4px; opacity: 0.7;"></i> {{ .Name }}
-                                    </a>
-                                </li>
+                            <li>
+                                <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">
+                                    <i class="fas fa-chevron-right"
+                                        style="font-size: 0.7em; margin-right: 4px; opacity: 0.7;"></i> {{ .Name }}
+                                </a>
+                            </li>
                             {{ end }}
-                            </ul>
+                        </ul>
                         {{ end }}
                     </li>
-                {{ end }}
+                    {{ end }}
                 </ul>
             </aside>
             {{ end }}
 
             <div class="page-content">
                 {{ if .Params.custom_layout }}
-                    {{ .Content }}
+                {{ .Content }}
                 {{ else }}
-                    <div class="content-card">
-                        <h2 class="content-title">{{ .Title }} Overview</h2>
-                        <div class="content-divider"></div>
-                        {{ .Content }}
-                    </div>
+                <div class="content-card">
+                    <h2 class="content-title">{{ .Title }}</h2>
+                    <div class="content-divider"></div>
+                    {{ .Content }}
+                </div>
                 {{ end }}
 
                 <!-- Automated Embeds defined in Page Front Matter -->
                 {{ if .Params.embed_video_src }}
-                    <div class="content-embed-block content-card">
-                        <h3 class="embed-title"><i class="fas fa-video"></i> Video Presentation</h3>
-                        <div class="content-divider"></div>
-                        <div class="video-wrapper">
-                            <iframe class="responsive-iframe" src="{{ .Params.embed_video_src }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Page Embedded Video"></iframe>
-                        </div>
+                <div class="content-embed-block content-card">
+                    <h3 class="embed-title"><i class="fas fa-video"></i> Video Presentation</h3>
+                    <div class="content-divider"></div>
+                    <div class="video-wrapper">
+                        <iframe class="responsive-iframe" src="{{ .Params.embed_video_src }}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen title="Page Embedded Video"></iframe>
                     </div>
+                </div>
                 {{ end }}
 
                 {{ if .Params.embed_map_src }}
-                    <div class="content-embed-block content-card">
-                        <h3 class="embed-title"><i class="fas fa-map-marker-alt"></i> Location Map</h3>
-                        <div class="content-divider"></div>
-                        <div class="map-container">
-                            <iframe src="{{ .Params.embed_map_src }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Page Embedded Map"></iframe>
-                        </div>
+                <div class="content-embed-block content-card">
+                    <h3 class="embed-title"><i class="fas fa-map-marker-alt"></i> Location Map</h3>
+                    <div class="content-divider"></div>
+                    <div class="map-container">
+                        <iframe src="{{ .Params.embed_map_src }}" width="100%" height="450" style="border:0;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Page Embedded Map"></iframe>
                     </div>
+                </div>
                 {{ end }}
 
                 {{ if .Params.embed_calendar_src }}
-                    <div class="content-embed-block content-card">
-                        <h3 class="embed-title"><i class="fas fa-calendar-alt"></i> Interactive Timetable</h3>
-                        <div class="content-divider"></div>
-                        <div class="calendar-container">
-                            <iframe src="{{ .Params.embed_calendar_src }}" width="100%" height="600" style="border:0;" scrolling="no" title="Page Embedded Calendar"></iframe>
-                        </div>
+                <div class="content-embed-block content-card">
+                    <h3 class="embed-title"><i class="fas fa-calendar-alt"></i> Interactive Timetable</h3>
+                    <div class="content-divider"></div>
+                    <div class="calendar-container">
+                        <iframe src="{{ .Params.embed_calendar_src }}" width="100%" height="600" style="border:0;"
+                            scrolling="no" title="Page Embedded Calendar"></iframe>
                     </div>
+                </div>
                 {{ end }}
             </div>
-            
+
         </div>
     </div>
 </main>

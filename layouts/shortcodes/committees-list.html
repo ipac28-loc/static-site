@@ -1,0 +1,148 @@
+{{ $committees := slice
+    (dict "id" "ioc" "title" "International Organizing Committee (IOC)" "data" .Site.Params.committee_ioc)
+    (dict "id" "spc" "title" "Scientific Program Committee (SPC)" "data" .Site.Params.committee_spc)
+    (dict "id" "sab" "title" "Scientific Advisory Board (SAB)" "data" .Site.Params.committee_sab)
+    (dict "id" "loc" "title" "Local Organizing Committee (LOC)" "data" .Site.Params.committee_loc)
+}}
+
+{{ range $committees }}
+    {{ if .data }}
+    {{ $id := .id }}
+    {{ $chairs := where .data "chair" true }}
+    {{ $members := where .data "chair" "!=" true }}
+    
+    <!-- Collapsible main committee panel -->
+    <details class="committee-details" open>
+        <summary class="committee-summary">
+            <h2>{{ .title }}</h2>
+            <span class="summary-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        
+        <div class="committee-content">
+            <!-- 1. Spotlight Section for Chairs (if present) -->
+            {{ if gt (len $chairs) 0 }}
+            <div class="committee-chairs-grid">
+                {{ range $chairs }}
+                    {{ $fullName := printf "%s %s" .name .surname }}
+                    <div class="member-card is-chair">
+                        <div class="member-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-role">Committee Chair</div>
+                            <h4><strong>{{ $fullName }}</strong><span class="chair-badge">Chair</span></h4>
+                            <div class="member-inst">
+                                {{ .institution }}{{ if .location }}, {{ .location }}{{ end }}
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <!-- 2. Roster Section for Regular Members -->
+            {{ if eq $id "sab" }}
+                <!-- SAB Special Case: Split regular members into three collapsible regions -->
+                {{ $sabAmerica := where $members "region" "America" }}
+                {{ $sabAsia := where $members "region" "Asia" }}
+                {{ $sabEurope := where $members "region" "Europe" }}
+                
+                <div class="sab-regions">
+                    <!-- America region collapsible panel -->
+                    {{ if gt (len $sabAmerica) 0 }}
+                    <details class="region-details" open>
+                        <summary class="region-summary">
+                            <h3>America Region ({{ len $sabAmerica }} members)</h3>
+                            <span class="region-icon"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="region-content">
+                            <div class="committee-members-grid">
+                                {{ range $sabAmerica }}
+                                    {{ $fullName := printf "%s %s" .name .surname }}
+                                    <div class="compact-member-row">
+                                        <div class="compact-member-dot"></div>
+                                        <div class="compact-member-details">
+                                            <span class="compact-member-name">{{ $fullName }}</span>
+                                            <span class="compact-member-inst">{{ .institution }}{{ if .location }} ({{ .location }}){{ end }}</span>
+                                        </div>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </details>
+                    {{ end }}
+
+                    <!-- Asia region collapsible panel -->
+                    {{ if gt (len $sabAsia) 0 }}
+                    <details class="region-details" open>
+                        <summary class="region-summary">
+                            <h3>Asia Region ({{ len $sabAsia }} members)</h3>
+                            <span class="region-icon"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="region-content">
+                            <div class="committee-members-grid">
+                                {{ range $sabAsia }}
+                                    {{ $fullName := printf "%s %s" .name .surname }}
+                                    <div class="compact-member-row">
+                                        <div class="compact-member-dot"></div>
+                                        <div class="compact-member-details">
+                                            <span class="compact-member-name">{{ $fullName }}</span>
+                                            <span class="compact-member-inst">{{ .institution }}{{ if .location }} ({{ .location }}){{ end }}</span>
+                                        </div>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </details>
+                    {{ end }}
+
+                    <!-- Europe region collapsible panel -->
+                    {{ if gt (len $sabEurope) 0 }}
+                    <details class="region-details" open>
+                        <summary class="region-summary">
+                            <h3>Europe Region ({{ len $sabEurope }} members)</h3>
+                            <span class="region-icon"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="region-content">
+                            <div class="committee-members-grid">
+                                {{ range $sabEurope }}
+                                    {{ $fullName := printf "%s %s" .name .surname }}
+                                    <div class="compact-member-row">
+                                        <div class="compact-member-dot"></div>
+                                        <div class="compact-member-details">
+                                            <span class="compact-member-name">{{ $fullName }}</span>
+                                            <span class="compact-member-inst">{{ .institution }}{{ if .location }} ({{ .location }}){{ end }}</span>
+                                        </div>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </details>
+                    {{ end }}
+                </div>
+            {{ else }}
+                <!-- Non-SAB Committees: Standard compact roster -->
+                {{ if gt (len $members) 0 }}
+                <div class="committee-members-grid">
+                    {{ range $members }}
+                        {{ $fullName := printf "%s %s" .name .surname }}
+                        <div class="compact-member-row">
+                            <div class="compact-member-dot"></div>
+                            <div class="compact-member-details">
+                                <span class="compact-member-name">{{ $fullName }}</span>
+                                <span class="compact-member-inst">
+                                    {{ .institution }}{{ if .location }} ({{ .location }}){{ end }}
+                                </span>
+                                {{ if .desc }}
+                                    <span class="compact-member-role-label">{{ .desc }}</span>
+                                {{ end }}
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </details>
+    {{ end }}
+{{ end }}

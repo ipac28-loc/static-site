@@ -8,13 +8,13 @@ The official logo of the **19th International Particle Accelerator Conference (I
 ### Usage Guidelines
 Academic authors, exhibitors, and sponsoring societies are permitted to download and display the IPAC'28 logos in their presentations, poster templates, and marketing materials.
 
-- **Standard Horizontal Logo**: Suitable for light website banners and papers.  
+- **Standard Horizontal Logo**: Suitable for light website banners and papers.
   `To be added (Logo PNG high-res link)`
-  
-- **Vertical Emblem Logo**: Ideal for merchandise, social badges, and banners.  
+
+- **Vertical Emblem Logo**: Ideal for merchandise, social badges, and banners.
   `To be added (Emblem PNG link)`
 
-- **Vector Formats**: For physical banners and large scale poster printing, download the official Illustrator/SVG vector formats.  
+- **Vector Formats**: For physical banners and large scale poster printing, download the official Illustrator/SVG vector formats.
   `To be added (Vector AI/SVG link)`
 
 ---

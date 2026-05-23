@@ -3,9 +3,11 @@ title: "Sponsoring Societies"
 url: "/about/societies/"
 ---
 
-IPAC'28 is officially sponsored and hosted by several leading global physical societies and engineering councils. We express our deepest gratitude for their scientific oversight and administrative support.
+<!-- IPAC'28 is officially sponsored and hosted by several leading global physical societies and engineering councils. We express our deepest gratitude for their scientific oversight and administrative support. -->
 
-### Lead Sponsoring Organizations
+`To be added`
+
+<!-- ### Lead Sponsoring Organizations
 
 - **IEEE Nuclear & Plasma Sciences Society (NPSS)**  
   Providing technical co-sponsorship and digital proceedings archiving via IEEE Xplore.
@@ -22,4 +24,4 @@ IPAC'28 is officially sponsored and hosted by several leading global physical so
 ---
 
 ### Sponsoring Rules & Endorsements
-Endorsements for satellite meetings, co-sponsored student travel grants, and society memberships can be requested through the general contact desk at `info@ipac28.org`. Detailed guidelines for joint society events are `To be added`.
+Endorsements for satellite meetings, co-sponsored student travel grants, and society memberships can be requested through the general contact desk at `info@ipac28.org`. Detailed guidelines for joint society events are `To be added`. -->

@@ -5,6 +5,8 @@ url: "/faq/"
 
 Find quick answers to common questions about abstract submission, registration, travel, and accommodation for IPAC'28.
 
+<div class="faq-container">
+
 ### General & Abstracts
 
 {{< accordion title="When and where will IPAC'28 take place?" >}}
@@ -38,3 +40,5 @@ Many countries have visa-exempt agreements with Japan. However, nationals of cer
 {{< accordion title="Will the conference provide visa support letters?" >}}
 Yes! The Local Organizing Committee will provide official visa support documentation (invitation letter, guarantee letter, etc.) *only* to registered and fully paid attendees, presenters, and exhibitors.
 {{< /accordion >}}
+
+</div>
