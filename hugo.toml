@@ -1,5 +1,5 @@
 baseURL = "https://test.ipac28.org/"
-languageCode = "en-us"
+locale = "en-us"
 title = "IPAC'28 - International Particle Accelerator Conference"
 
 [markup.goldmark.renderer]
@@ -10,7 +10,7 @@ unsafe = true
   logo_suffix = "'28"
   logo_image = "/img/ipac28_1200x608.png"
   conf_short_name = "IPAC'28"
-  conf_full_name = "16th International Particle Accelerator Conference"
+  conf_full_name = "19th International Particle Accelerator Conference"
   conf_dates = "June 5-9, 2028"
   conf_start_date = "2028-06-05T08:00:00+09:00"
   conf_location = "Tokyo International Forum, Tokyo, Japan"
@@ -19,22 +19,39 @@ unsafe = true
   abstract_deadline = "December 5, 2027"
 
   # Appearance & Toggles
-  hero_badge = "16th International Conference"
+  hero_badge = "19th International Particle Accelerator Conference"
   hero_image = "/img/ipac28_poster_a0.png"
   about_image = "/img/kanko.png"
   enable_countdown = true
   enable_sponsors = true
 
+  # Global Announcement Banner
+  enable_announcement = true
+  announcement_text = "Abstract submission is now open! Submission deadline: December 5, 2027."
+  announcement_link = "/abstract/"
+
+[params.text_style]
+  font_size = "1.05rem"
+  line_height = "2.1"
+  font_family = "Inter"
+  heading_font_family = "Montserrat"
+  body_color = "#334155"
+  heading_color = "#1d4485"
+  link_color = "#e52421"
+
 [params.social]
   twitter = "https://twitter.com/IPAC28"
   linkedin = "https://linkedin.com/company/ipac28"
   facebook = "https://facebook.com/ipac28"
-  # github = "https://github.com/ipac..."
 
 [params.stats]
   attendees = "1200+"
   presentations = "800+"
   exhibitors = "80+"
+
+# ==========================================
+# MULTI-LEVEL NAVIGATION MENU (IPAC'27 Style)
+# ==========================================
 
 # ----- 1. About -----
 [[menu.main]]
@@ -43,8 +60,8 @@ unsafe = true
   weight = 10
 
 [[menu.main]]
-  name = "About IPAC"
-  url = "/about/"
+  name = "Welcome Address"
+  url = "/about/welcome/"
   parent = "about"
   weight = 10
 
@@ -55,76 +72,96 @@ unsafe = true
   weight = 20
 
 [[menu.main]]
+  name = "Sponsoring Societies"
+  url = "/about/societies/"
+  parent = "about"
+  weight = 30
+
+[[menu.main]]
   name = "Policies & Conduct"
   url = "/policies/"
   parent = "about"
-  weight = 30
+  weight = 40
+
+[[menu.main]]
+  name = "Conference Logo"
+  url = "/about/logo/"
+  parent = "about"
+  weight = 50
+
+[[menu.main]]
+  name = "Conference Poster"
+  url = "/about/poster/"
+  parent = "about"
+  weight = 60
+
+[[menu.main]]
+  name = "Mobile App"
+  url = "/about/app/"
+  parent = "about"
+  weight = 70
 
 [[menu.main]]
   name = "FAQ"
   url = "/faq/"
   parent = "about"
-  weight = 40
+  weight = 80
 
-# ----- 2. Author -----
+
+# ----- 2. Program -----
 [[menu.main]]
-  name = "Author"
-  identifier = "author"
+  name = "Program"
+  identifier = "program"
   weight = 20
-
-[[menu.main]]
-  name = "Submit Abstract"
-  url = "/abstract/"
-  parent = "author"
-  weight = 10
-
-[[menu.main]]
-  name = "Paper Preparation"
-  url = "/paper-prep/"
-  parent = "author"
-  weight = 20
-
-[[menu.main]]
-  name = "Presentation Guidelines"
-  url = "/presentation/"
-  parent = "author"
-  weight = 30
-
-[[menu.main]]
-  name = "Important Dates"
-  url = "/dates/"
-  parent = "author"
-  weight = 40
-
-# ----- 3. Programmes -----
-[[menu.main]]
-  name = "Programmes"
-  identifier = "programmes"
-  weight = 30
 
 [[menu.main]]
   name = "Scientific Program"
   url = "/program/"
-  parent = "programmes"
+  parent = "program"
   weight = 10
+
+[[menu.main]]
+  name = "Synoptic Table"
+  url = "/program/synoptic/"
+  parent = "program"
+  weight = 20
 
 [[menu.main]]
   name = "Plenary Speakers"
   url = "/speakers/"
-  parent = "programmes"
-  weight = 20
+  parent = "program"
+  weight = 30
+
+[[menu.main]]
+  name = "Student Program"
+  url = "/program/student/"
+  parent = "program"
+  weight = 40
+
+[[menu.main]]
+  name = "Accelerator Prizes"
+  url = "/program/prizes/"
+  parent = "program"
+  weight = 50
 
 [[menu.main]]
   name = "Social Events"
   url = "/social/"
-  parent = "programmes"
-  weight = 30
+  parent = "program"
+  weight = 60
 
-# ----- 4. Registration -----
+[[menu.main]]
+  name = "Satellite Events"
+  url = "/program/satellite/"
+  parent = "program"
+  weight = 70
+
+
+# ----- 3. Registration -----
 [[menu.main]]
   name = "Registration"
   identifier = "registration"
-  weight = 40
+  weight = 30
 
 [[menu.main]]
   name = "Registration Fees"
@@ -138,11 +175,80 @@ unsafe = true
   parent = "registration"
   weight = 20
 
-# ----- 5. Travel -----
+[[menu.main]]
+  name = "Technical Tour"
+  url = "/register/tour/"
+  parent = "registration"
+  weight = 30
+
+
+# ----- 4. Authors -----
+[[menu.main]]
+  name = "Authors"
+  identifier = "authors"
+  weight = 40
+
+[[menu.main]]
+  name = "Abstract Submission"
+  url = "/abstract/"
+  parent = "authors"
+  weight = 10
+
+[[menu.main]]
+  name = "Classifications"
+  url = "/abstract/classifications/"
+  parent = "authors"
+  weight = 20
+
+[[menu.main]]
+  name = "Paper Preparation"
+  url = "/paper-prep/"
+  parent = "authors"
+  weight = 30
+
+[[menu.main]]
+  name = "Speaker Guidelines"
+  url = "/presentation/"
+  parent = "authors"
+  weight = 40
+
+[[menu.main]]
+  name = "Poster Guidelines"
+  url = "/presentation/poster/"
+  parent = "authors"
+  weight = 50
+
+
+# ----- 5. Exhibitors -----
+[[menu.main]]
+  name = "Exhibitors"
+  identifier = "exhibitors"
+  weight = 50
+
+[[menu.main]]
+  name = "Exhibition Opportunities"
+  url = "/exhibitor-info/"
+  parent = "exhibitors"
+  weight = 10
+
+[[menu.main]]
+  name = "Exhibitor Registration"
+  url = "/exhibitor-info/register/"
+  parent = "exhibitors"
+  weight = 20
+
+[[menu.main]]
+  name = "Exhibitor List"
+  url = "/sponsors/"
+  parent = "exhibitors"
+  weight = 30
+
+
+# ----- 6. Travel -----
 [[menu.main]]
   name = "Travel"
   identifier = "travel"
-  weight = 50
+  weight = 60
 
 [[menu.main]]
   name = "Venue & Accommodation"
@@ -151,34 +257,17 @@ unsafe = true
   weight = 10
 
 [[menu.main]]
+  name = "Getting to Tokyo"
+  url = "/city/"
+  parent = "travel"
+  weight = 20
+
+[[menu.main]]
   name = "Visa Information"
   url = "/visa/"
   parent = "travel"
-  weight = 20
-
-[[menu.main]]
-  name = "Discover the City"
-  url = "/city/"
-  parent = "travel"
   weight = 30
 
-# ----- 6. Sponsors & Exhibitors -----
-[[menu.main]]
-  name = "Sponsors & Exhibitors"
-  identifier = "sponsors_menu"
-  weight = 60
-
-[[menu.main]]
-  name = "Our Sponsors"
-  url = "/sponsors/"
-  parent = "sponsors_menu"
-  weight = 10
-
-[[menu.main]]
-  name = "Exhibitor Prospectus"
-  url = "/exhibitor-info/"
-  parent = "sponsors_menu"
-  weight = 20
 
 # ----- 7. Contact -----
 [[menu.main]]
@@ -186,9 +275,14 @@ unsafe = true
   url = "/contact/"
   weight = 70
 
+
+# ==========================================
+# FOOTER NAVIGATION MENUS
+# ==========================================
+
 [[menu.footer_quick]]
-  name = "About Conference"
-  url = "/about/"
+  name = "Welcome Address"
+  url = "/about/welcome/"
   weight = 10
 
 [[menu.footer_quick]]
@@ -202,12 +296,12 @@ unsafe = true
   weight = 30
 
 [[menu.footer_quick]]
-  name = "Exhibitors & Sponsors"
-  url = "/sponsors/"
+  name = "Exhibitor Info"
+  url = "/exhibitor-info/"
   weight = 40
 
 [[menu.footer_quick]]
-  name = "Committees"
+  name = "Organizing Committees"
   url = "/committees/"
   weight = 50
 
@@ -227,7 +321,7 @@ unsafe = true
   weight = 30
 
 [[menu.footer_info]]
-  name = "Policies & Code of Conduct"
+  name = "Code of Conduct"
   url = "/policies/"
   weight = 40
 
@@ -235,3 +329,4 @@ unsafe = true
   name = "FAQ"
   url = "/faq/"
   weight = 50
+

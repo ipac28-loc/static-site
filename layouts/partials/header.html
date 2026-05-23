@@ -1,3 +1,25 @@
+{{ if .Site.Params.enable_announcement }}
+<div class="announcement-banner" id="announcement-banner">
+    <div class="container banner-content">
+        <div class="banner-center-area">
+            {{ if .Site.Params.announcement_link }}
+                <a href="{{ .Site.Params.announcement_link | relURL }}" class="banner-link-wrapper">
+                    <span class="banner-badge">News</span>
+                    <span class="banner-text">{{ .Site.Params.announcement_text }}</span>
+                    <span class="banner-cta">Learn more <i class="fas fa-chevron-right" style="font-size: 0.8em; margin-left: 2px;"></i></span>
+                </a>
+            {{ else }}
+                <span class="banner-link-wrapper">
+                    <span class="banner-badge">News</span>
+                    <span class="banner-text">{{ .Site.Params.announcement_text }}</span>
+                </span>
+            {{ end }}
+        </div>
+        <button class="banner-close" id="banner-close" aria-label="Close Announcement"><i class="fas fa-xmark"></i></button>
+    </div>
+</div>
+{{ end }}
+
 <header class="navbar" id="navbar">
     <div class="container">
         <a href="{{ "/" | relURL }}" class="logo">
@@ -20,14 +42,35 @@
                 {{ if .HasChildren }}
                     {{ range .Children }}
                         {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
+                        {{ range .Children }}
+                            {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
+                        {{ end }}
                     {{ end }}
                     <div class="nav-dropdown">
                         <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="{{ if $isParentActive }}active{{ end }}">
-                            {{ .Name }} <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                            {{ .Name }} <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 0.8em; margin-left: 4px;"></i>
                         </a>
                         <div class="nav-dropdown-content">
                             {{ range .Children }}
-                                <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+                                {{ if .HasChildren }}
+                                    <!-- 3rd Level Dropdown Support -->
+                                    {{ $isSubParentActive := eq $relPermalink .URL }}
+                                    {{ range .Children }}
+                                        {{ if eq $relPermalink .URL }}{{ $isSubParentActive = true }}{{ end }}
+                                    {{ end }}
+                                    <div class="nav-subdropdown">
+                                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="subdropdown-toggle {{ if $isSubParentActive }}active{{ end }}">
+                                            {{ .Name }} <i class="fas fa-chevron-right subdropdown-arrow" style="font-size: 0.8em; margin-left: 4px;"></i>
+                                        </a>
+                                        <div class="nav-subdropdown-content">
+                                            {{ range .Children }}
+                                                <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                {{ else }}
+                                    <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+                                {{ end }}
                             {{ end }}
                         </div>
                     </div>

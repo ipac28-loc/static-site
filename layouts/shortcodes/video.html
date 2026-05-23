@@ -1,0 +1,30 @@
+{{ $provider := .Get "provider" | default "youtube" }}
+{{ $src := .Get "src" }}
+<div class="video-wrapper">
+    {{ if eq $provider "youtube" }}
+        {{ $id := $src }}
+        <!-- Simple helper to extract ID if user paste a full watch URL -->
+        {{ if in $src "v=" }}
+            {{ $id = index (split $src "v=") 1 }}
+            {{ if in $id "&" }}
+                {{ $id = index (split $id "&") 0 }}
+            {{ end }}
+        {{ else if in $src "youtu.be/" }}
+            {{ $id = index (split $src "youtu.be/") 1 }}
+        {{ else if in $src "embed/" }}
+            {{ $id = index (split $src "embed/") 1 }}
+        {{ end }}
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/{{ $id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video Player"></iframe>
+    {{ else if eq $provider "vimeo" }}
+        {{ $id := $src }}
+        {{ if in $src "vimeo.com/" }}
+            {{ $id = index (split $src "vimeo.com/") 1 }}
+        {{ end }}
+        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/{{ $id }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vimeo Video Player"></iframe>
+    {{ else if eq $provider "local" }}
+        <video class="responsive-video" controls>
+            <source src="{{ $src | relURL }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {{ end }}
+</div>

@@ -1,0 +1,19 @@
+<div class="timeline-item">
+    <div class="timeline-meta">
+        <div class="timeline-date-bubble">
+            <span class="timeline-date">{{ .Get "date" }}</span>
+        </div>
+        {{ if .Get "badge" }}
+            <span class="timeline-badge-label {{ .Get "badge_class" | default "badge-default" }}">{{ .Get "badge" }}</span>
+        {{ end }}
+    </div>
+    <div class="timeline-dot"></div>
+    <div class="timeline-item-content">
+        {{ if .Get "title" }}
+            <h4 class="timeline-item-title">{{ .Get "title" }}</h4>
+        {{ end }}
+        <div class="timeline-item-body">
+            {{ .Inner | markdownify }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<details class="accordion-item">
+    <summary class="accordion-header">
+        <span class="accordion-title">{{ .Get "title" | default "Details" }}</span>
+        <i class="fas fa-chevron-right accordion-chevron"></i>
+    </summary>
+    <div class="accordion-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>

@@ -1,8 +1,9 @@
 {{ define "head" }}
 <style>
+    /* Premium Page Hero styles styled in single.html */
     .page-hero {
-        height: 40vh;
-        min-height: 300px;
+        height: 35vh;
+        min-height: 250px;
         display: flex;
         align-items: center;
         position: relative;
@@ -26,12 +27,15 @@
         color: white;
         font-size: 3rem;
         margin-bottom: 0.5rem;
+        font-family: var(--font-heading);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .breadcrumb {
         display: flex;
         gap: 0.5rem;
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.5rem;
     }
     .breadcrumb a {
         color: rgba(255, 255, 255, 0.7);
@@ -72,6 +76,12 @@
                 {{ $siblingNodes = $parentEntry.Children }}
                 {{ $parentMenuTitle = $parentEntry.Name }}
             {{ end }}
+            {{ range .Children }}
+                {{ if eq $relPermalink .URL }}
+                    {{ $siblingNodes = $parentEntry.Children }}
+                    {{ $parentMenuTitle = $parentEntry.Name }}
+                {{ end }}
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}
@@ -86,7 +96,29 @@
                 <h3>{{ $parentMenuTitle }}</h3>
                 <ul>
                 {{ range $siblingNodes }}
-                    <li><a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a></li>
+                    {{ $isChildActive := eq $relPermalink .URL }}
+                    {{ $hasActiveGrandchild := false }}
+                    {{ if .HasChildren }}
+                        {{ range .Children }}
+                            {{ if eq $relPermalink .URL }}{{ $hasActiveGrandchild = true }}{{ end }}
+                        {{ end }}
+                    {{ end }}
+                    <li>
+                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="{{ if or $isChildActive $hasActiveGrandchild }}active{{ end }}">
+                            {{ .Name }}
+                        </a>
+                        {{ if .HasChildren }}
+                            <ul class="sub-sidebar-nav" style="display: {{ if or $isChildActive $hasActiveGrandchild }}block{{ else }}none{{ end }};">
+                            {{ range .Children }}
+                                <li>
+                                    <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">
+                                        <i class="fas fa-chevron-right" style="font-size: 0.7em; margin-right: 4px; opacity: 0.7;"></i> {{ .Name }}
+                                    </a>
+                                </li>
+                            {{ end }}
+                            </ul>
+                        {{ end }}
+                    </li>
                 {{ end }}
                 </ul>
             </aside>
@@ -100,6 +132,37 @@
                         <h2 class="content-title">{{ .Title }} Overview</h2>
                         <div class="content-divider"></div>
                         {{ .Content }}
+                    </div>
+                {{ end }}
+
+                <!-- Automated Embeds defined in Page Front Matter -->
+                {{ if .Params.embed_video_src }}
+                    <div class="content-embed-block content-card">
+                        <h3 class="embed-title"><i class="fas fa-video"></i> Video Presentation</h3>
+                        <div class="content-divider"></div>
+                        <div class="video-wrapper">
+                            <iframe class="responsive-iframe" src="{{ .Params.embed_video_src }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Page Embedded Video"></iframe>
+                        </div>
+                    </div>
+                {{ end }}
+
+                {{ if .Params.embed_map_src }}
+                    <div class="content-embed-block content-card">
+                        <h3 class="embed-title"><i class="fas fa-map-marker-alt"></i> Location Map</h3>
+                        <div class="content-divider"></div>
+                        <div class="map-container">
+                            <iframe src="{{ .Params.embed_map_src }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Page Embedded Map"></iframe>
+                        </div>
+                    </div>
+                {{ end }}
+
+                {{ if .Params.embed_calendar_src }}
+                    <div class="content-embed-block content-card">
+                        <h3 class="embed-title"><i class="fas fa-calendar-alt"></i> Interactive Timetable</h3>
+                        <div class="content-divider"></div>
+                        <div class="calendar-container">
+                            <iframe src="{{ .Params.embed_calendar_src }}" width="100%" height="600" style="border:0;" scrolling="no" title="Page Embedded Calendar"></iframe>
+                        </div>
                     </div>
                 {{ end }}
             </div>

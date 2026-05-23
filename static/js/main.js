@@ -131,4 +131,92 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update every second
     setInterval(updateCountdown, 1000);
 
+    // --- 5. Dynamic Tabs Builder ---
+    const tabContainers = document.querySelectorAll('.tab-container');
+    tabContainers.forEach((container) => {
+        const panes = container.querySelectorAll('.tab-pane');
+        if (panes.length === 0) return;
+        
+        const tabNav = document.createElement('div');
+        tabNav.classList.add('tab-nav');
+        
+        panes.forEach((pane, idx) => {
+            const title = pane.getAttribute('data-title') || `Tab ${idx + 1}`;
+            const btn = document.createElement('button');
+            btn.classList.add('tab-btn');
+            btn.type = 'button';
+            btn.innerText = title;
+            
+            if (idx === 0) {
+                btn.classList.add('active');
+                pane.classList.add('active');
+            }
+            
+            btn.addEventListener('click', () => {
+                container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+                
+                btn.classList.add('active');
+                pane.classList.add('active');
+            });
+            
+            tabNav.appendChild(btn);
+        });
+        
+        const tabPanes = container.querySelector('.tab-panes');
+        container.insertBefore(tabNav, tabPanes);
+    });
+
+    // --- 6. Announcement Close Handler ---
+    const banner = document.getElementById('announcement-banner');
+    const bannerClose = document.getElementById('banner-close');
+    
+    // Check if dismissed before
+    if (banner && localStorage.getItem('announcement-dismissed') === 'true') {
+        banner.style.display = 'none';
+        document.body.classList.add('banner-dismissed');
+    }
+    
+    if (banner && bannerClose) {
+        bannerClose.addEventListener('click', () => {
+            banner.style.display = 'none';
+            document.body.classList.add('banner-dismissed');
+            localStorage.setItem('announcement-dismissed', 'true');
+        });
+    }
+
+    // --- 7. Mobile Multilevel Navigation ---
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown > a, .nav-subdropdown > a');
+    dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const siblingContent = toggle.nextElementSibling;
+                if (siblingContent && (siblingContent.classList.contains('nav-dropdown-content') || siblingContent.classList.contains('nav-subdropdown-content'))) {
+                    e.preventDefault();
+                    siblingContent.style.display = (siblingContent.style.display === 'block') ? 'none' : 'block';
+                }
+            }
+        });
+    });
+
+    // --- 8. Sidebar Sub-nav Mobile Toggle ---
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    if (sidebarNav) {
+        const parentLinks = sidebarNav.querySelectorAll('li > a');
+        parentLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const subMenu = link.nextElementSibling;
+                if (subMenu && subMenu.classList.contains('sub-sidebar-nav')) {
+                    // Let link navigate if it already has active grandchild or was clicked twice
+                    // but allow simple toggles
+                    if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+                        e.preventDefault();
+                        subMenu.style.display = 'block';
+                    }
+                }
+            });
+        });
+    }
+
 });
+

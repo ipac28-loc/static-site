@@ -1,0 +1,8 @@
+<div class="committee-group fade-up">
+    {{ if .Get "title" }}
+        <h2>{{ .Get "title" }}</h2>
+    {{ end }}
+    <div class="member-list">
+        {{ .Inner }}
+    </div>
+</div>

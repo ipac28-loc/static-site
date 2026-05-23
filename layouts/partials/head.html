@@ -17,3 +17,31 @@
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+{{ if .Site.Params.text_style }}
+<style>
+    :root {
+        {{ with .Site.Params.text_style.font_family }}--font-sans-markdown: '{{ . }}', -apple-system, sans-serif;{{ end }}
+        {{ with .Site.Params.text_style.heading_font_family }}--font-heading: '{{ . }}', sans-serif;{{ end }}
+        {{ with .Site.Params.text_style.body_color }}--color-text-body-markdown: {{ . }};{{ end }}
+        {{ with .Site.Params.text_style.heading_color }}--color-text-heading: {{ . }};{{ end }}
+        {{ with .Site.Params.text_style.link_color }}
+            --color-link-default: {{ . }};
+            --color-btn-primary-bg: {{ . }};
+            --color-btn-outline-border: {{ . }};
+            --color-btn-outline-text: {{ . }};
+            --color-btn-outline-bg-hover: {{ . }};
+            --color-title-underline: {{ . }};
+            --color-countdown-border-top: {{ . }};
+            --color-countdown-divider: {{ . }};
+            --color-stat-number: {{ . }};
+            --color-date-card-icon-text: {{ . }};
+            --color-date-card-border-hover: {{ . }};
+            --color-sidebar-item-text-active: {{ . }};
+            --color-news-date-text: {{ . }};
+        {{ end }}
+        {{ with .Site.Params.text_style.font_size }}--color-text-size: {{ . }};{{ end }}
+        {{ with .Site.Params.text_style.line_height }}--color-line-height: {{ . }};{{ end }}
+    }
+</style>
+{{ end }}
