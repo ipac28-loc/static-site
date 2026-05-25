@@ -9,6 +9,7 @@ unsafe = true
   logo_prefix = "IPAC"
   logo_suffix = "'28"
   logo_image = "/img/ipac28_1200x608.png"
+  favicon = "/img/ipac28_600x304.png"
   conf_short_name = "IPAC'28"
   conf_full_name = "19th International Particle Accelerator Conference"
   conf_dates = "June 5-9, 2028"
