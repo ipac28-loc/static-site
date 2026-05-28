@@ -166,6 +166,13 @@
     .sg-card { padding: 1.5rem 1.25rem 1.25rem; }
     .sg-cta { padding: 2.5rem 1.5rem; }
 }
+@media (max-width: 480px) {
+    .sg-grid.platinum,
+    .sg-grid.gold,
+    .sg-grid.silver,
+    .sg-grid.bronze,
+    .sg-grid.supporter { grid-template-columns: 1fr; }
+}
 </style>
 
 {{ $allSponsors := .Site.Params.sponsors }}
@@ -200,7 +207,7 @@
             {{ range $group }}
             <a href="{{ .url }}" class="sg-card" target="_blank" rel="noopener noreferrer">
                 <div class="sg-logo-wrap">
-                    <img src="{{ .logo | absURL }}" alt="{{ .name }} logo" loading="lazy">
+                    <img src="{{ .logo | relURL }}" alt="{{ .name }} logo" loading="lazy">
                 </div>
                 <p class="sg-card-name">{{ .name }}</p>
                 {{ if .tagline }}

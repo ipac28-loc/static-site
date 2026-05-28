@@ -39,11 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close mobile menu when clicking a link
+    // Close mobile menu when clicking a link (only for leaf links, not dropdown expanders)
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
+        link.addEventListener('click', (e) => {
+            const isDropdownToggler = link.parentElement.classList.contains('nav-dropdown') || 
+                                     link.parentElement.classList.contains('nav-subdropdown') ||
+                                     link.classList.contains('subdropdown-toggle') ||
+                                     link.getAttribute('href') === 'javascript:void(0);';
+            
+            if (navLinks.classList.contains('active') && !isDropdownToggler) {
                 navLinks.classList.remove('active');
                 const icon = mobileToggle.querySelector('i');
                 icon.classList.remove('fa-times');
@@ -52,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Handle smooth scroll manually for offset
             const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
+            if (targetId && targetId.startsWith('#')) {
                 // Prevent default behavior to handle active state
                 // But let css scroll-behavior handle the scrolling
                 
@@ -131,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update every second
     setInterval(updateCountdown, 1000);
 
-    // --- 5. Dynamic Tabs Builder ---
+    // --- 5. Dynamic Tabs Builder (Dual Mode: Tab Buttons on Desktop, Custom Styled Select Box on Mobile) ---
     const tabContainers = document.querySelectorAll('.tab-container');
     tabContainers.forEach((container) => {
         const panes = container.querySelectorAll('.tab-pane');
@@ -139,32 +144,107 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const tabNav = document.createElement('div');
         tabNav.classList.add('tab-nav');
+
+        // Create a premium custom styled select box for mobile
+        const selectWrapper = document.createElement('div');
+        selectWrapper.classList.add('tab-mobile-select-wrapper');
+        
+        const selectLabel = document.createElement('label');
+        selectLabel.classList.add('tab-mobile-select-label');
+        selectLabel.innerHTML = '<i class="fas fa-list-ul" style="margin-right: 6px; color: var(--color-btn-primary-bg);"></i> Select Section:';
+        
+        const customSelectContainer = document.createElement('div');
+        customSelectContainer.classList.add('custom-select-container');
+        
+        const customSelectTrigger = document.createElement('div');
+        customSelectTrigger.classList.add('custom-select-trigger');
+        
+        const triggerText = document.createElement('span');
+        const triggerIcon = document.createElement('i');
+        triggerIcon.className = 'fas fa-chevron-down';
+        
+        customSelectTrigger.appendChild(triggerText);
+        customSelectTrigger.appendChild(triggerIcon);
+        
+        const customSelectOptions = document.createElement('div');
+        customSelectOptions.classList.add('custom-select-options');
         
         panes.forEach((pane, idx) => {
             const title = pane.getAttribute('data-title') || `Tab ${idx + 1}`;
+            
+            // 1. Create Desktop Tab Button
             const btn = document.createElement('button');
             btn.classList.add('tab-btn');
             btn.type = 'button';
             btn.innerText = title;
+            btn.setAttribute('data-tab-index', idx);
             
             if (idx === 0) {
                 btn.classList.add('active');
                 pane.classList.add('active');
+                triggerText.innerText = title; // Set initial active text
             }
             
             btn.addEventListener('click', () => {
-                container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                panes.forEach(p => p.classList.remove('active'));
-                
-                btn.classList.add('active');
-                pane.classList.add('active');
+                switchActiveTab(idx);
             });
-            
             tabNav.appendChild(btn);
+
+            // 2. Create Custom Select Option
+            const opt = document.createElement('div');
+            opt.classList.add('custom-select-option');
+            if (idx === 0) opt.classList.add('active');
+            opt.innerText = title;
+            opt.setAttribute('data-value', idx);
+            
+            opt.addEventListener('click', () => {
+                switchActiveTab(idx);
+                customSelectContainer.classList.remove('open');
+            });
+            customSelectOptions.appendChild(opt);
         });
+
+        // Trigger toggle open
+        customSelectTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            customSelectContainer.classList.toggle('open');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            customSelectContainer.classList.remove('open');
+        });
+
+        customSelectContainer.appendChild(customSelectTrigger);
+        customSelectContainer.appendChild(customSelectOptions);
+        
+        selectWrapper.appendChild(selectLabel);
+        selectWrapper.appendChild(customSelectContainer);
         
         const tabPanes = container.querySelector('.tab-panes');
         container.insertBefore(tabNav, tabPanes);
+        container.insertBefore(selectWrapper, tabPanes);
+
+        function switchActiveTab(activeIdx) {
+            // Update Tab Buttons classes
+            container.querySelectorAll('.tab-btn').forEach((b, idx) => {
+                b.classList.toggle('active', idx === activeIdx);
+            });
+            
+            // Update Custom Select active option and trigger text
+            const optionsList = customSelectOptions.querySelectorAll('.custom-select-option');
+            optionsList.forEach((opt, idx) => {
+                opt.classList.toggle('active', idx === activeIdx);
+                if (idx === activeIdx) {
+                    triggerText.innerText = opt.innerText;
+                }
+            });
+            
+            // Update Panes classes
+            panes.forEach((p, idx) => {
+                p.classList.toggle('active', idx === activeIdx);
+            });
+        }
     });
 
     // --- 6. Announcement Close Handler ---
@@ -193,7 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const siblingContent = toggle.nextElementSibling;
                 if (siblingContent && (siblingContent.classList.contains('nav-dropdown-content') || siblingContent.classList.contains('nav-subdropdown-content'))) {
                     e.preventDefault();
-                    siblingContent.style.display = (siblingContent.style.display === 'block') ? 'none' : 'block';
+                    const parent = toggle.parentElement;
+                    parent.classList.toggle('open');
                 }
             }
         });
@@ -217,6 +298,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- 9. Close Sidebar Accordion on Mobile by Default ---
+    const sidebarDetails = document.querySelector('.sidebar-details');
+    if (sidebarDetails && window.innerWidth <= 900) {
+        sidebarDetails.removeAttribute('open');
+    }
+
+    // --- 10. Automatic Responsive Tables in Markdown ---
+    const tables = document.querySelectorAll('.page-content table:not(.synoptic-table)');
+    tables.forEach((table) => {
+        if (!table.parentElement.classList.contains('table-responsive')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'table-responsive';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        }
+    });
 
 });
 

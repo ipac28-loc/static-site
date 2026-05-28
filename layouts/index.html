@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="hero-poster fade-up delay-2">
-            <img src="{{ .Site.Params.hero_image | absURL }}" alt="Conference Poster">
+            <img src="{{ .Site.Params.hero_image | relURL }}" alt="Conference Poster">
         </div>
     </div>
 </section>
@@ -84,7 +84,7 @@
             </div>
             <div class="about-image fade-up delay-1">
                 <div class="image-wrapper">
-                    <img src="{{ .Site.Params.about_image | absURL }}" alt="Tokyo Host City">
+                    <img src="{{ .Site.Params.about_image | relURL }}" alt="Tokyo Host City">
                 </div>
             </div>
         </div>
@@ -223,13 +223,13 @@
                 {{ range .Site.Params.sponsors }}
                 <a href="{{ .url }}" class="sponsor-logo" target="_blank" rel="noopener noreferrer"
                     title="{{ .name }}{{ if .tier }} — {{ .tier | title }} Sponsor{{ end }}">
-                    <img src="{{ .logo | absURL }}" alt="{{ .name }} logo">
+                    <img src="{{ .logo | relURL }}" alt="{{ .name }} logo">
                 </a>
                 {{ end }}
                 {{ range .Site.Params.sponsors }}
                 <a href="{{ .url }}" class="sponsor-logo" target="_blank" rel="noopener noreferrer" title="{{ .name }}"
                     aria-hidden="true">
-                    <img src="{{ .logo | absURL }}" alt="">
+                    <img src="{{ .logo | relURL }}" alt="">
                 </a>
                 {{ end }}
             </div>
