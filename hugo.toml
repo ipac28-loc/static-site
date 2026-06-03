@@ -1296,9 +1296,9 @@ font_size = "0.95rem"
 line_height = "1.65"
 font_family = "Inter"
 heading_font_family = "Montserrat"
-body_color = "#334155"
-heading_color = "#1d4485"
-link_color = "#e52421"
+body_color = "#475569"
+heading_color = "#0f2547"
+link_color = "#f43f5e"
 
 [params.social]
 twitter = "https://twitter.com/IPAC28"

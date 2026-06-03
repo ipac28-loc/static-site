@@ -417,7 +417,7 @@
     --color-brand-primary: var(--color-link-default, #e52421);
     --color-brand-primary-hover: #b91c1b;
     --color-brand-secondary: var(--color-text-heading, #1d4485);
-    --color-brand-dark: #132f5f;
+    --color-brand-dark: #0f2547;
     --color-brand-bg-light: #f8fafc;
     --color-text-body: var(--color-text-body-markdown, #334155);
     --color-text-heading: var(--color-text-heading, #1d4485);
@@ -4616,7 +4616,7 @@
   }
   .max-md\:bg-brand-dark\/95 {
     @media (width < 48rem) {
-      background-color: color-mix(in srgb, #132f5f 95%, transparent);
+      background-color: color-mix(in srgb, #0f2547 95%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-brand-dark) 95%, transparent);
       }
