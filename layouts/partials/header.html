@@ -17,7 +17,7 @@
             this.scrolled = window.scrollY > 50;
         }
     }"
-    class="fixed top-0 left-0 w-full z-40 text-white transition-all duration-300"
+    class="fixed top-0 left-0 w-full z-40 transition-all duration-300"
     id="navbar"
 >
     {{ if .Site.Params.enable_announcement }}
@@ -54,7 +54,7 @@
     {{ end }}
 
     <div
-        :class="scrolled ? 'bg-brand-secondary/95 backdrop-blur-md py-3.5 shadow-lg' : 'bg-black/25 py-5'"
+        :class="scrolled ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md py-3.5 shadow-md border-b border-slate-200/30 dark:border-slate-800/30 text-slate-800 dark:text-white' : 'bg-transparent py-5 text-white border-b border-white/0'"
         class="w-full transition-all duration-300"
     >
         <div class="container flex items-center justify-between">
@@ -62,21 +62,21 @@
                 {{ if .Site.Params.logo_image }}
                     <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo" class="h-10 w-auto object-contain">
                 {{ else }}
-                    <span class="font-heading text-2xl font-extrabold tracking-wide text-white">
+                    <span class="font-heading text-2xl font-extrabold tracking-wide text-inherit">
                         {{ .Site.Params.logo_prefix }}<span class="text-brand-primary">{{ .Site.Params.logo_suffix }}</span>
                     </span>
                 {{ end }}
             </a>
             
             <!-- Hamburger Button -->
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none z-50 text-xl" aria-label="Toggle navigation">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-inherit focus:outline-none z-50 text-xl" aria-label="Toggle navigation">
                 <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
             </button>
             
             <!-- Nav Links (Desktop & Mobile Drawer) -->
             <nav
                 :class="{ 'max-md:translate-x-0': mobileMenuOpen, 'max-md:translate-x-full': !mobileMenuOpen }"
-                class="max-md:fixed max-md:top-0 max-md:right-0 max-md:h-screen max-md:w-72 max-md:bg-brand-dark/95 max-md:p-8 max-md:flex-col max-md:justify-start max-md:items-start max-md:pt-24 max-md:z-40 max-md:shadow-2xl transition-transform duration-300 ease-in-out md:flex md:items-center md:gap-8 max-md:overflow-y-auto max-md:translate-x-full"
+                class="max-md:fixed max-md:top-0 max-md:right-0 max-md:h-screen max-md:w-72 max-md:bg-brand-dark/95 max-md:p-8 max-md:flex-col max-md:justify-start max-md:items-start max-md:pt-24 max-md:z-40 max-md:shadow-2xl transition-transform duration-300 ease-in-out md:flex md:items-center md:gap-8 max-md:overflow-y-auto max-md:translate-x-full max-md:text-white"
                 id="nav-links"
             >
                 {{ $current := . }}
@@ -101,7 +101,8 @@
                         >
                             <button
                                 @click="if (window.innerWidth <= 768) open = !open"
-                                class="flex items-center justify-between w-full md:gap-1 text-white/95 hover:text-white font-medium transition-colors cursor-pointer py-1 {{ if $isParentActive }}text-brand-primary! border-b-2 border-brand-primary md:pb-0.5{{ end }}"
+                                class="flex items-center justify-between w-full md:gap-1 font-medium transition-colors cursor-pointer py-1 {{ if $isParentActive }}border-b-2 md:pb-0.5{{ else }}opacity-85 hover:opacity-100{{ end }}"
+                                :class="scrolled ? ({{ if $isParentActive }}'text-brand-primary! border-brand-primary!'{{ else }}'text-inherit'{{ end }}) : ({{ if $isParentActive }}'text-white! border-white!'{{ else }}'text-white/90 hover:text-white'{{ end }})"
                             >
                                 <span>{{ .Name }}</span>
                                 <i class="fas fa-chevron-down text-[0.75em] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
@@ -163,13 +164,14 @@
                     {{ else }}
                         <a
                             href="{{ .URL | relURL }}"
-                            class="text-white/95 hover:text-white font-medium transition-colors py-1.5 block w-full md:w-auto max-md:border-b max-md:border-white/10 {{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}text-brand-primary! border-b-2 border-brand-primary md:pb-0.5{{ end }}"
+                            class="font-medium transition-colors py-1.5 block w-full md:w-auto max-md:border-b max-md:border-white/10 {{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}border-b-2 md:pb-0.5{{ else }}opacity-85 hover:opacity-100{{ end }}"
+                            :class="scrolled ? ({{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}'text-brand-primary! border-brand-primary!'{{ else }}'text-inherit'{{ end }}) : ({{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}'text-white! border-white!'{{ else }}'text-white/90 hover:text-white'{{ end }})"
                         >
                             {{ .Name }}
                         </a>
                     {{ end }}
                 {{ end }}
-                <a href="{{ .Site.Params.registration_link | relURL }}" class="mt-4 md:mt-0 w-full md:w-auto text-center inline-block px-5 py-2 rounded-full font-bold text-sm bg-brand-primary text-white hover:bg-brand-primary-hover shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">Register</a>
+                <a href="{{ .Site.Params.registration_link | relURL }}" class="mt-4 md:mt-0 w-full md:w-auto text-center inline-block px-5 py-2 rounded-full font-bold text-sm bg-brand-primary text-white! hover:bg-brand-primary-hover shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">Register</a>
             </nav>
         </div>
     </div>
