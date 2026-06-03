@@ -1,12 +1,12 @@
 {{ $src := .Get "src" }}
 {{ $title := .Get "title" }}
-<div class="map-card">
+<div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden my-6">
     {{ if $title }}
-        <div class="map-card-header">
-            <h4><i class="fas fa-map-marker-alt"></i> {{ $title }}</h4>
+        <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850/20 select-none">
+            <h4 class="font-heading font-extrabold text-brand-secondary dark:text-slate-100 text-sm flex items-center gap-2"><i class="fas fa-map-marker-alt text-brand-primary"></i> {{ $title }}</h4>
         </div>
     {{ end }}
-    <div class="map-container">
-        <iframe src="{{ $src }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="{{ $title | default "Venue Map" }}"></iframe>
+    <div class="w-full h-[450px]">
+        <iframe src="{{ $src }}" width="100%" height="100%" class="border-0 block -mt-2.5" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="{{ $title | default "Venue Map" }}"></iframe>
     </div>
 </div>

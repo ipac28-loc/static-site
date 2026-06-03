@@ -13,13 +13,13 @@ Find quick answers to common questions about abstract submission, registration, 
 IPAC'28 will be held from **June 5-9, 2028**, at the **Tokyo International Forum (TIF)**, located in the heart of Tokyo, Japan. Satellite meetings and registration check-ins will commence on Sunday, June 4, 2028.
 {{< /accordion >}}
 
-{{< accordion title="What is the deadline for abstract submission?" >}}
+<!-- {{< accordion title="What is the deadline for abstract submission?" >}}
 The abstract submission deadline is **December 5, 2027, 23:59 JST (UTC+9)**. To submit an abstract, you must log in to the JACoW Indico platform. No late abstracts will be accepted.
-{{< /accordion >}}
+{{< /accordion >}} -->
 
-{{< accordion title="How many abstracts can I submit as a primary author?" >}}
+<!-- {{< accordion title="How many abstracts can I submit as a primary author?" >}}
 Usually, an individual is limited to submitting **one abstract as the primary presenter**. You may be listed as a co-author on multiple abstracts.
-{{< /accordion >}}
+{{< /accordion >}} -->
 
 ### Registration & Grants
 

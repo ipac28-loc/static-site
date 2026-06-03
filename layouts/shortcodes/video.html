@@ -1,9 +1,10 @@
 {{ $provider := .Get "provider" | default "youtube" }}
 {{ $src := .Get "src" }}
-<div class="video-wrapper">
+
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md my-6 bg-black">
     {{ if eq $provider "youtube" }}
         {{ $id := $src }}
-        <!-- Simple helper to extract ID if user paste a full watch URL -->
+        <!-- Extract ID if full watch URL is provided -->
         {{ if in $src "v=" }}
             {{ $id = index (split $src "v=") 1 }}
             {{ if in $id "&" }}
@@ -14,15 +15,15 @@
         {{ else if in $src "embed/" }}
             {{ $id = index (split $src "embed/") 1 }}
         {{ end }}
-        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/{{ $id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video Player"></iframe>
+        <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://www.youtube.com/embed/{{ $id }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="YouTube Video Player"></iframe>
     {{ else if eq $provider "vimeo" }}
         {{ $id := $src }}
         {{ if in $src "vimeo.com/" }}
             {{ $id = index (split $src "vimeo.com/") 1 }}
         {{ end }}
-        <iframe class="responsive-iframe" src="https://player.vimeo.com/video/{{ $id }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vimeo Video Player"></iframe>
+        <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://player.vimeo.com/video/{{ $id }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Vimeo Video Player"></iframe>
     {{ else if eq $provider "local" }}
-        <video class="responsive-video" controls>
+        <video class="absolute top-0 left-0 w-full h-full object-cover" controls>
             <source src="{{ $src | relURL }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>

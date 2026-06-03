@@ -1,84 +1,176 @@
 {{ if .Site.Params.enable_announcement }}
-<div class="announcement-banner" id="announcement-banner">
-    <div class="container banner-content">
-        <div class="banner-center-area">
+<!-- Managed via global header Alpine instance to prevent vertical overlap and flow naturally -->
+{{ end }}
+<header
+    x-data="{
+        scrolled: false,
+        mobileMenuOpen: false,
+        dismissed: localStorage.getItem('announcement-dismissed') === 'true',
+        dismiss() {
+            this.dismissed = true;
+            localStorage.setItem('announcement-dismissed', 'true');
+        },
+        init() {
+            window.addEventListener('scroll', () => {
+                this.scrolled = window.scrollY > 50;
+            });
+            this.scrolled = window.scrollY > 50;
+        }
+    }"
+    class="fixed top-0 left-0 w-full z-40 text-white transition-all duration-300"
+    id="navbar"
+>
+    {{ if .Site.Params.enable_announcement }}
+    <!-- Apple-style Announcement Banner (Slides up on scroll) -->
+    <div
+        x-show="!dismissed && !scrolled"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-full"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-full"
+        class="bg-[#1d1d1f]/90 dark:bg-black/90 backdrop-blur-md border-b border-white/5 text-slate-300 py-2 px-4 text-xs font-normal tracking-wide relative z-50 text-center font-sans"
+        style="display: none;"
+    >
+        <div class="inline-flex items-center gap-2">
             {{ if .Site.Params.announcement_link }}
-                <a href="{{ .Site.Params.announcement_link | relURL }}" class="banner-link-wrapper">
-                    <span class="banner-badge">News</span>
-                    <span class="banner-text">{{ .Site.Params.announcement_text }}</span>
-                    <span class="banner-cta">Learn more <i class="fas fa-chevron-right" style="font-size: 0.8em; margin-left: 2px;"></i></span>
+                <a href="{{ .Site.Params.announcement_link | relURL }}" class="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <span class="bg-white/10 border border-white/10 text-[9px] uppercase px-1.5 py-0.5 rounded font-bold tracking-wider">News</span>
+                    <span>{{ .Site.Params.announcement_text }}</span>
+                    <i class="fas fa-chevron-right text-[0.7em] opacity-80"></i>
                 </a>
             {{ else }}
-                <span class="banner-link-wrapper">
-                    <span class="banner-badge">News</span>
-                    <span class="banner-text">{{ .Site.Params.announcement_text }}</span>
+                <span class="inline-flex items-center gap-2">
+                    <span class="bg-white/10 border border-white/10 text-[9px] uppercase px-1.5 py-0.5 rounded font-bold tracking-wider">News</span>
+                    <span>{{ .Site.Params.announcement_text }}</span>
                 </span>
             {{ end }}
         </div>
-        <button class="banner-close" id="banner-close" aria-label="Close Announcement"><i class="fas fa-xmark"></i></button>
-    </div>
-</div>
-{{ end }}
-
-<header class="navbar" id="navbar">
-    <div class="container">
-        <a href="{{ `/` | relURL }}" class="logo">
-            {{ if .Site.Params.logo_image }}
-                <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo" style="height: 40px; width: auto; object-fit: contain;">
-            {{ else }}
-                <span class="logo-text">{{ .Site.Params.logo_prefix }}<span class="highlight">{{ .Site.Params.logo_suffix }}</span></span>
-            {{ end }}
-        </a>
-        
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+        <button @click="dismiss()" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors cursor-pointer p-1" aria-label="Dismiss Announcement">
+            <i class="fas fa-xmark text-sm"></i>
         </button>
-        
-        <nav class="nav-links" id="nav-links">
-            {{ $current := . }}
-            {{ $relPermalink := .RelPermalink }}
-            {{ range .Site.Menus.main }}
-                {{ $isParentActive := eq $relPermalink .URL }}
-                {{ if .HasChildren }}
-                    {{ range .Children }}
-                        {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
+    </div>
+    {{ end }}
+
+    <div
+        :class="scrolled ? 'bg-brand-secondary/95 backdrop-blur-md py-3.5 shadow-lg' : 'bg-black/25 py-5'"
+        class="w-full transition-all duration-300"
+    >
+        <div class="container flex items-center justify-between">
+            <a href="{{ `/` | relURL }}" class="flex items-center">
+                {{ if .Site.Params.logo_image }}
+                    <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo" class="h-10 w-auto object-contain">
+                {{ else }}
+                    <span class="font-heading text-2xl font-extrabold tracking-wide text-white">
+                        {{ .Site.Params.logo_prefix }}<span class="text-brand-primary">{{ .Site.Params.logo_suffix }}</span>
+                    </span>
+                {{ end }}
+            </a>
+            
+            <!-- Hamburger Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none z-50 text-xl" aria-label="Toggle navigation">
+                <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+            
+            <!-- Nav Links (Desktop & Mobile Drawer) -->
+            <nav
+                :class="{ 'max-md:translate-x-0': mobileMenuOpen, 'max-md:translate-x-full': !mobileMenuOpen }"
+                class="max-md:fixed max-md:top-0 max-md:right-0 max-md:h-screen max-md:w-72 max-md:bg-brand-dark/95 max-md:p-8 max-md:flex-col max-md:justify-start max-md:items-start max-md:pt-24 max-md:z-40 max-md:shadow-2xl transition-transform duration-300 ease-in-out md:flex md:items-center md:gap-8 max-md:overflow-y-auto max-md:translate-x-full"
+                id="nav-links"
+            >
+                {{ $current := . }}
+                {{ $relPermalink := .RelPermalink }}
+                {{ range .Site.Menus.main }}
+                    {{ $isParentActive := eq $relPermalink .URL }}
+                    {{ if .HasChildren }}
                         {{ range .Children }}
                             {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
-                        {{ end }}
-                    {{ end }}
-                    <div class="nav-dropdown">
-                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="{{ if $isParentActive }}active{{ end }}">
-                            {{ .Name }} <i class="fas fa-chevron-down dropdown-arrow" style="font-size: 0.8em; margin-left: 4px;"></i>
-                        </a>
-                        <div class="nav-dropdown-content">
                             {{ range .Children }}
-                                {{ if .HasChildren }}
-                                    <!-- 3rd Level Dropdown Support -->
-                                    {{ $isSubParentActive := eq $relPermalink .URL }}
-                                    {{ range .Children }}
-                                        {{ if eq $relPermalink .URL }}{{ $isSubParentActive = true }}{{ end }}
-                                    {{ end }}
-                                    <div class="nav-subdropdown">
-                                        <a href="{{ if .URL }}{{ .URL | relURL }}{{ else }}javascript:void(0);{{ end }}" class="subdropdown-toggle {{ if $isSubParentActive }}active{{ end }}">
-                                            {{ .Name }} <i class="fas fa-chevron-right subdropdown-arrow" style="font-size: 0.8em; margin-left: 4px;"></i>
-                                        </a>
-                                        <div class="nav-subdropdown-content">
-                                            {{ range .Children }}
-                                                <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
-                                            {{ end }}
-                                        </div>
-                                    </div>
-                                {{ else }}
-                                    <a href="{{ .URL | relURL }}" class="{{ if eq $relPermalink .URL }}active{{ end }}">{{ .Name }}</a>
-                                {{ end }}
+                                {{ if eq $relPermalink .URL }}{{ $isParentActive = true }}{{ end }}
                             {{ end }}
+                        {{ end }}
+                        
+                        <!-- 2nd Level Dropdown Group -->
+                        <div
+                            x-data="{ open: false }"
+                            @mouseenter="if (window.innerWidth > 768) open = true"
+                            @mouseleave="if (window.innerWidth > 768) open = false"
+                            @click.away="open = false"
+                            class="relative w-full md:w-auto group max-md:border-b max-md:border-white/10 max-md:py-2"
+                        >
+                            <button
+                                @click="if (window.innerWidth <= 768) open = !open"
+                                class="flex items-center justify-between w-full md:gap-1 text-white/95 hover:text-white font-medium transition-colors cursor-pointer py-1 {{ if $isParentActive }}text-brand-primary! border-b-2 border-brand-primary md:pb-0.5{{ end }}"
+                            >
+                                <span>{{ .Name }}</span>
+                                <i class="fas fa-chevron-down text-[0.75em] transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+                            </button>
+                            
+                            <!-- Dropdown Content -->
+                            <div
+                                x-show="open"
+                                x-transition:enter="transition ease-out duration-150"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-100"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95"
+                                class="md:absolute md:left-0 md:mt-2 w-full md:w-56 rounded-2xl md:shadow-xl md:bg-white dark:md:bg-slate-900 md:text-slate-800 dark:md:text-slate-200 divide-y divide-slate-100 dark:divide-slate-800/80 focus:outline-none z-50 pl-4 md:pl-0 max-md:bg-transparent max-md:text-white py-1.5"
+                                style="display: none;"
+                            >
+                                {{ range .Children }}
+                                    {{ if .HasChildren }}
+                                        <!-- 3rd Level Dropdown Support -->
+                                        {{ $isSubParentActive := eq $relPermalink .URL }}
+                                        {{ range .Children }}
+                                            {{ if eq $relPermalink .URL }}{{ $isSubParentActive = true }}{{ end }}
+                                        {{ end }}
+                                        <div
+                                            x-data="{ openSub: false }"
+                                            @mouseenter="if (window.innerWidth > 768) openSub = true"
+                                            @mouseleave="if (window.innerWidth > 768) openSub = false"
+                                            @click.away="openSub = false"
+                                            class="relative w-full"
+                                        >
+                                            <button
+                                                @click="if (window.innerWidth <= 768) openSub = !openSub"
+                                                class="flex items-center justify-between w-full px-4 py-3 text-sm text-left hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-primary dark:hover:text-brand-primary transition-colors cursor-pointer {{ if $isSubParentActive }}font-semibold text-brand-primary max-md:text-white{{ end }}"
+                                            >
+                                                <span>{{ .Name }}</span>
+                                                <i class="fas fa-chevron-right text-[0.75em] hidden md:inline"></i>
+                                                <i class="fas fa-chevron-down text-[0.75em] md:hidden transition-transform duration-200" :class="openSub ? 'rotate-180' : ''"></i>
+                                            </button>
+                                            
+                                            <!-- 3rd Level Menu Panel -->
+                                            <div
+                                                x-show="openSub"
+                                                x-transition
+                                                class="md:absolute md:left-full md:top-0 w-full md:w-56 rounded-2xl md:shadow-xl md:bg-white dark:md:bg-slate-900 md:text-slate-800 dark:md:text-slate-200 focus:outline-none pl-4 md:pl-0 max-md:bg-transparent max-md:text-white py-1"
+                                                style="display: none;"
+                                            >
+                                                {{ range .Children }}
+                                                    <a href="{{ .URL | relURL }}" class="block px-8 md:px-4 py-3 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-primary dark:hover:text-brand-primary transition-colors {{ if eq $relPermalink .URL }}font-semibold text-brand-primary!{{ end }}">{{ .Name }}</a>
+                                                {{ end }}
+                                            </div>
+                                        </div>
+                                    {{ else }}
+                                        <a href="{{ .URL | relURL }}" class="block px-4 py-3 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-primary dark:hover:text-brand-primary transition-colors {{ if eq $relPermalink .URL }}font-semibold text-brand-primary!{{ end }}">{{ .Name }}</a>
+                                    {{ end }}
+                                {{ end }}
+                            </div>
                         </div>
-                    </div>
-                {{ else }}
-                    <a href="{{ .URL | relURL }}" class="{{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}active{{ end }}">{{ .Name }}</a>
+                    {{ else }}
+                        <a
+                            href="{{ .URL | relURL }}"
+                            class="text-white/95 hover:text-white font-medium transition-colors py-1.5 block w-full md:w-auto max-md:border-b max-md:border-white/10 {{ if or (eq $relPermalink .URL) (and (eq .URL "/") ($current.IsHome)) }}text-brand-primary! border-b-2 border-brand-primary md:pb-0.5{{ end }}"
+                        >
+                            {{ .Name }}
+                        </a>
+                    {{ end }}
                 {{ end }}
-            {{ end }}
-            <a href="{{ .Site.Params.registration_link | relURL }}" class="btn btn-primary nav-btn">Register</a>
-        </nav>
+                <a href="{{ .Site.Params.registration_link | relURL }}" class="mt-4 md:mt-0 w-full md:w-auto text-center inline-block px-5 py-2 rounded-full font-bold text-sm bg-brand-primary text-white hover:bg-brand-primary-hover shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">Register</a>
+            </nav>
+        </div>
     </div>
 </header>

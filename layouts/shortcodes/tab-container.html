@@ -1,5 +1,63 @@
-<div class="tab-container">
-    <div class="tab-panes">
+<div x-data="{
+    activeTab: 0,
+    tabs: [],
+    init() {
+        this.tabs = Array.from(this.$refs.panes.children).map((pane, idx) => {
+            this.$watch('activeTab', (newVal) => {
+                pane.style.display = idx === newVal ? 'block' : 'none';
+            });
+            pane.style.display = idx === this.activeTab ? 'block' : 'none';
+            return {
+                index: idx,
+                title: pane.getAttribute('data-title') || ('Tab ' + (idx + 1))
+            };
+        });
+    }
+}" class="border border-slate-100 dark:border-slate-800 rounded-2xl shadow-sm bg-white dark:bg-slate-900 overflow-hidden my-8">
+    <!-- Desktop Navigation Tabs -->
+    <div class="hidden md:flex border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850/20 p-1 gap-1">
+        <template x-for="tab in tabs" :key="tab.index">
+            <button
+                @click="activeTab = tab.index"
+                :class="activeTab === tab.index ? 'bg-white dark:bg-slate-800 text-brand-primary shadow-sm font-semibold' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-50/40 dark:hover:bg-slate-800/30'"
+                class="px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer outline-none border-0"
+                x-text="tab.title"
+            ></button>
+        </template>
+    </div>
+    
+    <!-- Mobile Dropdown Selector Navigation -->
+    <div class="md:hidden p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850/20" x-data="{ open: false }">
+        <label class="block text-[10px] uppercase font-extrabold tracking-wider text-slate-400 dark:text-slate-500 mb-1.5">Select Section:</label>
+        <div class="relative">
+            <button
+                @click="open = !open"
+                class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-left text-sm flex items-center justify-between shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary/20 cursor-pointer text-slate-700 dark:text-slate-200"
+            >
+                <span x-text="tabs[activeTab]?.title || 'Select...'"></span>
+                <i class="fas fa-chevron-down text-slate-400 dark:text-slate-500 text-xs transition-transform duration-200" :class="open ? 'rotate-180' : ''"></i>
+            </button>
+            <div
+                x-show="open"
+                @click.away="open = false"
+                x-transition
+                class="absolute z-10 mt-1 w-full bg-white dark:bg-slate-900 border border-slate-150/60 dark:border-slate-800 rounded-xl shadow-xl py-1.5 max-h-60 overflow-y-auto focus:outline-none"
+                style="display: none;"
+            >
+                <template x-for="tab in tabs" :key="tab.index">
+                    <button
+                        @click="activeTab = tab.index; open = false"
+                        :class="activeTab === tab.index ? 'bg-brand-primary/5 dark:bg-brand-primary/10 text-brand-primary font-semibold' : 'text-slate-650 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'"
+                        class="w-full text-left px-4 py-2 text-sm focus:outline-none transition-colors border-0 cursor-pointer"
+                        x-text="tab.title"
+                    ></button>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panes container -->
+    <div x-ref="panes" class="p-6 sm:p-8">
         {{ .Inner }}
     </div>
 </div>

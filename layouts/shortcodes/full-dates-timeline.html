@@ -1,4 +1,4 @@
-<div class="conference-timeline">
+<div class="relative border-l border-slate-200 dark:border-slate-800 ml-4 pl-8 space-y-12 my-8">
     {{ range .Site.Params.important_dates }}
     <!-- Check if the milestone is in the past relative to the current build time -->
     {{ $is_expired := false }}
@@ -7,21 +7,21 @@
     {{ end }}
 
     <!-- Determine Badge Text and Badge Class -->
-    {{ $badge_class := "badge-info" }}
+    {{ $badge_class := "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800/50" }}
     {{ $badge_label := "Info" }}
 
     {{ if $is_expired }}
-        {{ $badge_class = "badge-outdated" }}
-        {{ $badge_label = "Outdated" }}
+        {{ $badge_class = "bg-slate-100 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-500 dark:border-slate-700 line-through" }}
+        {{ $badge_label = "Expired" }}
     {{ else }}
         {{ if eq .type "open" }}
-            {{ $badge_class = "badge-open" }}
+            {{ $badge_class = "bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800/50" }}
             {{ $badge_label = "Open" }}
         {{ else if eq .type "close" }}
-            {{ $badge_class = "badge-close" }}
-            {{ $badge_label = "Close" }}
+            {{ $badge_class = "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/20 dark:text-rose-300 dark:border-rose-800/50 animate-pulse" }}
+            {{ $badge_label = "Deadline" }}
         {{ else if eq .type "info" }}
-            {{ $badge_class = "badge-info" }}
+            {{ $badge_class = "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800/50" }}
             {{ $badge_label = "Info" }}
         {{ end }}
     {{ end }}
@@ -29,17 +29,21 @@
     <!-- Date formatting based on user-defined date_fmt in hugo.toml -->
     {{ $formatted_date := (time .date).Format (site.Params.date_fmt | default "January 2, 2006") }}
 
-    <div class="timeline-item timeline-type-{{ .type }}{{ if $is_expired }} timeline-expired{{ end }}">
-        <div class="timeline-meta">
-            <div class="timeline-date-bubble">
-                <span class="timeline-date">{{ $formatted_date }}</span>
+    <div class="relative group">
+        <!-- Timeline dot indicator -->
+        <div class="absolute -left-[39px] top-1.5 w-[14px] h-[14px] rounded-full bg-white dark:bg-slate-900 border-[3px] border-brand-primary shadow-sm transition-transform duration-200 group-hover:scale-125 z-10"></div>
+        
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <span class="text-sm font-bold text-brand-primary flex items-center gap-2">
+                    <i class="far fa-calendar-check"></i> {{ $formatted_date }}
+                </span>
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider border {{ $badge_class }}">
+                    {{ $badge_label }}
+                </span>
             </div>
-            <span class="timeline-badge-label {{ $badge_class }}">{{ $badge_label }}</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-item-content">
-            <h4 class="timeline-item-title">{{ .title }}</h4>
-            <div class="timeline-item-body">
+            <h4 class="text-lg font-heading font-bold text-brand-secondary dark:text-slate-100 mb-2">{{ .title }}</h4>
+            <div class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                 {{ .description | markdownify }}
             </div>
         </div>

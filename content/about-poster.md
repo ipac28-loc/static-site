@@ -8,7 +8,7 @@ The official poster for **IPAC'28** has been published. It highlights Tokyo's hi
 ### Download & Share
 We kindly request members of the accelerator community to print and display the official poster on bulletin boards at their respective research institutes and laboratories.
 
-{{< poster-download 
+{{< poster-download
     src="/img/ipac28_poster_a0.png"
     dimensions="A0 Size (841 x 1189 mm / 33.1 x 46.8 in)"
     format="High-Resolution PNG (300 DPI, Print Ready)"
