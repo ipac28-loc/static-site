@@ -1,8 +1,8 @@
-<div class="committee-group fade-up">
+<div class="my-10 fade-up visible">
     {{ if .Get "title" }}
-        <h2>{{ .Get "title" }}</h2>
+        <h3 class="text-lg font-heading font-extrabold text-brand-secondary dark:text-slate-100 mb-6 border-b border-slate-100 dark:border-slate-800 pb-3 uppercase tracking-wider text-xs sm:text-sm">{{ .Get "title" }}</h3>
     {{ end }}
-    <div class="member-list">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {{ .Inner }}
     </div>
 </div>

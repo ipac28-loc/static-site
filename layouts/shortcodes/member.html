@@ -1,8 +1,12 @@
-<div class="member-card">
-    <div class="member-avatar"><i class="fas fa-{{ default "user" (.Get "icon") }}"></i></div>
-    <div class="member-info">
-        {{ if .Get "role" }}<div class="member-role">{{ .Get "role" }}</div>{{ end }}
-        <h4>{{ .Get "name" }}</h4>
-        <div class="member-inst">{{ .Get "inst" }}</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl p-5 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+    <div class="w-12 h-12 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center text-xl flex-shrink-0">
+        <i class="fas fa-{{ default "user" (.Get "icon") }}"></i>
+    </div>
+    <div class="flex-grow min-w-0">
+        {{ if .Get "role" }}
+            <div class="text-[10px] font-extrabold uppercase tracking-widest text-brand-primary mb-0.5">{{ .Get "role" }}</div>
+        {{ end }}
+        <h4 class="font-heading font-bold text-brand-secondary dark:text-slate-100 text-base truncate m-0 leading-snug">{{ .Get "name" }}</h4>
+        <div class="text-xs text-slate-500 dark:text-slate-400 font-medium truncate mt-0.5">{{ .Get "inst" }}</div>
     </div>
 </div>

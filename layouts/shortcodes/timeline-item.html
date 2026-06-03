@@ -1,18 +1,31 @@
-<div class="timeline-item">
-    <div class="timeline-meta">
-        <div class="timeline-date-bubble">
-            <span class="timeline-date">{{ .Get "date" }}</span>
+<div class="relative group">
+    <!-- Timeline dot indicator -->
+    <div class="absolute -left-[39px] top-1.5 w-[14px] h-[14px] rounded-full bg-white dark:bg-slate-900 border-[3px] border-brand-primary shadow-sm transition-transform duration-200 group-hover:scale-125 z-10"></div>
+    
+    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow duration-200">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <span class="text-sm font-bold text-brand-primary flex items-center gap-2">
+                <i class="far fa-calendar-check"></i> {{ .Get "date" }}
+            </span>
+            {{ if .Get "badge" }}
+                {{ $badge_class := .Get "badge_class" | default "badge-default" }}
+                {{ $tailwind_badge_class := "bg-slate-100 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700" }}
+                {{ if eq $badge_class "badge-success" }}
+                    {{ $tailwind_badge_class = "bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800/50" }}
+                {{ else if eq $badge_class "badge-danger" }}
+                    {{ $tailwind_badge_class = "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/20 dark:text-rose-300 dark:border-rose-800/50" }}
+                {{ else if eq $badge_class "badge-info" }}
+                    {{ $tailwind_badge_class = "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800/50" }}
+                {{ end }}
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider border {{ $tailwind_badge_class }}">
+                    {{ .Get "badge" }}
+                </span>
+            {{ end }}
         </div>
-        {{ if .Get "badge" }}
-            <span class="timeline-badge-label {{ .Get "badge_class" | default "badge-default" }}">{{ .Get "badge" }}</span>
-        {{ end }}
-    </div>
-    <div class="timeline-dot"></div>
-    <div class="timeline-item-content">
         {{ if .Get "title" }}
-            <h4 class="timeline-item-title">{{ .Get "title" }}</h4>
+            <h4 class="text-lg font-heading font-bold text-brand-secondary dark:text-slate-100 mb-2">{{ .Get "title" }}</h4>
         {{ end }}
-        <div class="timeline-item-body">
+        <div class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             {{ .Inner | markdownify }}
         </div>
     </div>

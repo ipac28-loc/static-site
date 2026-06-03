@@ -18,26 +18,26 @@ Haneda Airport is located much closer to central Tokyo (approx. 15 km) and is hi
 - **By Taxi (~¥7,000 - ¥9,000)**:
   - Takes about 25-40 minutes depending on traffic.
     {{< /tab >}}
-    
+
     {{< tab title="From Narita Airport (NRT)" >}}
 Narita Airport handles a large portion of long-haul international flights and is located approx. 60 km outside central Tokyo.
 
 - **By JR Narita Express (N'EX) (Recommended - ~60 mins)**:
   1. Take the **Narita Express** directly from Airport Terminals to **Tokyo Station**.
   2. Tokyo International Forum is a 5-minute walk from Tokyo Station (connected via underground passenger tunnels or via street walk from the Marunouchi South Exit).
-  
+
 - **By Keisei Skyliner (Alternate - ~60 mins)**:
   1. Take the **Keisei Skyliner** from Narita to **Nippori Station** (36 mins).
   2. Transfer to the **JR Yamanote Line** southbound to **Yurakucho Station** (15 mins).
     {{< /tab >}}
-    
+
     {{< tab title="Local Subway & JR Lines" >}}
 The Tokyo International Forum is directly serviced by several subway and rail junctions, providing direct access from anywhere in the city:
 
 - **JR Rail Network**:
   - **Yurakucho Station**: 1 min walk.
   - **Tokyo Station**: 5 mins walk (directly connected via underground concourse to Keiyo Line platforms).
-  
+
 - **Tokyo Metro Subway Lines**:
   - **Yurakucho Line (Y-18)**: Directly connected to Yurakucho Station (Exit D5).
   - **Chiyoda Line**: 5 mins walk from **Nijubashimae Station** or **Hibiya Station**.

@@ -5,6 +5,8 @@ url: "/authors/authors-poster/"
 
 > The poster guidelines for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
 
+---------
+
 Poster sessions are a highly vital part of IPAC'28, allowing researchers to interact directly with peers and present their detailed work. Posters will be displayed in the **Commercial Exhibition & Poster Hall**.
 
 ### Poster Specifications

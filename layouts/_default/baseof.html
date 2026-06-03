@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.Locale }}">
+<html
+    lang="{{ site.Language.Locale }}"
+    class="scroll-smooth scroll-pt-20 overflow-x-hidden"
+    x-data="{
+        darkMode: localStorage.getItem('dark-mode') === 'true',
+        toggleDark() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('dark-mode', this.darkMode);
+            document.documentElement.classList.toggle('dark', this.darkMode);
+        }
+    }"
+    x-init="document.documentElement.classList.toggle('dark', darkMode)"
+    :class="darkMode ? 'dark' : ''"
+>
 <head>
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}
 </head>
-<body>
+<body class="bg-white dark:bg-slate-900 font-sans text-text-body dark:text-slate-200 leading-body antialiased min-h-screen flex flex-col overflow-x-hidden transition-colors duration-300">
     {{ partial "header.html" . }}
 
     {{ block "main" . }}{{ end }}
 
     {{ partial "footer.html" . }}
+
+    <!-- Floating Dark Mode Toggle Button -->
+    <button
+        @click="toggleDark()"
+        class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg flex items-center justify-center cursor-pointer text-slate-700 dark:text-amber-400 hover:scale-110 active:scale-95 transition-all duration-200 focus:outline-none border-0 select-none"
+        title="Toggle Dark Mode"
+        aria-label="Toggle Dark Mode"
+    >
+        <i
+            class="fas text-lg transition-transform duration-300"
+            :class="darkMode ? 'fa-sun text-amber-400 rotate-45' : 'fa-moon -rotate-12'"
+        ></i>
+    </button>
 </body>
 </html>

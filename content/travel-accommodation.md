@@ -13,34 +13,34 @@ These are high-quality, full-service hotels located within 5-15 minutes walking 
    - *Proximity*: 10 mins walk from TIF.
    - *Features*: World-class services, spacious rooms, site of the Conference Dinner.
    - *Conference Rate*: `To be added` (Book via our custom portal link).
-   
+
 2. **The Peninsula Tokyo** (★★★★★)
    - *Proximity*: 8 mins walk from TIF.
    - *Features*: High-end facilities, directly connected to Hibiya subway station.
    - *Conference Rate*: `To be added`.
-   
+
 3. **Dai-ichi Hotel Tokyo** (★★★★)
    - *Proximity*: 12 mins walk from TIF.
    - *Features*: Conveniently located near Shimbashi Station, comfortable business amenities.
    - *Conference Rate*: `To be added`.
     {{< /tab >}}
-    
+
     {{< tab title="Standard Business Hotels" >}}
 These standard Japanese "business hotels" are extremely clean, highly compact, and provide functional amenities (free Wi-Fi, toiletries) at a very affordable price tag.
 
 - **Remm Hibiya**
   - *Proximity*: 5 mins walk from TIF. Highly recommended for daily commute.
   - *Average Rate*: ¥16,000 - ¥22,000 per night.
-  
+
 - **Sotetsu Fresa Inn Ginza-Sanchome**
   - *Proximity*: 10 mins walk from TIF, located inside the Ginza shopping district.
   - *Average Rate*: ¥14,000 - ¥18,000 per night.
-  
+
 - **APA Hotel Ginza Kyobashi**
   - *Proximity*: 8 mins walk from TIF.
   - *Average Rate*: ¥10,000 - ¥15,000 per night.
     {{< /tab >}}
-    
+
     {{< tab title="Booking Guidelines" >}}
 ### Important Booking Conditions
 - **Securing Rates**: To receive negotiated group discounts, bookings must be made strictly via the **IPAC'28 Hotel Reservation System** which will launch in **January 2028**.

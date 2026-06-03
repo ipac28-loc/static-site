@@ -1,62 +1,93 @@
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col brand-col">
-                <a href="{{ `/` | relURL }}" class="logo">
+<footer class="bg-brand-secondary text-white border-t border-white/10 pt-16 pb-8">
+    <div class="container mx-auto px-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <!-- Brand Column -->
+            <div class="flex flex-col gap-4">
+                <a href="{{ `/` | relURL }}" class="flex items-center">
                     {{ if .Site.Params.logo_image }}
-                    <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo"
-                        style="height: 48px; width: auto; object-fit: contain;">
+                        <img src="{{ .Site.Params.logo_image | relURL }}" alt="{{ .Site.Params.conf_short_name }} Logo" class="h-12 w-auto object-contain">
                     {{ else }}
-                    <span class="logo-text">{{ .Site.Params.logo_prefix }}<span class="highlight">{{
-                            .Site.Params.logo_suffix }}</span></span>
+                        <span class="font-heading text-2xl font-extrabold tracking-wide text-white">
+                            {{ .Site.Params.logo_prefix }}<span class="text-brand-primary">{{ .Site.Params.logo_suffix }}</span>
+                        </span>
                     {{ end }}
                 </a>
-                <p class="footer-desc">The {{ .Site.Params.conf_full_name }}. Bringing together the brightest minds in
-                    accelerator science and engineering.</p>
-                <div class="social-links">
-                    {{ with .Site.Params.social.twitter }}<a href="{{ . }}"><i class="fab fa-twitter"></i></a>{{ end }}
-                    {{ with .Site.Params.social.linkedin }}<a href="{{ . }}"><i class="fab fa-linkedin-in"></i></a>{{
-                    end }}
-                    {{ with .Site.Params.social.facebook }}<a href="{{ . }}"><i class="fab fa-facebook-f"></i></a>{{ end
-                    }}
-                    {{ with .Site.Params.social.github }}<a href="{{ . }}"><i class="fab fa-github"></i></a>{{ end }}
+                <p class="text-white/80 text-sm leading-relaxed max-w-sm">
+                    The {{ .Site.Params.conf_full_name }}. Bringing together the brightest minds in accelerator science and engineering.
+                </p>
+                <div class="flex items-center gap-3.5 mt-2">
+                    {{ with .Site.Params.social.twitter }}
+                        <a href="{{ . }}" class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center transition-colors duration-200" aria-label="Twitter">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                    {{ end }}
+                    {{ with .Site.Params.social.linkedin }}
+                        <a href="{{ . }}" class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center transition-colors duration-200" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                    {{ end }}
+                    {{ with .Site.Params.social.facebook }}
+                        <a href="{{ . }}" class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center transition-colors duration-200" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                    {{ end }}
+                    {{ with .Site.Params.social.github }}
+                        <a href="{{ . }}" class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center transition-colors duration-200" aria-label="GitHub">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+                    {{ end }}
                 </div>
             </div>
 
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
+            <!-- Quick Links Column -->
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-5 relative pb-2.5 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand-primary after:rounded">Quick Links</h4>
+                <ul class="flex flex-col gap-3 text-sm">
                     {{ range .Site.Menus.footer_quick }}
-                    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                        <li>
+                            <a href="{{ .URL | relURL }}" class="text-white/80 hover:text-white hover:pl-1 transition-all duration-200 flex items-center gap-1.5">
+                                <i class="fas fa-chevron-right text-[0.65em] opacity-50"></i>
+                                {{ .Name }}
+                            </a>
+                        </li>
                     {{ end }}
                 </ul>
             </div>
 
-            <div class="footer-col">
-                <h4>Information</h4>
-                <ul class="footer-links">
+            <!-- Information Column -->
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-5 relative pb-2.5 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand-primary after:rounded">Information</h4>
+                <ul class="flex flex-col gap-3 text-sm">
                     {{ range .Site.Menus.footer_info }}
-                    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                        <li>
+                            <a href="{{ .URL | relURL }}" class="text-white/80 hover:text-white hover:pl-1 transition-all duration-200 flex items-center gap-1.5">
+                                <i class="fas fa-chevron-right text-[0.65em] opacity-50"></i>
+                                {{ .Name }}
+                            </a>
+                        </li>
                     {{ end }}
                 </ul>
             </div>
 
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Contact us at:</p>
-                <p>{{ .Site.Params.email }}</p>
+            <!-- Contact Column -->
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-5 relative pb-2.5 after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand-primary after:rounded">Contact</h4>
+                <div class="flex flex-col gap-3.5 text-sm text-white/80">
+                    <p class="leading-relaxed">Please feel free to contact the organizing committee at:</p>
+                    <a href="mailto:{{ .Site.Params.email }}" class="inline-flex items-center gap-2 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-brand-primary text-base"></i>
+                        <span class="underline">{{ .Site.Params.email }}</span>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
             <p>&copy; 2028 {{ .Site.Params.conf_short_name }} Conference. All rights reserved.</p>
-            <div class="legal-links">
-                <a href="{{ `privacy/` | relURL }}">Privacy Policy</a>
-                <a href="{{ `terms/` | relURL }}">Terms of Use</a>
+            <div class="flex gap-6">
+                <a href="{{ `privacy/` | relURL }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="{{ `terms/` | relURL }}" class="hover:text-white transition-colors">Terms of Use</a>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- Custom Logic -->
-<script src="{{ `js/main.js` | relURL }}"></script>
