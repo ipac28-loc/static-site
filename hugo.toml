@@ -108,7 +108,7 @@ description = "Timetable sessions, plenary keynotes, parallel talks, commercial 
 date = "2026-04-23T00:00:00+09:00"
 title = "IPAC'28 Website Is Now Open"
 summary = "The official IPAC'28 conference website has launched. Find information on the scientific program, registration, venue, and more."
-link = "/about/welcome/"
+link = "/about/about-welcome/"
 
 [[params.news]]
 date = "2026-05-01T00:00:00+09:00"
