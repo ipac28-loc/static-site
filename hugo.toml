@@ -24,7 +24,7 @@ hero_badge = "19th International Particle Accelerator Conference"
 hero_image = "/img/ipac28_poster_a0.png"
 about_image = "/img/kanko.png"
 enable_countdown = true
-enable_sponsors = true
+enable_sponsors = false
 
 # Global Announcement Banner
 enable_announcement = true
@@ -174,232 +174,232 @@ tagline = "Turn-key synchrotron light source solutions worldwide."
 # ----------------------------------------------------
 # International Organizing Committee Members
 # ----------------------------------------------------
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Jie"
 # surname = "Wei"
 # institution = "FRIB"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Fulvia"
 # surname = "Pilat"
 # institution = "ORNL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Ralitsa"
 # surname = "Sharankova"
 # institution = "FNAL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Frederic"
 # surname = "Le Pimpec"
 # institution = "CLS"
 # location = "Canada"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Vadim"
 # surname = "Sajaev"
 # institution = "ANL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Lin"
 # surname = "Liu"
 # institution = "LNLS"
 # location = "Brazil"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Oliver"
 # surname = "Kester"
 # institution = "TRIUMF"
 # location = "Canada"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Mattias"
 # surname = "Liepe"
 # institution = "Cornell"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Wolfram"
 # surname = "Fischer"
 # institution = "BNL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Dan"
 # surname = "Wang"
 # institution = "LBNL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Todd"
 # surname = "Satogata"
 # institution = "JLab"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Zhirong"
 # surname = "Huang"
 # institution = "SLAC"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Bruce"
 # surname = "Carlsten"
 # institution = "LANL"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Peter"
 # surname = "Ostroumov"
 # institution = "FRIB"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "David"
 # surname = "Bruwhiler"
 # institution = "RadiaSoft"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Pietro"
 # surname = "Musumeci"
 # institution = "UCLA"
 # location = "USA"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Enrica"
 # surname = "Chiadroni"
 # institution = "La Sapienza"
 # location = "Italy"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Ralf"
 # surname = "Gebel"
 # institution = "FZJ & GSI"
 # location = "Germany"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Jordi"
 # surname = "Marcos"
 # institution = "CELLS"
 # location = "Spain"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Atoosa"
 # surname = "Meseck"
 # institution = "HZB"
 # location = "Germany"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Eduard"
 # surname = "Prat"
 # institution = "PSI"
 # location = "Switzerland"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "John"
 # surname = "Thomason"
 # institution = "STFC"
 # location = "UK"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Rogelio"
 # surname = "Tomas"
 # institution = "CERN"
 # location = "Switzerland"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Adriana"
 # surname = "Wawrzyniak"
 # institution = "Solaris"
 # location = "Poland"
 # chair = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 # name = "Yoichi"
 # surname = "Sato"
 # institution = "J-PARC"
 # location = "Japan"
 # chair = false
 
-[[params.committee_ioc]]
+[[params.committee_oc]]
 name = "Tadashi"
 surname = "Koseki"
 institution = "KEK"
 location = "Japan"
-desc = "IOC Chair"
+desc = "OC Chair"
 chair = true
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Toru"
 #   surname     = "Hara"
 #   institution = "RIKEN/Spring-8"
 #   location    = "Japan"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Yuan"
 #   surname     = "He"
 #   institution = "IMP"
 #   location    = "China"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Haixiao"
 #   surname     = "Deng"
 #   institution = "SARI"
 #   location    = "China"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Seunghwan"
 #   surname     = "Shin"
 #   institution = "4GSR/KBSI"
 #   location    = "Korea"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Ming-Chyuan"
 #   surname     = "Lin"
 #   institution = "NSRRC"
 #   location    = "Taiwan"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Prapong"
 #   surname     = "Klysubun"
 #   institution = "SLRI"
 #   location    = "Thailand"
 #   chair       = false
 
-# [[params.committee_ioc]]
+# [[params.committee_oc]]
 #   name        = "Peter"
 #   surname     = "McIntosh"
 #   institution = "STFC"
@@ -1301,9 +1301,9 @@ heading_color = "#0f2547"
 link_color = "#f43f5e"
 
 [params.social]
-twitter = "https://twitter.com/IPAC28"
-linkedin = "https://linkedin.com/company/ipac28"
-facebook = "https://facebook.com/ipac28"
+#twitter = "https://twitter.com/IPAC28"
+#linkedin = "https://linkedin.com/company/ipac28"
+#facebook = "https://facebook.com/ipac28"
 
 [params.stats]
 attendees = "1200+"
@@ -1323,7 +1323,7 @@ parent = "about"
 weight = 10
 
 [[menu.main]]
-name = "Organizing Committees"
+name = "Committees"
 url = "/about/about-committees/"
 parent = "about"
 weight = 20

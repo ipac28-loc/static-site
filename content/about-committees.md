@@ -1,5 +1,5 @@
 ---
-title: "Organizing Committees"
+title: "Committees"
 url: "/about/about-committees/"
 ---
 
