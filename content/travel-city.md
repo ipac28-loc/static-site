@@ -15,6 +15,16 @@ Haneda Airport is located much closer to central Tokyo (approx. 15 km) and is hi
   2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (4 mins).
   3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
 
+- **By Keikyū Airport Line (~35-45 mins)**:
+  1. Take the **Keikyū Airport Line** (Airport Limited Express) from Haneda Airport to **Shinagawa Station** (15-20 mins).
+  2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (10 mins).
+  3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
+
+- **By Airport Limousine Bus / Keikyū Limousine Bus (~30-50 mins)**:
+  1. Take the **Airport Limousine Bus** or **Keikyū Limousine Bus** bound for Tokyo Station (Yaesu Exit / Tekko Building).
+  2. Tokyo International Forum is a 5-minute walk from Tokyo Station.
+  3. For more information, please visit the [Airport Limousine Bus](https://www.limousinebus.co.jp/en/) or [Keikyu Bus](https://www.keikyu-bus.co.jp/en) websites.
+
 - **By Taxi (~¥7,000 - ¥9,000)**:
   - Takes about 25-40 minutes depending on traffic.
     {{< /tab >}}
@@ -22,25 +32,40 @@ Haneda Airport is located much closer to central Tokyo (approx. 15 km) and is hi
     {{< tab title="From Narita Airport (NRT)" >}}
 Narita Airport handles a large portion of long-haul international flights and is located approx. 60 km outside central Tokyo.
 
-- **By JR Narita Express (N'EX) (Recommended - ~60 mins)**:
-  1. Take the **Narita Express** directly from Airport Terminals to **Tokyo Station**.
-  2. Tokyo International Forum is a 5-minute walk from Tokyo Station (connected via underground passenger tunnels or via street walk from the Marunouchi South Exit).
+- **By JR Narita Express (N'EX) (Recommended - ~60 mins train ride)**:
+  1. Take the **Narita Express** directly from the airport terminals to **Tokyo Station** (arrives at underground Sobu Line platforms).
+  2. Tokyo International Forum is a 10-15 minute walk from the Sobu Line platforms.
 
 - **By Keisei Skyliner (Alternate - ~60 mins)**:
   1. Take the **Keisei Skyliner** from Narita to **Nippori Station** (36 mins).
-  2. Transfer to the **JR Yamanote Line** southbound to **Yurakucho Station** (15 mins).
+  2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** southbound to **Yurakucho Station** (15 mins).
+  3. Tokyo International Forum is a 1-minute walk from Yurakucho Station.
+
+- **By Airport Limousine Bus (60-90 mins)**:
+  1. Take the **Airport Limousine Bus** from Narita Airport Terminals to **Tokyo Station** (stops at Yaesu South Exit).
+  2. Tokyo International Forum is a 5-minute walk from the bus stop.
+  3. For more information, please visit the [Airport Limousine Bus](https://www.limousinebus.co.jp/en/) website.
+
     {{< /tab >}}
 
-    {{< tab title="Local Subway & JR Lines" >}}
-The Tokyo International Forum is directly serviced by several subway and rail junctions, providing direct access from anywhere in the city:
+    {{< tab title="Local Subway" >}}
+The Tokyo International Forum is accessible via several major train and subway stations, providing convenient access from anywhere in the city:
 
 - **JR Rail Network**:
-  - **Yurakucho Station**: 1 min walk.
-  - **Tokyo Station**: 5 mins walk (directly connected via underground concourse to Keiyo Line platforms).
+  - **Yurakucho Station**: 1-minute walk from the **International Forum Exit**.
+  - **Tokyo Station**: 5-minute walk from the Keiyo Line underground concourse (directly connected to the Forum's B1F).
 
 - **Tokyo Metro Subway Lines**:
-  - **Yurakucho Line (Y-18)**: Directly connected to Yurakucho Station (Exit D5).
-  - **Chiyoda Line**: 5 mins walk from **Nijubashimae Station** or **Hibiya Station**.
-  - **Marunouchi Line**: 5 mins walk from **Tokyo Station**.
+  - **Yurakucho Line**: (Y-18): Directly connected to **Yurakucho Station**.
+  - **Chiyoda Line**: (C-10): 5-minute walk from **Nijubashimae Station**.
+  - **Marunouchi Line**: (M-17): 5-minute walk from **Tokyo Station**.
+  - **Hibiya Line** (H-09) / **Ginza Line** (G-09): 5-minute walk from **Ginza Station**.
+  - **Hibiya Line** (H-08) / **Chiyoda Line** (C-09): 5 to 7-minute walk from **Hibiya Station**.
+  - **Ginza Line** (G-10): 7-minute walk from **Kyobashi Station**.
+
+
+- **Toei Subway Lines**:
+  - **Toei Mita Line** (I-08): 5 mins walk from **Hibiya Station**.
+
     {{< /tab >}}
 {{< /tab-container >}}

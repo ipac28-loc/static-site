@@ -19,7 +19,6 @@ Define the core metadata under the `[params]` namespace:
   conf_location = "Tokyo International Forum, Tokyo, Japan"
   email = "contact@ipac28.org"
   registration_link = "/register/register-conf/"
-  abstract_deadline = "December 5, 2027"
 ```
 
 ### Branding Logos and Toggles
@@ -57,10 +56,12 @@ Renders a dismissible banner at the top of the header:
 ### Important Dates Database
 Configures the milestones listed in the dynamic timeline page.
 * **type options**: `"info"` (blue bubble), `"open"` (green bubble), `"close"` (red bubble for deadlines).
+* **season** (optional): If configured as a string (e.g. `"Late Summer, 2027"`), the template displays this value in place of the specific date. The `date` parameter must still be present to govern sorting and automatic expiration styling.
 * Past dates are marked automatically as outdated based on the build timestamp.
 ```toml
 [[params.important_dates]]
   date = "2027-12-30T23:59:59+09:00"
+  season = "Late Summer, 2027" # optional
   title = "Abstract Submission Deadline"
   type = "close"
   description = "Abstract submission closes strictly at 23:59 JST. No late submissions accepted."
@@ -149,28 +150,27 @@ Creates tabbed panels to split dense information:
 ```markdown
 {{< tab-container >}}
     {{< tab title="Haneda Airport" >}}
-    Take the Tokyo Monorail to Hamamatsucho Station.
+Take the Tokyo Monorail to Hamamatsucho Station.
     {{< /tab >}}
     {{< tab title="Narita Airport" >}}
-    Take the Narita Express to Tokyo Station.
+Take the Narita Express to Tokyo Station.
     {{< /tab >}}
 {{< /tab-container >}}
 ```
 
-#### Poster Showcase (`poster-download`)
-Displays official posters with specifications, downloads, and an interactive light-box visualizer.
+#### Poster Download Button (`download-button`)
+Renders a clean, customizable download button. You can call it multiple times to display side-by-side buttons.
+Parameters:
+* **url**: Link to the target download asset.
+* **label**: Custom text label.
+* **filename**: Download filename.
+* **icon** (optional): Custom FontAwesome icon class (defaults to `"fa-solid fa-download"`).
+* **theme** (optional): Theme style class: `"primary"`, `"secondary"`, `"dark"`, `"green"`, `"blue"`.
+
+Example:
 ```markdown
-{{< poster-download
-    src="/img/ipac28_poster_a0.png"
-    dimensions="A0 Size (841 x 1189 mm)"
-    format="High-Resolution PNG (300 DPI)"
-    size="1.1 MB"
-    description="Official IPAC'28 poster for laboratory display."
-    download1_url="/img/ipac28_poster_a0.png"
-    download1_label="Download A0 PNG"
-    download2_url="/img/ipac28_poster_a0.png"
-    download2_label="Download A4 PDF"
->}}
+{{< download-button url="/img/poster_a0.png" label="Download A0 Poster" filename="poster_a0.png" theme="primary" >}}
+{{< download-button url="/img/poster_a4.png" label="Download A4 Poster" filename="poster_a4.png" theme="secondary" >}}
 ```
 
 #### Manual Timeline

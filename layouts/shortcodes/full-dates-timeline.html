@@ -1,5 +1,5 @@
 <div class="relative border-l border-slate-200 dark:border-slate-800 ml-4 pl-8 space-y-12 my-8">
-    {{ range .Site.Params.important_dates }}
+    {{ range sort .Site.Params.important_dates "date" "asc" }}
     <!-- Check if the milestone is in the past relative to the current build time -->
     {{ $is_expired := false }}
     {{ if lt (time .date) now }}
@@ -36,7 +36,7 @@
         <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-shadow duration-200">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <span class="text-sm font-bold text-brand-primary flex items-center gap-2">
-                    <i class="far fa-calendar-check"></i> {{ $formatted_date }}
+                    <i class="far fa-calendar-check"></i> {{ if .season }}{{ .season }}{{ else }}{{ $formatted_date }}{{ end }}
                 </span>
                 <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider border {{ $badge_class }}">
                     {{ $badge_label }}

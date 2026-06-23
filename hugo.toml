@@ -17,7 +17,6 @@ conf_start_date = "2028-06-04T08:00:00+09:00"
 conf_location = "Tokyo International Forum, Tokyo, Japan"
 email = "contact@ipac28.org"
 registration_link = "/register/register-conf/"
-abstract_deadline = "December 5, 2027"
 
 # Appearance & Toggles
 hero_badge = "19th International Particle Accelerator Conference"
@@ -42,89 +41,124 @@ date_fmt = "January 2, 2006"
 
 # Centralized Important Dates & Milestones (Clean multi-line arrays for easy editing)
 [[params.important_dates]]
-date = "2026-04-23T00:00:00+09:00"
+date = "2026-07-01T00:00:00+09:00"
 title = "IPAC'28 Website Opening"
 type = "info"
 description = "The IPAC'28 Website has been opened. We have prepared the contents of the homepage including program, registration, and venue information."
 
+# 2027 spring
 [[params.important_dates]]
 date = "2027-04-01T00:00:00+09:00"
+season = "Spring, 2027"
 title = "Exhibitor Registration Opens"
 type = "open"
 description = "Exhibitor registration opens"
 
+# 2027 summber
 [[params.important_dates]]
-date = "2027-10-01T00:00:00+09:00"
+date = "2027-09-30T23:59:59+09:00"
+season = "Late Summer, 2027"
 title = "Abstract Submission Opens"
 type = "open"
 description = "Abstract submission opens"
 
+# 2027 summber
 [[params.important_dates]]
 date = "2027-10-01T00:00:00+09:00"
-title = "Early Bird Registration Opens"
+season = "Late Summer, 2027"
+title = "Early Registration Opens"
 type = "open"
-description = "Early bird registration opens"
+description = "Early registration opens"
 
 [[params.important_dates]]
+date = "2027-10-01T00:00:00+09:00"
+season = "Late Summer, 2027"
+title = "Student Grant Opens"
+type = "open"
+description = "Student grant applications open. "
+
+# 2027 winter
+[[params.important_dates]]
 date = "2027-12-30T23:59:59+09:00"
-title = "Abstract Submission Deadline"
+season = "Late winter, 2027"
+title = "Abstract Submission Close"
 type = "close"
 description = "Abstract submission closes strictly at 23:59 JST. No late submissions or modifications will be processed."
 
+# 2027 early dec
+[[params.important_dates]]
+date = "2027-12-10T09:00:00+09:00"
+season = "Winter, 2027"
+title = "Student Grant Close"
+type = "close"
+description = "Student grant applications close. "
+
+# winter
+[[params.important_dates]]
+date = "2028-03-31T23:59:59+09:00"
+season = "Spring, 2028"
+title = "Early Registration Closes"
+type = "close"
+description = "Last day to register under the discounted early-bird rate."
+
 [[params.important_dates]]
 date = "2028-01-10T09:00:00+09:00"
-title = "Regular Registration & Student Grant Opens"
+season = "Spring, 2028"
+title = "Author Notification"
+type = "info"
+description = "Abstract decisions (Oral, Poster, or Rejection) are communicated to primary authors. "
+
+[[params.important_dates]]
+date = "2028-04-01T09:00:00+09:00"
+season = "Spring, 2028"
+title = "Regular Registration Opens"
 type = "open"
-description = "Early bird registration rate becomes active. Eligible students can apply for the IPAC'28 Travel Grant."
+description = "Regular registration opens."
 
 [[params.important_dates]]
-date = "2028-03-10T09:00:00+09:00"
-title = "Author Notification & Student Grant Deadline"
-type = "info"
-description = "Abstract decisions (Oral, Poster, or Rejection) are communicated to primary authors. Student grant applications close."
-
-[[params.important_dates]]
-date = "2028-04-01T23:59:59+09:00"
-title = "Early Registration Rate Closes"
+date = "2028-04-30T23:59:59+09:00"
+season = "Late Spring, 2028"
+title = "Regular Registration Closes"
 type = "close"
-description = "Last day to register under the discounted early-bird rate. After this date, standard conference registration fees apply."
+description = "Regular registration closes."
 
 [[params.important_dates]]
-date = "2028-05-20T23:59:59+09:00"
-title = "Final Paper Submission Deadline"
+date = "2028-05-31T23:59:59+09:00"
+season = "Late Spring, 2028"
+title = "Final Paper Submission Close"
 type = "close"
-description = "All contributions must upload their final, peer-review-ready PDF and source files (LaTeX/Word) to the JACoW Scientific Repository for editorial checks."
+description = "All contributions must upload their final PDF and source files (LaTeX/Word) to the JACoW Scientific Repository for editorial checks."
 
 [[params.important_dates]]
-date = "2028-06-04T12:00:00+09:00"
-title = "Pre-Registration & Welcome Drink"
+date = "2028-06-03T18:00:00+09:00"
+title = "Welcome Drink"
 type = "info"
-description = "Early badge pick-up and registration desk opens at the Tokyo International Forum, followed by the informal Welcome Drink in the evening."
+description = "Registration desk opens at the Tokyo International Forum."
 
 [[params.important_dates]]
-date = "2028-06-05T08:00:00+09:00"
+date = "2028-06-04T08:00:00+09:00"
 title = "IPAC'28 Scientific Program"
 type = "info"
 description = "Timetable sessions, plenary keynotes, parallel talks, commercial exhibitions, and the official social banquet."
 
 # Latest Updates & Announcements (shown on homepage, newest 3 displayed)
 [[params.news]]
-date = "2026-04-23T00:00:00+09:00"
+date = "2026-07-01T00:00:00+09:00"
 title = "IPAC'28 Website Is Now Open"
 summary = "The official IPAC'28 conference website has launched. Find information on the scientific program, registration, venue, and more."
 link = "/about/about-welcome/"
 
-[[params.news]]
-date = "2026-05-01T00:00:00+09:00"
-title = "Call for Abstracts: Coming Soon"
-summary = "Abstract submission will open in October 2027 via the JACoW Indico portal. Authors are encouraged to prepare their contributions in advance."
-link = "/authors/authors-abstract/"
+# [[params.news]]
+# date = "2026-05-01T00:00:00+09:00"
+# title = "Call for Abstracts: Coming Soon"
+# summary = "Abstract submission will open in October 2027 via the JACoW Indico portal. Authors are encouraged to prepare their contributions in advance."
+# link = "/authors/authors-abstract/"
 
-[[params.news]]
-date = "2026-05-15T00:00:00+09:00"
-title = "Exhibitor Prospectus Now Available"
-summary = "The exhibitor and sponsorship prospectus for IPAC'28 is now available for download. Secure prime booth space early — allocation is first-come, first-served."
-link = "/exhibitor/exhibitor-info/"
+# [[params.news]]
+# date = "2026-05-15T00:00:00+09:00"
+# title = "Exhibitor Prospectus Now Available"
+# summary = "The exhibitor and sponsorship prospectus for IPAC'28 is now available for download. Secure prime booth space early — allocation is first-come, first-served."
+# link = "/exhibitor/exhibitor-info/"
 
 # Sponsors & Industry Partners
 # Fields:
@@ -1269,6 +1303,12 @@ institution = "KEK"
 chair = false
 
 [[params.committee_loc]]
+name = "Akihiro"
+surname = "Shirakawa"
+institution = "KEK"
+chair = false
+
+[[params.committee_loc]]
 name = "Kazuro"
 surname = "Furukawa"
 institution = "KEK"
@@ -1276,7 +1316,7 @@ chair = false
 
 [[params.committee_loc]]
 name = "Shunto"
-surname = "Ogasaware"
+surname = "Ogasawara"
 institution = "KEK"
 chair = false
 
@@ -1516,10 +1556,16 @@ identifier = "travel"
 weight = 60
 
 [[menu.main]]
-name = "Venue & Accommodation"
-url = "/travel/travel-accommodation/"
+name = "Venue"
+url = "/travel/travel-venue/"
 parent = "travel"
 weight = 10
+
+[[menu.main]]
+name = "Accommodation"
+url = "/travel/travel-accommodation/"
+parent = "travel"
+weight = 12
 
 [[menu.main]]
 name = "Getting to Tokyo"

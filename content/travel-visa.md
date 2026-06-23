@@ -3,7 +3,9 @@ title: "Visa Information"
 url: "/travel/travel-visa/"
 ---
 
-Most international visitors traveling to Japan for academic conferences require a short-term temporary visitor visa unless they hold passport nationalities with visa-exemption agreements. Please consult the guidelines below.
+Many countries have visa-exempt agreements with Japan. However, nationals of certain countries must obtain a visa before entering. Please check the Official Japanese Ministry of Foreign Affairs (MOFA) website at [Visa Information](https://www.mofa.go.jp/j_info/visit/visa/index.html).
+
+<!-- Most international visitors traveling to Japan for academic conferences require a short-term temporary visitor visa unless they hold passport nationalities with visa-exemption agreements. Please consult the guidelines below.
 
 {{< accordion title="1. Countries Exempt from Visa Requirements" >}}
 As of 2027, nationals of over 60 countries and regions (including the United States, Canada, European Union nations, Australia, United Kingdom, Singapore, etc.) who enter Japan for short-term stays (up to 90 days) for conference participation, business meetings, or tourism **do not need to apply for a visa** in advance.
@@ -30,4 +32,4 @@ Official visa support documents will be issued **only after** all the following 
 - If presenting, your abstract has been formally accepted in the JACoW Indico system.
 - You have submitted a completed **Visa Request Form** (available in your registration dashboard starting **January 2028**) containing your flight schedules, passport details, and hotel reservations.
 - A fee of `To be added` may apply for physical express mailing of documents.
-{{< /accordion >}}
+{{< /accordion >}} -->

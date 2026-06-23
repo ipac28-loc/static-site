@@ -3,9 +3,9 @@ title: "Accelerator Prizes"
 url: "/program/prizes/"
 ---
 
-> The list of accelerator prizes for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
+The accelerator prizes for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
 
-Every year, the International Particle Accelerator Conference honors exceptional achievements in the field through a series of internationally recognized accelerator awards and prizes.
+<!-- Every year, the International Particle Accelerator Conference honors exceptional achievements in the field through a series of internationally recognized accelerator awards and prizes. -->
 <!--
 ### Prestigious IPAC'28 Accelerator Prizes
 

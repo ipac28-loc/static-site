@@ -3,4 +3,4 @@ title: "Terms of Use"
 url: "/terms/"
 ---
 
-`To be added`
+To be announced.

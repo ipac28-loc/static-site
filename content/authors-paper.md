@@ -3,9 +3,9 @@ title: "Paper Preparation Guidelines"
 url: "/authors/authors-paper/"
 ---
 
->  The paper preparation guidelines for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
+The paper preparation guidelines for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
 
-----------------
+<!-- ----------------
 All authors presenting at IPAC'28 must submit a contribution paper (maximum 3 pages for posters/contributed orals, 5 pages for plenary/invited talks). Papers must adhere strictly to the **JACoW (Joint Accelerator Conferences Website)** style templates.
 
 {{< tab-container >}}
@@ -45,4 +45,4 @@ All files must be uploaded before the paper deadline: **May 20, 2028**.
    - No page numbers, headers, or footers should be present in the PDF.
 3. **JACoW Cat Scan**: The online Indico submission will run an automated script (Cat Scan) to verify margins, font embedding, and outline boundaries. Any failing issues must be resolved by uploading revised drafts.
     {{< /tab >}}
-{{< /tab-container >}}
+{{< /tab-container >}} -->

@@ -3,6 +3,9 @@ title: "Ongoing Accelerator Projects"
 url: "/exhibitor/exhibitor-project/"
 ---
 
+The exhibitor and sponsor information for IPAC'28 will open in the coming months. Please check back regularly for updates.
+
+<!-- 
 The industrial exhibition at IPAC'28 provides a unique portal connecting global vendors with major upcoming national and international particle accelerator projects.
 
 ### Prominent Scientific Infrastructures & Upgrades
@@ -18,4 +21,4 @@ The industrial exhibition at IPAC'28 provides a unique portal connecting global 
 ---
 
 ### Industry Seminars
-Exhibiting companies have the opportunity to deliver 15-minute presentations detailing their technological solutions for these upcoming scientific projects during the **Industry Seminar Sessions** scheduled on Monday and Tuesday afternoons. Seminar slots are `To be added`.
+Exhibiting companies have the opportunity to deliver 15-minute presentations detailing their technological solutions for these upcoming scientific projects during the **Industry Seminar Sessions** scheduled on Monday and Tuesday afternoons. Seminar slots are `To be added`. -->

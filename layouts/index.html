@@ -200,7 +200,7 @@
                         <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-200">
                             <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
                                 <span class="text-sm font-bold text-brand-primary flex items-center gap-2">
-                                    <i class="far fa-calendar-check"></i> {{ $formatted_date }}
+                                    <i class="far fa-calendar-check"></i> {{ if .season }}{{ .season }}{{ else }}{{ $formatted_date }}{{ end }}
                                 </span>
                                 <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider border {{ $badge_class }}">
                                     {{ $badge_label }}

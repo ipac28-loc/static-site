@@ -3,8 +3,11 @@ title: "Exhibitor Registration"
 url: "/exhibitor/exhibitor-register/"
 ---
 
-Industrial exhibition booths booking for **IPAC'28** will launch on **October 1, 2027**. Booking is processed strictly on a first-come, first-served basis via our exhibitor reservation system.
+The exhibitor registration for IPAC'28 will open in the coming months. Please check back regularly for updates.
 
+
+Industrial exhibition booths booking for **IPAC'28** will launch on **late 2027**. Booking is processed strictly on a first-come, first-served basis via our exhibitor reservation system.
+<!--
 ### Exhibition Booth Options
 
 - **Option A: Premium Shell Scheme (3m x 3m - 9sqm)**  
@@ -20,4 +23,4 @@ Industrial exhibition booths booking for **IPAC'28** will launch on **October 1,
 ### Registration Procedures
 1. Read the **[Exhibitor Opportunities & Prospectus](/exhibitor-info/)** carefully.
 2. Open the online Exhibitor Portal, select your preferred booth number on the floor plan map, and fill in company contact details.
-3. Submit full payment within 30 days to secure booking. Booth bookings are automatically canceled if payment terms are violated. Exhibition regulations and insurance agreements are `To be added`.
+3. Submit full payment within 30 days to secure booking. Booth bookings are automatically canceled if payment terms are violated. Exhibition regulations and insurance agreements are `To be added`. -->

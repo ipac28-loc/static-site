@@ -3,8 +3,8 @@ title: "Technical Tour"
 url: "/register/register-tour/"
 ---
 
-> The technical tour details for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
------
+The technical tour details for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
+<!-- -----
 A dedicated post-conference Technical Tour is organized for Friday, June 9 (afternoon) and Saturday, June 10, allowing participants to visit Japan's world-leading particle accelerator facilities and national scientific laboratories.
 
 ### Tour Options
@@ -30,4 +30,4 @@ A dedicated post-conference Technical Tour is organized for Friday, June 9 (afte
 ---
 
 ### Reservation Rules
-Tour bookings will open in **January 2028** alongside standard registration. Due to high demand and laboratory security checks, on-site sign-ups are strictly prohibited. Foreign national clearance forms are `To be added`.
+Tour bookings will open in **January 2028** alongside standard registration. Due to high demand and laboratory security checks, on-site sign-ups are strictly prohibited. Foreign national clearance forms are `To be added`. -->

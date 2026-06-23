@@ -3,10 +3,10 @@ title: "Conference Registration"
 url: "/register/register-conf/"
 ---
 
-> The registration fees and cancellation policy for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
+The registration procedure for IPAC'28 will be announced closer to the conference date. Please check back regularly for updates.
 
--------
 
+<!-- 
 This is the designated template page for **Conference Registration**. You can replace this placeholder content with the comprehensive details regarding the IPAC conference.
 
 
@@ -34,4 +34,4 @@ To register for IPAC’28:
 
 ## Support
 
-Please contact [IPAC'28 Registration](mailto:register@ipac28.org) if you have questions about registration process.
+Please contact [IPAC'28 Registration](mailto:register@ipac28.org) if you have questions about registration process. -->

@@ -3,9 +3,9 @@ title: "Contact Us"
 url: "/contact/"
 ---
 
-If you have any questions or require administrative assistance regarding IPAC'28, please consult the appropriate contact desk below.
+If you have any questions or require administrative assistance regarding IPAC'28, please consult us at contacg@ipac28.org.
 
-### Conference Help Desks
+<!-- ### Conference Help Desks
 
 - **General Information & Local Logistics**
   For general queries about Hibiya, Tokyo sightseeing, companion tours, or venue guidelines:
@@ -23,9 +23,9 @@ If you have any questions or require administrative assistance regarding IPAC'28
   For corporate booths booking, custom shell schemes, banner advertisements, or sponsor tiers:
   - **Email**: `exhibitor@ipac28.org`
 
----
+--- -->
 
 ### Local Secretariat Headquarters
 - **Office Address**: Oho 1-1, Tsukuba, Ibaraki 305-0801, Japan.
 - **Operating Hours**: Monday to Friday, 09:00 - 17:00 JST (UTC+9).
-- **Telephone**: `To be added`.
+<!-- - **Telephone**: `To be added`. -->
