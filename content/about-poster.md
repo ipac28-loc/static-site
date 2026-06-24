@@ -9,5 +9,6 @@ The official poster for **IPAC'28** has been published. It highlights Tokyo's sy
 ### Download & Share
 We kindly request members of the accelerator community to print and display the official poster on bulletin boards at their respective research institutes and laboratories.
 
-{{< download-button url="/img/ipac28_poster_a0.png" label="Download A0 Poster (PNG)" filename="ipac28_poster_a0.png" theme="primary" >}}
-{{< download-button url="/img/ipac28_poster_a0.png" label="Download A4 Poster (PNG)" filename="ipac28_poster_a4.png" theme="secondary" >}}
+{{< download-button url="/img/ipac28_poster_a2.pdf" label="Download High Resolution Poster (PDF)" filename="ipac28_poster_a2.pdf" theme="primary" >}}
+{{< download-button url="/img/ipac28_poster.png" label="Download Poster (PNG)" filename="ipac28_poster.png" theme="secondary" >}}
+

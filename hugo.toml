@@ -20,7 +20,7 @@ registration_link = "/register/register-conf/"
 
 # Appearance & Toggles
 hero_badge = "19th International Particle Accelerator Conference"
-hero_image = "/img/ipac28_poster_a0.png"
+hero_image = "/img/ipac28_poster.png"
 about_image = "/img/kanko.png"
 enable_countdown = true
 enable_sponsors = false
