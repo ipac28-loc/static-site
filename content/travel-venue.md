@@ -20,19 +20,19 @@ The venue is highly accessible via Tokyo's extensive public transportation netwo
 The Tokyo International Forum features several distinct halls and spaces designed to accommodate large-scale international conferences. The primary halls for IPAC'28 are:
 
 {{< tab-container >}}
-    {{< tab title="A Hall (Plenary)" >}}
-The Plenary talks will be held in Hall A. The floor map is shown below.
+    {{< tab title="Plenary Sessions" >}}
+The Plenary talks will be held in Hall C. The floor map is shown below.
 
-https://www.t-i-forum.co.jp/en/facilities/a/
+https://www.t-i-forum.co.jp/en/facilities/c/
     {{< /tab >}}
 
-    {{< tab title="B/C Hall (Parallel Sessions)" >}}
-The parallel sessions will be held in Hall B/C. The floor map is shown below.
+    {{< tab title="Parallel Sessions" >}}
+The parallel sessions will be held in Hall B5. The floor map is shown below.
 
 https://www.t-i-forum.co.jp/en/facilities/b5/
     {{< /tab >}}
 
-    {{< tab title="Exhibition Hall" >}}
+    {{< tab title="Exhibition Area" >}}
 The main exhibition area where posters, industrial exhibits, and commercial booths will be located at Hall E. The floor map is shown below.
 
 https://www.t-i-forum.co.jp/en/facilities/e/
