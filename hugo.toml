@@ -394,7 +394,7 @@ institution = "KEK"
 location = "Japan"
 desc = "OC Chair"
 chair = true
-avatar = "/img/koseki.jpg"
+avatar = "/img/koseki.png"
 
 [[params.committee_oc]]
 name = "Toru"
@@ -575,7 +575,7 @@ institution = "RIKEN/Nishina"
 location = "Japan"
 desc = "SPC Chair"
 chair = true
-avatar = ""
+avatar = "/img/sakamoto.png"
 
 # ----------------------------------------------------
 # Scientific Advisory Board
@@ -1269,7 +1269,7 @@ surname = "Sato"
 institution = "KEK"
 desc = "LOC Chair"
 chair = true
-avatar = ""
+avatar = "/img/sato.png"
 
 [[params.committee_loc]]
 name = "Hitomi"
@@ -1282,11 +1282,13 @@ chair = false
 name = "Michiru"
 surname = "Nishiwaki"
 institution = "KEK"
+desc = "Scientific Secretariat"
 chair = false
 
 [[params.committee_loc]]
-name = "Hitoshi"
-surname = "Sugimura"
+name = "Shuei"
+surname = "Yamada"
+desc = "Scientific Secretariat"
 institution = "KEK"
 chair = false
 
@@ -1315,6 +1317,12 @@ institution = "KEK"
 chair = false
 
 [[params.committee_loc]]
+name = "Hitoshi"
+surname = "Sugimura"
+institution = "KEK"
+chair = false
+
+[[params.committee_loc]]
 name = "Shunto"
 surname = "Ogasawara"
 institution = "KEK"
@@ -1323,12 +1331,6 @@ chair = false
 [[params.committee_loc]]
 name = "Shinya"
 surname = "Sasaki"
-institution = "KEK"
-chair = false
-
-[[params.committee_loc]]
-name = "Shuei"
-surname = "Yamada"
 institution = "KEK"
 chair = false
 
