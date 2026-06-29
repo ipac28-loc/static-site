@@ -12,8 +12,10 @@ To maximize your conference experience, the official **IPAC'28 Mobile App** will
 - **Digital Badge Integration**: Access your registration QR code directly inside the app for seamless security gate entry. -->
 
 
-### App Store Downloads
+### App Downloads
+<!--
 - **Apple App Store (iOS)**:
     `To be added (iOS Download link)`
+-->
 - **Google Play Store (Android)**:
 `To be added (Android Download link)`

@@ -3,7 +3,7 @@ title: "Contact Us"
 url: "/contact/"
 ---
 
-If you have any questions or require administrative assistance regarding IPAC'28, please consult us at contacg@ipac28.org.
+If you have any questions or require administrative assistance regarding IPAC'28, please consult us at contact@ipac28.org.
 
 <!-- ### Conference Help Desks
 

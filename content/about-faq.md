@@ -10,7 +10,7 @@ Find quick answers to common questions about abstract submission, registration, 
 ### General & Abstracts
 
 {{< accordion title="When and where will IPAC'28 take place?" >}}
-IPAC'28 will be held from **June 5-9, 2028**, at the **Tokyo International Forum (TIF)**, located in the heart of Tokyo, Japan.
+IPAC'28 will be held from **June 4-9, 2028**, at the **Tokyo International Forum (TIF)**, located in the heart of Tokyo, Japan.
  <!-- Satellite meetings and registration check-ins will commence on Sunday, June 4, 2028. -->
 {{< /accordion >}}
 

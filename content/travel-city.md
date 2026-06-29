@@ -10,17 +10,18 @@ Tokyo features two world-class international airports: **Haneda Airport (HND)** 
     {{< tab title="From Haneda Airport (HND)" >}}
 Haneda Airport is located much closer to central Tokyo (approx. 15 km) and is highly convenient.
 
-- **By Monorail & Train (Fastest - ~30 mins)**:
-  1. Take the **Tokyo Monorail** from Haneda Terminal 1/2/3 to **Hamamatsucho Station** (13 mins via Haneda Express).
-  2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (4 mins).
-  3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
+- **By Train**:
+  - **Route 1 (Recommended - ~30 mins)**
+    1. Take the **Tokyo Monorail** from Haneda Terminal 1/2/3 to **Hamamatsucho Station** (13 mins via Haneda Express).
+    2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (4 mins).
+    3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
 
-- **By Keikyū Airport Line (~35-45 mins)**:
-  1. Take the **Keikyū Airport Line** (Airport Limited Express) from Haneda Airport to **Shinagawa Station** (15-20 mins).
-  2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (10 mins).
-  3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
+  - **Route 2 (Alternate - ~35-45 mins)**:
+    1. Take the **Keikyū Airport Line** (Airport Limited Express) from Haneda Airport to **Shinagawa Station** (15-20 mins).
+    2. Transfer to the **JR Yamanote Line** or **JR Keihin-Tohoku Line** northbound to **Yurakucho Station** (10 mins).
+    3. Tokyo International Forum is a 1-minute walk from JR Yurakucho Station.
 
-- **By Airport Limousine Bus / Keikyū Limousine Bus (~30-50 mins)**:
+- **By Bus (~30-50 mins)**:
   1. Take the **Airport Limousine Bus** or **Keikyū Limousine Bus** bound for Tokyo Station (Yaesu Exit / Tekko Building).
   2. Tokyo International Forum is a 5-minute walk from Tokyo Station.
   3. For more information, please visit the [Airport Limousine Bus](https://www.limousinebus.co.jp/en/) or [Keikyu Bus](https://www.keikyu-bus.co.jp/en) websites.
