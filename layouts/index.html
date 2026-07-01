@@ -115,6 +115,7 @@
                 </div>
                 
                 <!-- Stats Row -->
+                {{ if .Site.Params.enable_stats }}
                 <div class="grid grid-cols-3 gap-6 border-t border-slate-100 pt-8">
                     <div class="text-center sm:text-left">
                         <div class="text-3xl sm:text-4xl font-extrabold text-brand-primary tracking-tight">{{ .Site.Params.stats.attendees }}</div>
@@ -129,6 +130,7 @@
                         <div class="text-xs sm:text-sm font-semibold uppercase text-slate-400 mt-1 tracking-wider">Exhibitors</div>
                     </div>
                 </div>
+                {{ end }}
             </div>
             
             <!-- Right image wrapper -->

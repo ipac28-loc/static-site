@@ -24,6 +24,7 @@ hero_image = "/img/ipac28_poster.png"
 about_image = "/img/kanko.png"
 enable_countdown = true
 enable_sponsors = false
+enable_stats = false
 hide_oc_members = true
 hide_spc_members = true
 hide_sab_members = true

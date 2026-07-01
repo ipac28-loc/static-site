@@ -27,6 +27,7 @@ Define the core metadata under the `[params]` namespace:
 * **Interactivity Toggles**:
   * `enable_countdown = true` (Toggles the countdown timer on the homepage)
   * `enable_sponsors = true` (Toggles the scrolling sponsor ribbon)
+  * `enable_stats = true` (Toggles the attendee, presentation, and exhibitor stats row on the homepage)
 
 ### Appearance, Fonts and Colors
 Configure layout sizes, fonts, and base color tones under `[params.text_style]`:
