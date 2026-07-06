@@ -1,5 +1,5 @@
 ---
-title: "Welcome ti IAPC'28 in Tokyo"
+title: "Welcome to IAPC'28 in Tokyo"
 url: "/about/about-welcome/"
 ---
 
