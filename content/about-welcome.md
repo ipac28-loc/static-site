@@ -1,26 +1,23 @@
 ---
-title: "Welcome Address"
+title: "Welcome to IAPC'28 in Tokyo"
 url: "/about/about-welcome/"
 ---
 
-`To be added`
-<!--  Dear Colleagues and Friends,
+It is our great pleasure to welcome you to the 19th International Particle Accelerator Conference (IPAC'28), which will be held from **June 4 to 9, 2028**, at the **Tokyo International Forum** in the heart of Tokyo, Japan. IPAC'28 is hosted by KEK in collaboration with RIKEN and several Japanese organizations.
 
-On behalf of the Organizing Committees, it is our great pleasure and privilege to welcome you to the **19th International Particle Accelerator Conference (IPAC'28)**, which will be held from **June 5 to 9, 2028**, at the **Tokyo International Forum** in Tokyo, Japan.
+As one of the world's leading international conferences in accelerator science and technology, IPAC brings together researchers, engineers, industrial partners, early-career researchers and students from around the world. Organized collaboratively by the accelerator communities of Asia, Europe, and the Americas, the conference provides a unique forum for presenting the latest advances in accelerator research and development, sharing updates on existing facilities, discussing future projects and innovative technologies, and fostering the international collaborations that continue to drive our field forward.
 
-IPAC is the main event in the worldwide particle accelerator field. Over the years, this conference series has established itself as an invaluable forum for researchers, engineers, students, and vendors to exchange scientific progress, foster collaborations, and highlight commercial innovations.
+Accelerator science and technology are essential to addressing many of today's scientific and societal challenges. Particle accelerators serve as indispensable tools for discoveries in particle and nuclear physics, photon science, materials research, life science, and numerous industrial applications. IPAC'28 will offer a comprehensive scientific program covering the latest achievements in accelerator science, technology, and applications while providing outstanding opportunities for scientific exchange and professional networking.
 
-##### Why Tokyo?
+Tokyo is one of the world's most dynamic and innovative cities, offers a unique blend of cutting-edge technology, rich cultural heritage, and renowned hospitality. The conference venue, Tokyo International Forum, is centrally located, providing convenient access to Tokyo's historic landmarks, vibrant neighborhoods, outstanding cuisine, and world-class public transportation system. We hope that your visit will be both scientifically rewarding and culturally memorable.
 
-Tokyo, the capital of Japan, is a city where centuries-old heritage harmoniously blends with futuristic urban grids. As a major global center for science, finance, and technology, it offers the perfect backdrop for our discussions. TIF is located at the center of Hibiya, a stones-throw away from Tokyo Station and the Imperial Palace Gardens.
+On behalf of the Organizing Committee, we cordially invite you to participate in IPAC'28 and contribute to making IPAC'28 a stimulating, inspiring, and memorable conference for the entire accelerator community. We look forward to welcoming you to Tokyo in June 2028.
 
-Alongside our rigorous scientific program, we hope you will take time to discover the culinary delights, rich architecture, and famous hospitality (Omotenashi) of Japan.
 
-We look forward to an inspiring week of research and connection!
 
-Warmest regards,
+**Tadashi Koseki (KEK)**, *Organizing Committee Chair*
 
-**Tadashi Koseki (KEK)**
+**Naruhiko Sakamoto (RIKEN/NRC)**, *Scientific Program Committee Chair*
 
-*Chair of the Organizing Committee*  -->
-<!-- `To be added (LOC Signature & Photos)` -->
+**Yoichi Sato (KEK/J-PARC)**, *Local Organizing Committee Chair*
+
