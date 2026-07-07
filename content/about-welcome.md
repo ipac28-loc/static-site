@@ -9,9 +9,7 @@ As one of the world's leading international conferences in accelerator science a
 
 Accelerator science and technology are essential to addressing many of today's scientific and societal challenges. Particle accelerators serve as indispensable tools for discoveries in particle and nuclear physics, photon science, materials research, life science, and numerous industrial applications. IPAC'28 will offer a comprehensive scientific program covering the latest achievements in accelerator science, technology, and applications while providing outstanding opportunities for scientific exchange and professional networking.
 
-Tokyo is one of the world's most dynamic and innovative cities, offers a unique blend of cutting-edge technology, rich cultural heritage, and renowned hospitality. The conference venue, Tokyo International Forum, is centrally located, providing convenient access to Tokyo's historic landmarks, vibrant neighborhoods, outstanding cuisine, and world-class public transportation system. We hope that your visit will be both scientifically rewarding and culturally memorable.
-
-On behalf of the Organizing Committee, we cordially invite you to participate in IPAC'28 and contribute to making IPAC'28 a stimulating, inspiring, and memorable conference for the entire accelerator community. We look forward to welcoming you to Tokyo in June 2028.
+Tokyo, one of the world's most dynamic and innovative cities, offers a unique blend of cutting-edge technology, rich cultural heritage, and renowned hospitality. The conference venue, Tokyo International Forum, is centrally located, providing convenient access to Tokyo's historic landmarks, vibrant neighborhoods, outstanding cuisine, and a world-class public transportation system. We hope that your visit will be both scientifically rewarding and culturally memorable. On behalf of the Organizing Committee, we cordially invite you to participate in IPAC'28 and contribute to making IPAC'28 a stimulating, inspiring, and memorable conference for the entire accelerator community. We look forward to welcoming you to Tokyo in June 2028.
 
 
 
