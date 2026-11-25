@@ -426,6 +426,12 @@ identifier = "travel"
 weight = 60
 
 [[menu.main]]
+name = "Promo Video"
+url = "/travel/travel-video/"
+parent = "travel"
+weight = 5
+
+[[menu.main]]
 name = "Venue"
 url = "/travel/travel-venue/"
 parent = "travel"
